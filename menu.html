@@ -2,19 +2,14 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<title>TV Platform UI</title>
+<title>TV UI</title>
 
 <style>
-*{
-    box-sizing:border-box;
-    font-family: Arial, sans-serif;
-}
-
 body{
     margin:0;
     background:#0b0b0f;
     color:white;
-    overflow:hidden;
+    font-family:Arial;
 }
 
 .header{
@@ -38,11 +33,13 @@ body{
     align-items:center;
     justify-content:center;
     font-size:20px;
-    transition:0.15s;
     border:3px solid transparent;
+    transition:0.15s;
+    outline:none;
 }
 
-.card.focused{
+/* TV focus sistemi */
+.card:focus{
     transform:scale(1.12);
     border-color:#00e5ff;
     box-shadow:0 0 25px rgba(0,229,255,0.8);
@@ -56,75 +53,30 @@ body{
 <div class="header">🔥 My TV Platform</div>
 
 <div class="row">
-    <div class="card">Netflix</div>
-    <div class="card">Disney+</div>
-    <div class="card">HBO Max</div>
-    <div class="card">Prime</div>
+    <div class="card" tabindex="1">Netflix</div>
+    <div class="card" tabindex="2">Disney+</div>
+    <div class="card" tabindex="3">HBO Max</div>
+    <div class="card" tabindex="4">Prime</div>
 </div>
 
 <div class="row">
-    <div class="card">Anime</div>
-    <div class="card">Aksiyon</div>
-    <div class="card">Dizi</div>
-    <div class="card">Film</div>
+    <div class="card" tabindex="5">Anime</div>
+    <div class="card" tabindex="6">Aksiyon</div>
+    <div class="card" tabindex="7">Dizi</div>
+    <div class="card" tabindex="8">Film</div>
 </div>
 
 <script>
-const rows = document.querySelectorAll('.row');
-let rowIndex = 0;
-let colIndex = 0;
+/* İlk açılışta focus */
+document.querySelector('.card').focus();
 
-function updateFocus(){
-    document.querySelectorAll('.card').forEach(c=>c.classList.remove('focused'));
-    const cards = rows[rowIndex].querySelectorAll('.card');
-    if(cards[colIndex]) cards[colIndex].classList.add('focused');
-}
-
-updateFocus();
-
+/* OK tuşu yakalama */
 document.addEventListener('keydown', function(e){
-
-    const key = e.key;
-    const code = e.keyCode;   // TV’ler genelde bunu kullanıyor
-
-    const currentRow = rows[rowIndex];
-    const cards = currentRow.querySelectorAll('.card');
-
-    // SAĞ
-    if(key === 'ArrowRight' || code === 39){
-        if(colIndex < cards.length-1) colIndex++;
-    }
-
-    // SOL
-    if(key === 'ArrowLeft' || code === 37){
-        if(colIndex > 0) colIndex--;
-    }
-
-    // AŞAĞI
-    if(key === 'ArrowDown' || code === 40){
-        if(rowIndex < rows.length-1){
-            rowIndex++;
-            colIndex = 0;
+    if(e.key === 'Enter' || e.keyCode === 13){
+        if(document.activeElement.classList.contains('card')){
+            alert("Seçilen: " + document.activeElement.innerText);
         }
     }
-
-    // YUKARI
-    if(key === 'ArrowUp' || code === 38){
-        if(rowIndex > 0){
-            rowIndex--;
-            colIndex = 0;
-        }
-    }
-
-    // OK / ENTER
-    if(key === 'Enter' || code === 13){
-        const selected = rows[rowIndex].querySelectorAll('.card')[colIndex];
-        if(selected){
-            alert("Seçilen: " + selected.innerText);
-        }
-    }
-
-    updateFocus();
 });
 </script>
 
