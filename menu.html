@@ -28,7 +28,7 @@ body{
     width: 10%;
     height 100%;
     top: 5%;
-    left: 5%;
+    right: 5%;
     z-index: 9;
 }
 
@@ -44,28 +44,26 @@ body{
     padding:30px 40px;
 }
 .card{
-    width: 150px;
-    height:75px;
+    width: 100px;
+    height:50px;
     position: absolute;
     z-index: 9;
     top: 5%;
     left: 25%;
-    background:black;
-    color: white;
-    border-radius:50px;
+    background:#1a1a1f;    
+    border-rad14s:50px;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:45px;
-    font-weight: 700;
-    border:3px solid transparent;
+    font-s10e:4700;
+    border:3px sotransparenthite;
     outline:none;
     transition:0.15s;
 }
 .card:focus{
     transform:scale(1.12);
-    border-color:white;
-    box-shadow:0 0 25px white;
+    border-co#00e5ffhite;
+    box-shadow:0 0 2rgba(0,229,255,0.9)hite;
     background:#111;
 }
 
@@ -113,6 +111,114 @@ body{
 
 /* İZLE BUTONU */
 .hero-btn{
+    padding:18px 40px;
+    font-size:22px;
+    border:none;
+    border-radius:12px;
+    background:#ffffff;
+    color:black;
+    cursor:pointer;
+    transition:0.2s;
+    outline:none;
+}
+
+/* TV FOCUS */
+.hero-btn:focus{
+    transform:scale(1.12);
+    background:#e6f0ff;
+    box-shadow: 0 0 40px rgba(0, 60, 150, 0.9);
+}
+
+
+/* TOP MENU */
+.top-menu{
+    position:absolute;
+    top:20px;
+    left:40px;
+    display:flex;
+    gap:25px;
+    z-index:10;
+}
+
+.menu-btn{
+    padding:20px 35px;
+    font-size:23px;
+    border:none;
+    border-radius:8px;
+    background:rgba(20,20,30,0.6);
+    color:white;
+    cursor:pointer;
+    transition:0.2s;
+    outline:none;
+}
+
+.menu-btn:focus{
+    background:#00e5ff;
+    color:black;
+    transform:scale(1.1);
+    box-shadow:0 0 25px rgba(0,60,150,0.9);
+}
+</style>
+</head>
+
+<body>
+<!--LOGO-->
+<img src="https://raw.githubusercontent.com/hbb200009/Server/refs/heads/main/images/applogo.png" alt="logo" class="applogo">
+
+
+<!-- ÜST MENÜ -->
+<div class="top-menu">
+    <button class="menu-btn" tabindex="2">Ana Sayfa</button>
+    <button class="menu-btn" tabindex="3">Arama</button>
+    <button class="menu-btn" tabindex="4">Filmler</button>
+    <button class="menu-btn" tabindex="5">Diziler</button>
+</div>
+
+
+<!-- AÇILIŞ RESMİ -->
+<div class="hero">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+        <h1 class="hero-title">Miraculous Ladybug</h1>
+        <p class="hero-desc">
+            Paris’i koruyan iki gizli kahraman. Ladybug & Chat Noir’un destansı hikayesi.
+        </p>
+
+        <button class="hero-btn" tabindex="1">▶ İzle</button>
+    </div>
+</div>
+
+
+<script>
+document.addEventListener('keydown', e=>{
+    if(e.key === 'Enter' || e.keyCode === 13){
+        if(document.activeElement.classList.contains('menu-btn')){
+            alert("Seçilen Menü: " + document.activeElement.innerText);
+        }
+    }
+});
+</script>
+
+<script>
+/* Sayfa açılınca ilk karta focus */
+window.onload = ()=>{
+    const first = document.querySelector('.card');
+    if(first) first.focus();
+};
+
+/* OK tuşu */
+document.addEventListener('keydown', function(e){
+    if(e.key === 'Enter' || e.keyCode === 13){
+        if(document.activeElement.classList.contains('card')){
+            alert("Seçilen: " + document.activeElement.innerText);
+        }
+    }
+});
+</script>
+
+</body>
+</html>.hero-btn{
     padding:18px 40px;
     font-size:22px;
     border:none;
