@@ -12,16 +12,10 @@ body{
     font-family:Arial;
 }
 
-.header{
-    padding:20px 40px;
-    font-size:28px;
-    font-weight:bold;
-}
-
 .row{
     display:flex;
     gap:20px;
-    padding:20px 40px;
+    padding:40px;
 }
 
 .card{
@@ -38,8 +32,7 @@ body{
     outline:none;
 }
 
-/* TV focus sistemi */
-.card:focus{
+.card.active{
     transform:scale(1.12);
     border-color:#00e5ff;
     box-shadow:0 0 25px rgba(0,229,255,0.8);
@@ -50,34 +43,40 @@ body{
 
 <body>
 
-<div class="header">🔥 My TV Platform</div>
-
 <div class="row">
-    <div class="card" tabindex="1">Netflix</div>
-    <div class="card" tabindex="2">Disney+</div>
-    <div class="card" tabindex="3">HBO Max</div>
-    <div class="card" tabindex="4">Prime</div>
-</div>
-
-<div class="row">
-    <div class="card" tabindex="5">Anime</div>
-    <div class="card" tabindex="6">Aksiyon</div>
-    <div class="card" tabindex="7">Dizi</div>
-    <div class="card" tabindex="8">Film</div>
+    <div class="card">Netflix</div>
+    <div class="card">Disney+</div>
+    <div class="card">HBO</div>
+    <div class="card">Prime</div>
 </div>
 
 <script>
-/* İlk açılışta focus */
-document.querySelector('.card').focus();
+const cards = document.querySelectorAll('.card');
+let index = 0;
 
-/* OK tuşu yakalama */
-document.addEventListener('keydown', function(e){
-    if(e.key === 'Enter' || e.keyCode === 13){
-        if(document.activeElement.classList.contains('card')){
-            alert("Seçilen: " + document.activeElement.innerText);
-        }
-    }
-});
+function render(){
+    cards.forEach(c=>c.classList.remove('active'));
+    cards[index].classList.add('active');
+}
+render();
+
+/* HACK INPUT SYSTEM */
+function handle(code){
+    if(code==39){ if(index < cards.length-1) index++; } // right
+    if(code==37){ if(index > 0) index--; } // left
+    if(code==13){ alert("Seçilen: " + cards[index].innerText); } // ok
+    render();
+}
+
+/* Her ihtimali yakala */
+document.addEventListener('keydown', e=>handle(e.keyCode||e.which));
+document.addEventListener('keyup', e=>handle(e.keyCode||e.which));
+document.addEventListener('keypress', e=>handle(e.keyCode||e.which));
+
+/* Focus hack */
+window.onload = ()=>{
+    document.body.focus();
+};
 </script>
 
 </body>
