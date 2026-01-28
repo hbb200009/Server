@@ -25,8 +25,8 @@ body{
 }
 .applogo {
     position: absolute;
-    width: 10%;
-    height 100%;
+    width: 12.5%;
+    height: 20%;
     top: 5%;
     right: 5%;
     z-index: 9;
@@ -51,19 +51,19 @@ body{
     top: 5%;
     left: 25%;
     background:#1a1a1f;    
-    border-rad14s:50px;
+    border-radius:50px;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-s10e:4700;
-    border:3px sotransparenthite;
+    font-size:16px;
+    border:3px solid transparent;
     outline:none;
     transition:0.15s;
 }
 .card:focus{
     transform:scale(1.12);
-    border-co#00e5ffhite;
-    box-shadow:0 0 2rgba(0,229,255,0.9)hite;
+    border-color: #00e5ffhite;
+    box-shadow:0 0 2rgba(0,229,255,0.9);
     background:#111;
 }
 
@@ -126,7 +126,7 @@ body{
 .hero-btn:focus{
     transform:scale(1.12);
     background:#e6f0ff;
-    box-shadow: 0 0 40px rgba(0, 60, 150, 0.9);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
 }
 
 
@@ -168,10 +168,10 @@ body{
 
 <!-- ÜST MENÜ -->
 <div class="top-menu">
-    <button class="menu-btn" tabindex="2">Ana Sayfa</button>
-    <button class="menu-btn" tabindex="3">Arama</button>
-    <button class="menu-btn" tabindex="4">Filmler</button>
-    <button class="menu-btn" tabindex="5">Diziler</button>
+    <button class="menu-btn" tabindex="1" data-page="anasayfa.html">Ana Sayfa</button>
+<button class="menu-btn" tabindex="2" data-page="arama.html">Arama</button>
+<button class="menu-btn" tabindex="3" data-page="filmler.html">Filmler</button>
+<button class="menu-btn" tabindex="4" data-page="diziler.html">Diziler</button>
 </div>
 
 
@@ -185,94 +185,28 @@ body{
             Paris’i koruyan iki gizli kahraman. Ladybug & Chat Noir’un destansı hikayesi.
         </p>
 
-        <button class="hero-btn" tabindex="1">▶ İzle</button>
+        <button class="hero-btn" tabindex="1" data-page="diziler.html">▶ İzle</button>
     </div>
 </div>
 
 
 <script>
-document.addEventListener('keydown', e=>{
+window.onload = ()=>{
+    const first = document.querySelector('.card');
+    if(first) first.focus();
+};
+
+/* OK tuşu */
+document.addEventListener('keydown', function(e){
     if(e.key === 'Enter' || e.keyCode === 13){
+        if(document.activeElement.classList.contains('card')){
+            alert("Seçilen: " + document.activeElement.innerText);
+        }
         if(document.activeElement.classList.contains('menu-btn')){
             alert("Seçilen Menü: " + document.activeElement.innerText);
         }
-    }
-});
-</script>
-
-<script>
-/* Sayfa açılınca ilk karta focus */
-window.onload = ()=>{
-    const first = document.querySelector('.card');
-    if(first) first.focus();
-};
-
-/* OK tuşu */
-document.addEventListener('keydown', function(e){
-    if(e.key === 'Enter' || e.keyCode === 13){
-        if(document.activeElement.classList.contains('card')){
-            alert("Seçilen: " + document.activeElement.innerText);
-        }
-    }
-});
-</script>
-
-</body>
-</html>.hero-btn{
-    padding:18px 40px;
-    font-size:22px;
-    border:none;
-    border-radius:12px;
-    background:#ffffff;
-    color:black;
-    cursor:pointer;
-    transition:0.2s;
-    outline:none;
-}
-
-/* TV FOCUS */
-.hero-btn:focus{
-    transform:scale(1.12);
-    background:#e6f0ff;
-    box-shadow: 0 0 40px rgba(0, 60, 150, 0.9);
-}
-</style>
-</head>
-
-<body>
-<!--LOGO-->
-<img src="https://raw.githubusercontent.com/hbb200009/Server/refs/heads/main/images/applogo.png" alt="logo" class="applogo">
-
-
-<!-- AÇILIŞ RESMİ -->
-<div class="hero">
-    <div class="hero-overlay"></div>
-
-    <div class="hero-content">
-        <h1 class="hero-title">Miraculous Ladybug</h1>
-        <p class="hero-desc">
-            Paris’i koruyan iki gizli kahraman. Ladybug & Chat Noir’un destansı hikayesi.
-        </p>
-
-        <button class="hero-btn" tabindex="1">▶ İzle</button>
-    </div>
-</div>
-
-
-
-
-<script>
-/* Sayfa açılınca ilk karta focus */
-window.onload = ()=>{
-    const first = document.querySelector('.card');
-    if(first) first.focus();
-};
-
-/* OK tuşu */
-document.addEventListener('keydown', function(e){
-    if(e.key === 'Enter' || e.keyCode === 13){
-        if(document.activeElement.classList.contains('card')){
-            alert("Seçilen: " + document.activeElement.innerText);
+        if(document.activeElement.classList.contains('hero-btn')){
+            alert("Hero Buton Clicked!");
         }
     }
 });
