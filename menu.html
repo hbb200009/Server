@@ -289,33 +289,22 @@ body{
 <script>
 window.onload = () => {
     // Tüm hero divlerini al
-    const heroes = document.querySelectorAll(".hero");
+    const heroes = document.querySelectorAll('.hero');
 
-    // Rastgele bir index seç
+    // Hepsini gizle
+    heroes.forEach(hero => hero.style.display = 'none');
+
+    // Rastgele birini seç
     const randIndex = Math.floor(Math.random() * heroes.length);
+    const selectedHero = heroes[randIndex];
 
-    // Hepsini gizle, sadece seçileni göster
-    heroes.forEach((hero, i) => {
-        if(i === randIndex){
-            hero.style.display = "block"; // görünür
-        } else {
-            hero.style.display = "none"; // gizli
-        }
-    });
+    // Sadece seçileni göster
+    selectedHero.style.display = 'block';
 
-    // Menü ilk focus
-    const firstMenu = document.querySelector(".menu-btn");
+    // Menüye ilk focus
+    const firstMenu = document.querySelector('.menu-btn');
     if(firstMenu) firstMenu.focus();
 };
-
-// Enter / OK tuşu kumanda
-document.addEventListener("keydown", function(e) {
-    const key = e.key || e.keyCode;
-    if (key === "Enter" || key === 13 || key === 415 || key === 10009) {
-        const active = document.activeElement;
-        if (active.tagName === "A") active.click();
-    }
-});
 </script>
 </body>
 </html>
