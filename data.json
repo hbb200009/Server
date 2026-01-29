@@ -32,7 +32,19 @@
           "img": "https://m.media-amazon.com/images/M/MV5BMmEzNTU3MjQtYjYzZS00ZjJjLTk2YzQtNjU3Y2NhYzFlNDEwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
           "link": "film2.html"
         }
+        
+        {
+      "title": "Öne Çıkanlar",
+      "items": [
+        {
+          "img": "https://m.media-amazon.com/images/M/MV5BODQ5NGFjZTQtNDkzNy00YWVjLWJiNGMtNTk1YzVmMmQ1YWQwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+          "link": "film1.html"
+        },
+        {
+          "img": "https://m.media-amazon.com/images/M/MV5BMmEzNTU3MjQtYjYzZS00ZjJjLTk2YzQtNjU3Y2NhYzFlNDEwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+          "link": "film2.html"
+        }
       ]
     }
   ]
-}
+    }
