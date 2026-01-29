@@ -284,14 +284,13 @@ body{
 
 
 <script>
-window.addEventListener('load', () => {
-
-    // 3 hero seçeneği
+document.addEventListener('DOMContentLoaded', () => {
+    // 3 hero div
     const heroes = ['hero1', 'hero2', 'hero3'];
 
-    // Rastgele bir hero seç
+    // Rastgele birini seç
     const randomIndex = Math.floor(Math.random() * heroes.length);
-    const selectedHeroClass = heroes[randomIndex];
+    const selectedHero = heroes[randomIndex];
 
     // Tüm hero divlerini gizle
     document.querySelectorAll('.hero').forEach(hero => {
@@ -299,15 +298,23 @@ window.addEventListener('load', () => {
     });
 
     // Seçilen hero'yu göster
-    const activeHero = document.querySelector(`.${selectedHeroClass}`);
+    const activeHero = document.querySelector(`.${selectedHero}`);
     if(activeHero) activeHero.style.display = 'block';
 
-    // Menüde ilk butona focus (TV kumanda için)
+    // Menüde ilk butona focus ver (TV kumanda için)
     const firstMenu = document.querySelector('.menu-btn');
     if(firstMenu) firstMenu.focus();
 
-    // Sayfa açıldı logu (debug veya TV’ye göstermek için)
-    console.log("Sayfa açıldı ve seçilen hero:", selectedHeroClass);
+    // Debug: TV’de de görebilmek için alt div'e yazabiliriz
+    const debugDiv = document.createElement('div');
+    debugDiv.style.position = 'fixed';
+    debugDiv.style.bottom = '0';
+    debugDiv.style.left = '0';
+    debugDiv.style.color = 'white';
+    debugDiv.style.background = 'rgba(0,0,0,0.5)';
+    debugDiv.style.padding = '5px 10px';
+    debugDiv.innerText = "Seçilen hero: " + selectedHero;
+    document.body.appendChild(debugDiv);
 });
 </script>
 </body>
