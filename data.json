@@ -8,13 +8,13 @@
     },
     {
       "title": "Paris Özel Bölümü",
-      "desc": "Paralel evrende kahraman vs kahraman.",
+      "desc": "Paralel evrende kahramanlar.",
       "image": "https://miraculous.to/global_data/img/S0E04_2025-08-18_17-37-57.webp",
       "link": "filmler.html"
     },
     {
       "title": "Miraculous The Movie",
-      "desc": "Yeni düşmanlar, yeni kahramanlar.",
+      "desc": "Yeni kahramanlar, yeni düşmanlar.",
       "image": "https://images5.alphacoders.com/132/thumb-1920-1325003.jpeg",
       "link": "filmler.html"
     }
@@ -25,29 +25,12 @@
       "title": "Öne Çıkanlar",
       "items": [
         {
-          "title": "Miraculous",
           "img": "https://m.media-amazon.com/images/M/MV5BODQ5NGFjZTQtNDkzNy00YWVjLWJiNGMtNTk1YzVmMmQ1YWQwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
-          "link": "film.html?id=1"
+          "link": "film1.html"
         },
         {
-          "title": "Ladybug Movie",
           "img": "https://images5.alphacoders.com/132/thumb-1920-1325003.jpeg",
-          "link": "film.html?id=2"
-        }
-      ]
-    },
-    {
-      "title": "Diziler",
-      "items": [
-        {
-          "title": "Miraculous S1",
-          "img": "https://wallpapercave.com/wp/wp8984729.jpg",
-          "link": "dizi.html?id=10"
-        },
-        {
-          "title": "Miraculous S2",
-          "img": "https://wallpapercave.com/wp/wp8984733.jpg",
-          "link": "dizi.html?id=11"
+          "link": "film2.html"
         }
       ]
     }
