@@ -20,29 +20,36 @@
     }
   ],
 
+  "{
   "categories": [
     {
       "title": "Öne Çıkanlar",
       "items": [
         {
-          "img": "https://m.media-amazon.com/images/M/MV5BODQ5NGFjZTQtNDkzNy00YWVjLWJiNGMtNTk1YzVmMmQ1YWQwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+          "img": "img1.jpg",
           "link": "film1.html"
-        },
-        {
-          "img": "https://images5.alphacoders.com/132/thumb-1920-1325003.jpeg",
-          "link": "film2.html"
         }
-        
-        {
-      "title": "Öne Çıkanlar",
+      ]
+    },
+    {
+      "title": "Popüler",
       "items": [
         {
-          "img": "https://m.media-amazon.com/images/M/MV5BODQ5NGFjZTQtNDkzNy00YWVjLWJiNGMtNTk1YzVmMmQ1YWQwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
-          "link": "film1.html"
+          "img": "pop1.jpg",
+          "link": "film5.html"
         },
         {
-          "img": "https://images5.alphacoders.com/132/thumb-1920-1325003.jpeg",
-          "link": "film2.html"
+          "img": "pop2.jpg",
+          "link": "film6.html"
+        }
+      ]
+    },
+    {
+      "title": "Yeni Eklenenler",
+      "items": [
+        {
+          "img": "new1.jpg",
+          "link": "film10.html"
         }
       ]
     }
