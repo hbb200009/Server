@@ -32,39 +32,55 @@ body{
     z-index: 9;
 }
 
-/*KUMANDA AYARLARI*/
-.header{
-    padding:20px 40px;
-    font-size:28px;
-    font-weight:bold;
+/* Kartlar alt kısımda yatay sıra */
+.row {
+    display: flex;
+    gap: 20px;
+    padding: 0 40px;
+    position: relative; /* absolute değil */
+    margin-left: 0%;
+    margin-top: 0.5%; /* hero resmin altına gelmesi için */
+    
+    z-index: 2; /* hero overlay’den sonra ama arka plan üstüne */
 }
-.row{
-    display:flex;
-    gap:20px;
-    padding:30px 40px;
+
+.card {
+    width: 220px;
+    height: 300px;
+    background: #1a1a1f;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    border: 3px solid transparent;
+    outline: none;
+    cursor: pointer;
+    transition: 0.2s;
+    text-decoration: none; /* a etiketi olursa alt çizgi yok */
+    color: white;
 }
-.card{
-    width: 100px;
-    height:50px;
-    position: absolute;
-    z-index: 9;
-    top: 5%;
-    left: 25%;
-    background:#1a1a1f;    
-    border-radius:50px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:16px;
-    border:3px solid transparent;
-    outline:none;
-    transition:0.15s;
+
+.card img {
+    width: 100%;
+    height: auto;
+    flex-grow: 1;
+    object-fit: cover;
 }
-.card:focus{
-    transform:scale(1.12);
-    border-color: #00e5ffhite;
-    box-shadow:0 0 2rgba(0,229,255,0.9);
-    background:#111;
+
+.card-title {
+    padding: 8px 12px;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Focus efekti */
+.card:focus {
+    transform: scale(1.12);
+    border-color: #00e5ff;
+    box-shadow: 0 0 20px rgba(0,229,255,0.9);
+    background: #111;
 }
 
 
@@ -188,6 +204,44 @@ body{
 
         <button class="hero-btn" tabindex="1" data-page="diziler.html">▶ İzle</button>
     </div>
+</div>
+
+
+<!--ÖNE ÇIKANLAR-->
+<h3 style="margin-top: 2%; margin-left: 2%;">Öne Çıkanlar</h3>
+<div class="row">
+    <a href="filmler.html" class="card" tabindex="1">
+        <img src="https://via.placeholder.com/180x200.png?text=Film+1" alt="Film 1">
+        <div class="card-title">Film 1</div>
+    </a>
+    <a href="filmler.html" class="card" tabindex="2">
+        <img src="https://via.placeholder.com/180x200.png?text=Film+2" alt="Film 2">
+        <div class="card-title">Film 2</div>
+    </a>
+    <a href="diziler.html" class="card" tabindex="3">
+        <img src="https://via.placeholder.com/180x200.png?text=Dizi+1" alt="Dizi 1">
+        <div class="card-title">Dizi 1</div>
+    </a>
+    <a href="diziler.html" class="card" tabindex="4">
+        <img src="https://via.placeholder.com/180x200.png?text=Dizi+2" alt="Dizi 2">
+        <div class="card-title">Dizi 2</div>
+    </a>
+    <a href="filmler.html" class="card" tabindex="1">
+        <img src="https://via.placeholder.com/180x200.png?text=Film+1" alt="Film 1">
+        <div class="card-title">Film 1</div>
+    </a>
+    <a href="filmler.html" class="card" tabindex="2">
+        <img src="https://via.placeholder.com/180x200.png?text=Film+2" alt="Film 2">
+        <div class="card-title">Film 2</div>
+    </a>
+    <a href="diziler.html" class="card" tabindex="3">
+        <img src="https://via.placeholder.com/180x200.png?text=Dizi+1" alt="Dizi 1">
+        <div class="card-title">Dizi 1</div>
+    </a>
+    <a href="diziler.html" class="card" tabindex="4">
+        <img src="https://via.placeholder.com/180x200.png?text=Dizi+2" alt="Dizi 2">
+        <div class="card-title">Dizi 2</div>
+    </a>
 </div>
 
 
