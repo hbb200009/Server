@@ -203,13 +203,34 @@ body{
 </div>
 
 
-<div class="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-        <h1 class="hero-title"></h1>
-        <p class="hero-desc"></p>
-        <a class="hero-btn" tabindex="1">▶ İzle</a>
-    </div>
+<!-- HERO 1 -->
+<div class="hero hero1" style="background: url('https://cdn.iview.abc.net.au/thumbs/1200/zw/ZW4198A_68952b8a2d2a8_3600.jpg') center/cover no-repeat;">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 class="hero-title">Miraculous Ladybug</h1>
+    <p class="hero-desc">Paris’i koruyan iki gizli kahraman...</p>
+    <a href="diziler.html" class="hero-btn">▶ İzle</a>
+  </div>
+</div>
+
+<!-- HERO 2 -->
+<div class="hero hero2" style="background: url('https://miraculous.to/global_data/img/S0E04_2025-08-18_17-37-57.webp') center/cover no-repeat;">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 class="hero-title">Paris Özel Bölümü</h1>
+    <p class="hero-desc">Kahramanlarımız paralel evrende...</p>
+    <a href="filmler.html" class="hero-btn">▶ İzle</a>
+  </div>
+</div>
+
+<!-- HERO 3 -->
+<div class="hero hero3" style="background: url('https://images5.alphacoders.com/132/thumb-1920-1325003.jpeg') center/cover no-repeat;">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 class="hero-title">Miraculous The Movie</h1>
+    <p class="hero-desc">Yeni kahramanlar ve düşmanlar...</p>
+    <a href="filmler.html" class="hero-btn">▶ İzle</a>
+  </div>
 </div>
 
 
@@ -267,29 +288,34 @@ body{
 
 <script>
 window.onload = () => {
-    // Rastgele hero
-    const heroes = [
-        {image:"https://cdn.iview.abc.net.au/thumbs/1200/zw/ZW4198A_68952b8a2d2a8_3600.jpg", title:"Miraculous Ladybug", desc:"Paris’i koruyan iki gizli kahraman.", link:"diziler.html"},
-        {image:"https://miraculous.to/global_data/img/S0E04_2025-08-18_17-37-57.webp", title:"Paris Özel Bölümü", desc:"Kahramanlarımız paralel evrendeki halleriyle karşı karşıya.", link:"filmler.html"},
-        {image:"https://images5.alphacoders.com/132/thumb-1920-1325003.jpeg", title:"Miraculous The Movie", desc:"Yeni kahramanlar ve yeni düşmanlar tek bir filmde.", link:"filmler.html"}
-    ];
-    const rand = heroes[Math.floor(Math.random() * heroes.length)];
-    const heroDiv = document.querySelector(".hero");
-    const heroTitle = document.querySelector(".hero-title");
-    const heroDesc = document.querySelector(".hero-desc");
-    const heroBtn = document.querySelector(".hero-btn");
+    // Tüm hero divlerini al
+    const heroes = document.querySelectorAll(".hero");
 
-    heroDiv.style.backgroundImage = `url('${rand.image}')`; // background yerine backgroundImage
-    heroDiv.style.backgroundSize = "cover";
-    heroDiv.style.backgroundPosition = "center";
-    heroTitle.innerText = rand.title;
-    heroDesc.innerText = rand.desc;
-    heroBtn.href = rand.link;
+    // Rastgele bir index seç
+    const randIndex = Math.floor(Math.random() * heroes.length);
+
+    // Hepsini gizle, sadece seçileni göster
+    heroes.forEach((hero, i) => {
+        if(i === randIndex){
+            hero.style.display = "block"; // görünür
+        } else {
+            hero.style.display = "none"; // gizli
+        }
+    });
 
     // Menü ilk focus
     const firstMenu = document.querySelector(".menu-btn");
     if(firstMenu) firstMenu.focus();
 };
+
+// Enter / OK tuşu kumanda
+document.addEventListener("keydown", function(e) {
+    const key = e.key || e.keyCode;
+    if (key === "Enter" || key === 13 || key === 415 || key === 10009) {
+        const active = document.activeElement;
+        if (active.tagName === "A") active.click();
+    }
+});
 </script>
 </body>
 </html>
