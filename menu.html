@@ -203,8 +203,7 @@ body{
 </div>
 
 
-<!-- HERO 1 -->
-<div class="hero hero1" style="background: url('https://cdn.iview.abc.net.au/thumbs/1200/zw/ZW4198A_68952b8a2d2a8_3600.jpg') center/cover no-repeat;">
+<div class="hero hero1" style="background-image: url('https://cdn.iview.abc.net.au/thumbs/1200/zw/ZW4198A_68952b8a2d2a8_3600.jpg');">
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <h1 class="hero-title">Miraculous Ladybug</h1>
@@ -213,8 +212,7 @@ body{
   </div>
 </div>
 
-<!-- HERO 2 -->
-<div class="hero hero2" style="background: url('https://miraculous.to/global_data/img/S0E04_2025-08-18_17-37-57.webp') center/cover no-repeat;">
+<div class="hero hero2" style="background-image: url('https://miraculous.to/global_data/img/S0E04_2025-08-18_17-37-57.webp');">
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <h1 class="hero-title">Paris Özel Bölümü</h1>
@@ -223,8 +221,7 @@ body{
   </div>
 </div>
 
-<!-- HERO 3 -->
-<div class="hero hero3" style="background: url('https://images5.alphacoders.com/132/thumb-1920-1325003.jpeg') center/cover no-repeat;">
+<div class="hero hero3" style="background-image: url('https://images5.alphacoders.com/132/thumb-1920-1325003.jpeg');">
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <h1 class="hero-title">Miraculous The Movie</h1>
@@ -287,24 +284,20 @@ body{
 
 
 <script>
-window.onload = () => {
-    // Tüm hero divlerini al
-    const heroes = document.querySelectorAll('.hero, .hero2, .hero3');
-
+window.addEventListener('load', () => {
+    const heroes = document.querySelectorAll('.hero');
+    
     // Hepsini gizle
     heroes.forEach(hero => hero.style.display = 'none');
 
-    // Rastgele birini seç
+    // Rastgele seç
     const randIndex = Math.floor(Math.random() * heroes.length);
-    const selectedHero = heroes[randIndex];
-
-    // Sadece seçileni göster
-    selectedHero.style.display = 'block';
+    heroes[randIndex].style.display = 'block';
 
     // Menüye ilk focus
     const firstMenu = document.querySelector('.menu-btn');
     if(firstMenu) firstMenu.focus();
-};
+});
 </script>
 </body>
 </html>
