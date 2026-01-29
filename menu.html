@@ -267,58 +267,29 @@ body{
 
 <script>
 window.onload = () => {
-    // İlk menüye focus ver
-    const firstMenu = document.querySelector('.menu-btn');
-    if(firstMenu) firstMenu.focus();
-};
-
-document.addEventListener('keydown', function(e){
-    const key = e.key || e.keyCode;
-
-    // Enter / OK tuşları
-    if(key === 'Enter' || key === 13 || key === 415 || key === 10009){
-        const active = document.activeElement;
-
-        // Eğer linkse, tıklamış gibi yap
-        if(active.classList.contains('menu-btn') || active.classList.contains('hero-btn')){
-            active.click(); // <a> veya button tetiklenir
-        }
-
-        // Card seçimi (alert veya başka aksiyon)
-        if(active.classList.contains('card')){
-            alert("Seçilen Card: " + active.innerText);
-        }
-    }
-});
-</script>
-
-<script>
-window.onload = () => {
     // Rastgele hero
     const heroes = [
         {image:"https://cdn.iview.abc.net.au/thumbs/1200/zw/ZW4198A_68952b8a2d2a8_3600.jpg", title:"Miraculous Ladybug", desc:"Paris’i koruyan iki gizli kahraman.", link:"diziler.html"},
-        {image:"https://miraculous.to/global_data/img/S0E04_2025-08-18_17-37-57.webp", title:"Paris Özel Bölümü", desc:"Kahramanlarımız paralel evrendeki halleriyle karşı karşıya.", 
-link:"filmler.html"},
-        {image:"https://images5.alphacoders.com/132/thumb-1920-1325003.jpeg", title:"Miraculous The Movie", desc:"Yeni kahtamanlar ve yeni düşmanlar tek bir filmde.", link:"filmler.html"}
+        {image:"https://miraculous.to/global_data/img/S0E04_2025-08-18_17-37-57.webp", title:"Paris Özel Bölümü", desc:"Kahramanlarımız paralel evrendeki halleriyle karşı karşıya.", link:"filmler.html"},
+        {image:"https://images5.alphacoders.com/132/thumb-1920-1325003.jpeg", title:"Miraculous The Movie", desc:"Yeni kahramanlar ve yeni düşmanlar tek bir filmde.", link:"filmler.html"}
     ];
-    const rand = heroes[Math.floor(Math.random()*heroes.length)];
-    document.querySelector(".hero").style.background = `url('${rand.image}') center/cover no-repeat`;
-    document.querySelector(".hero-title").innerText = rand.title;
-    document.querySelector(".hero-desc").innerText = rand.desc;
-    document.querySelector(".hero-btn").setAttribute("href", rand.link);
+    const rand = heroes[Math.floor(Math.random() * heroes.length)];
+    const heroDiv = document.querySelector(".hero");
+    const heroTitle = document.querySelector(".hero-title");
+    const heroDesc = document.querySelector(".hero-desc");
+    const heroBtn = document.querySelector(".hero-btn");
+
+    heroDiv.style.backgroundImage = `url('${rand.image}')`; // background yerine backgroundImage
+    heroDiv.style.backgroundSize = "cover";
+    heroDiv.style.backgroundPosition = "center";
+    heroTitle.innerText = rand.title;
+    heroDesc.innerText = rand.desc;
+    heroBtn.href = rand.link;
 
     // Menü ilk focus
     const firstMenu = document.querySelector(".menu-btn");
     if(firstMenu) firstMenu.focus();
 };
-
-// Enter / OK tuşu tüm <a> için
-document.addEventListener("keydown", function(e){
-    if(["Enter","13",415,10009].includes(e.key) || ["13"].includes(e.keyCode)){
-        const active = document.activeElement;
-        if(active.tagName === "A"){ active.click(); }
-    }
-});
 </script>
 </body>
 </html>
