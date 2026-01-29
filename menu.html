@@ -32,24 +32,15 @@ body{
     z-index: 9;
 }
 
-/* Row container */
-.row-container {
-    position: relative; /* absolute değil */
-    display: flex;
-    margin-top: -5%; /* hero altına */
-    margin-left: -3%;
-    width: 100%;
-    padding-bottom: 40px; /* büyüyünce alt kesilmesin */
-    z-index: 1;
-}
 
 /* Row kartlar */
 .row {
     display: flex;
     gap: 20px;
-    overflow-x: auto;
-    z-index: 1;
-    padding: 5%;    
+    overflow-x: auto;    
+    padding: 5%;
+    margin-top: -5%;
+    margin-left: -3%;    
 }
 .row:focus{
     outline: none;
@@ -81,7 +72,9 @@ body{
     z-index: 5;
 }
 .card img {
-  object-fit: cover; /* taşanı kes, estetik */
+    width:100%;
+    height:100%;
+    object-fit:cover;k */
 }
 /* Focus efekti */
 .card:focus {
@@ -202,63 +195,18 @@ body{
 </div>
 
 
-<div class="hero">
+<div class="hero" id="hero">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-        <h1 class="hero-title">Miraculous</h1>
-        <p class="hero-desc">İki süper kahraman Paris'i kurtarmak için birlikte olurlar...</p>
-        <a class="hero-btn" tabindex="1">▶ İzle</a>
+        <h1 id="hero-title"></h1>
+        <p id="hero-desc"></p>
+        <a id="hero-link" class="hero-btn">▶ İzle</a>
     </div>
 </div>
 
+<h2 id="cat-title" style="padding-left:40px;"></h2>
+<div class="row-container"><div class="row" id="row"></div></div>
 
-
-
-<!--ÖNE ÇIKANLAR-->
-<h3 style="margin-top: 2%; margin-left: 2%;">Öne Çıkanlar</h3>
-<div class="row-container">
-    <div class="row">
-        <a href="film1.html" class="card" tabindex="1">
-            <img src="https://m.media-amazon.com/images/M/MV5BODQ5NGFjZTQtNDkzNy00YWVjLWJiNGMtNTk1YzVmMmQ1YWQwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Film 1">
-        </a>
-        <a href="film2.html" class="card" tabindex="2">
-            <img src="film2.jpg" alt="Film 2">
-        </a>
-        <a href="film1.html" class="card" tabindex="1">
-            <img src="film1.jpg" alt="Film 1">
-        </a>
-        <a href="film2.html" class="card" tabindex="2">
-            <img src="film2.jpg" alt="Film 2">
-        </a>
-        <a href="film1.html" class="card" tabindex="1">
-            <img src="film1.jpg" alt="Film 1">
-        </a>
-        <a href="film2.html" class="card" tabindex="2">
-            <img src="film2.jpg" alt="Film 2">
-        </a>
-        <a href="film1.html" class="card" tabindex="1">
-            <img src="film1.jpg" alt="Film 1">
-        </a>
-        <a href="film2.html" class="card" tabindex="2">
-            <img src="film2.jpg" alt="Film 2">
-        </a>
-        <a href="film1.html" class="card" tabindex="1">
-            <img src="film1.jpg" alt="Film 1">
-        </a>
-        <a href="film2.html" class="card" tabindex="2">
-            <img src="film2.jpg" alt="Film 2">
-        </a>
-        <a href="film2.html" class="card" tabindex="2">
-            <img src="film2.jpg" alt="Film 2">
-        </a>
-        <a href="film1.html" class="card" tabindex="1">
-            <img src="film1.jpg" alt="Film 1">
-        </a>
-        <a href="film2.html" class="card" tabindex="2">
-            <img src="film2.jpg" alt="Film 2">
-        </a>
-    </div>
-</div>
 <br><br><br>
 
 
@@ -288,6 +236,44 @@ document.addEventListener('keydown', function(e){
             alert("Seçilen Card: " + active.innerText);
         }
     }
+});
+</script>
+<script>
+fetch("https://raw.githubusercontent.com/hbb200009/Server/main/data.json?ts=" + Date.now())
+.then(res => res.json())
+.then(data => {
+
+    /* HERO RANDOM */
+    const heroes = data.hero;
+    const randHero = heroes[Math.floor(Math.random() * heroes.length)];
+
+    const heroDiv = document.getElementById("hero");
+    const heroTitle = document.getElementById("hero-title");
+    const heroDesc = document.getElementById("hero-desc");
+    const heroLink = document.getElementById("hero-link");
+
+    heroDiv.style.background = `url('${randHero.image}') center/cover no-repeat`;
+    heroTitle.innerText = randHero.title;
+    heroDesc.innerText = randHero.desc;
+    heroLink.href = randHero.link;
+
+    /* CATEGORY */
+    const cat = data.categories[0];
+    document.getElementById("cat-title").innerText = cat.title;
+
+    const row = document.getElementById("row");
+
+    cat.items.forEach(item=>{
+        const a = document.createElement("a");
+        a.href = item.link;
+        a.className = "card";
+        a.innerHTML = `<img src="${item.img}">`;
+        row.appendChild(a);
+    });
+
+})
+.catch(err=>{
+    console.log("JSON ERROR:", err);
 });
 </script>
 </body>
