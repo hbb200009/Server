@@ -1,0 +1,38 @@
+{
+  "hero": [
+    {
+      "title": "Miraculous Ladybug",
+      "desc": "Paris’i koruyan iki gizli kahraman.",
+      "image": "https://cdn.iview.abc.net.au/thumbs/1200/zw/ZW4198A_68952b8a2d2a8_3600.jpg",
+      "link": "diziler.html"
+    },
+    {
+      "title": "Paris Özel Bölümü",
+      "desc": "Paralel evrende kahraman kaosu.",
+      "image": "https://miraculous.to/global_data/img/S0E04_2025-08-18_17-37-57.webp",
+      "link": "filmler.html"
+    },
+    {
+      "title": "Miraculous The Movie",
+      "desc": "Yeni kahramanlar ve yeni düşmanlar.",
+      "image": "https://images5.alphacoders.com/132/thumb-1920-1325003.jpeg",
+      "link": "filmler.html"
+    }
+  ],
+
+  "rows": [
+    {
+      "title": "Öne Çıkanlar",
+      "items": [
+        {
+          "img": "https://m.media-amazon.com/images/M/MV5BODQ5NGFjZTQtNDkzNy00YWVjLWJiNGMtNTk1YzVmMmQ1YWQwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+          "link": "film1.html"
+        },
+        {
+          "img": "https://m.media-amazon.com/images/M/MV5BMmEzNTU3MjQtYjYzZS00ZjJjLTk2YzQtNjU3Y2NhYzFlNDEwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+          "link": "film2.html"
+        }
+      ]
+    }
+  ]
+}
