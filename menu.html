@@ -36,12 +36,16 @@ body{
 .row {
     display: flex;
     gap: 20px;
+    overflow-x: auto;
     padding: 0 40px;
     position: relative; /* absolute değil */
     margin-left: 0%;
     margin-top: 0.5%; /* hero resmin altına gelmesi için */
     
     z-index: 2; /* hero overlay’den sonra ama arka plan üstüne */
+}
+.row::-webkit-scrollbar {
+  display: none;
 }
 
 .card {
@@ -52,6 +56,7 @@ body{
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    flex-shrink: 0;
     align-items: center;
     justify-content: flex-end;
     border: 3px solid transparent;
@@ -78,8 +83,8 @@ body{
 /* Focus efekti */
 .card:focus {
     transform: scale(1.12);
-    border-color: #00e5ff;
-    box-shadow: 0 0 20px rgba(0,229,255,0.9);
+    border-color: white;
+    box-shadow:0 0 25px white;
     background: #111;
 }
 
@@ -211,9 +216,7 @@ body{
 <h3 style="margin-top: 2%; margin-left: 2%;">Öne Çıkanlar</h3>
 <div class="row">
     <a href="filmler.html" class="card" tabindex="1">
-        <img src="https://via.placeholder.com/180x200.png?text=Film+1" alt="Film 1">
-        <div class="card-title">Film 1</div>
-    </a>
+        <img src="https://m.media-amazon.com/images/M/MV5BODQ5NGFjZTQtNDkzNy00YWVjLWJiNGMtNTk1YzVmMmQ1YWQwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Film 1">
     <a href="filmler.html" class="card" tabindex="2">
         <img src="https://via.placeholder.com/180x200.png?text=Film+2" alt="Film 2">
         <div class="card-title">Film 2</div>
@@ -242,9 +245,17 @@ body{
         <img src="https://via.placeholder.com/180x200.png?text=Dizi+2" alt="Dizi 2">
         <div class="card-title">Dizi 2</div>
     </a>
+    <a href="diziler.html" class="card" tabindex="3">
+        <img src="https://via.placeholder.com/180x200.png?text=Dizi+1" alt="Dizi 1">
+        <div class="card-title">Dizi 1</div>
+    </a>
+    <a href="diziler.html" class="card" tabindex="4">
+        <img src="https://via.placeholder.com/180x200.png?text=Dizi+2" alt="Dizi 2">
+        <div class="card-title">Dizi 2</div>
+    </a>
 </div>
 
-
+<br><br><br>
 <script>
 window.onload = () => {
     // İlk menüye focus ver
