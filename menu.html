@@ -285,18 +285,29 @@ body{
 
 <script>
 window.addEventListener('load', () => {
-    const heroes = document.querySelectorAll('.hero');
-    
-    // Hepsini gizle
-    heroes.forEach(hero => hero.style.display = 'none');
 
-    // Rastgele seç
-    const randIndex = Math.floor(Math.random() * heroes.length);
-    heroes[randIndex].style.display = 'block';
+    // 3 hero seçeneği
+    const heroes = ['hero1', 'hero2', 'hero3'];
 
-    // Menüye ilk focus
+    // Rastgele bir hero seç
+    const randomIndex = Math.floor(Math.random() * heroes.length);
+    const selectedHeroClass = heroes[randomIndex];
+
+    // Tüm hero divlerini gizle
+    document.querySelectorAll('.hero').forEach(hero => {
+        hero.style.display = 'none';
+    });
+
+    // Seçilen hero'yu göster
+    const activeHero = document.querySelector(`.${selectedHeroClass}`);
+    if(activeHero) activeHero.style.display = 'block';
+
+    // Menüde ilk butona focus (TV kumanda için)
     const firstMenu = document.querySelector('.menu-btn');
     if(firstMenu) firstMenu.focus();
+
+    // Sayfa açıldı logu (debug veya TV’ye göstermek için)
+    console.log("Sayfa açıldı ve seçilen hero:", selectedHeroClass);
 });
 </script>
 </body>
