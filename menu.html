@@ -150,6 +150,7 @@ body{
     cursor:pointer;
     transition:0.2s;
     outline:none;
+    text-decoration: none;
 }
 
 .menu-btn:focus{
@@ -168,10 +169,10 @@ body{
 
 <!-- ÜST MENÜ -->
 <div class="top-menu">
-    <button class="menu-btn" tabindex="1" data-page="https://raw.githubusercontent.com/hbb200009/Server/refs/heads/main/search.html">Ana Sayfa</button>
-<button class="menu-btn" tabindex="2" data-page="arama.html">Arama</button>
-<button class="menu-btn" tabindex="3" data-page="filmler.html">Filmler</button>
-<button class="menu-btn" tabindex="4" data-page="https://raw.githubusercontent.com/hbb200009/Server/refs/heads/main/search.html">Diziler</button>
+    <a href="anasayfa.html" class="menu-btn" tabindex="1">Ana Sayfa</a>
+    <a href="arama.html" class="menu-btn" tabindex="2">Arama</a>
+    <a href="filmler.html" class="menu-btn" tabindex="3">Filmler</a>
+    <a href="diziler.html" class="menu-btn" tabindex="4">Diziler</a>
 </div>
 
 
@@ -191,43 +192,29 @@ body{
 
 
 <script>
-/* TV Focus JS – Menü, Hero, Card */
-
 window.onload = () => {
-    // İlk menü butonuna focus ver
+    // İlk menüye focus ver
     const firstMenu = document.querySelector('.menu-btn');
     if(firstMenu) firstMenu.focus();
 };
 
-/* Kumanda / Enter / OK tuşu kontrolü */
 document.addEventListener('keydown', function(e){
     const key = e.key || e.keyCode;
 
-    // Enter (13), OK tuşları (TV farklı kodlar olabilir, örn: 415, 10009)
+    // Enter / OK tuşları
     if(key === 'Enter' || key === 13 || key === 415 || key === 10009){
         const active = document.activeElement;
 
-        // Menü butonu seçilmiş
-        if(active.classList.contains('menu-btn')){
-            const page = active.getAttribute('data-page');
-            if(page){
-                window.location.href = page; // sayfayı aç
-            }
+        // Eğer linkse, tıklamış gibi yap
+        if(active.classList.contains('menu-btn') || active.classList.contains('hero-btn')){
+            active.click(); // <a> veya button tetiklenir
         }
 
-        // Hero buton seçilmiş
-        if(active.classList.contains('hero-btn')){
-            alert("Hero Buton Clicked!"); // burayı istediğin aksiyonla değiştir
-        }
-
-        // Card seçilmiş
+        // Card seçimi (alert veya başka aksiyon)
         if(active.classList.contains('card')){
             alert("Seçilen Card: " + active.innerText);
         }
     }
-
-    // Yukarı / Aşağı / Sol / Sağ ok tuşları TV’de farklı olabilir
-    // Eğer istersen buraya navigation logic ekleyebiliriz
 });
 </script>
 </body>
