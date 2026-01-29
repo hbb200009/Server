@@ -212,7 +212,7 @@ body{
   </div>
 </div>
 
-<div class="hero hero2" style="background-image: url('https://miraculous.to/global_data/img/S0E04_2025-08-18_17-37-57.webp');">
+<!--<div class="hero hero2" style="background-image: url('https://miraculous.to/global_data/img/S0E04_2025-08-18_17-37-57.webp');">
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <h1 class="hero-title">Paris Özel Bölümü</h1>
@@ -228,7 +228,7 @@ body{
     <p class="hero-desc">Yeni kahramanlar ve düşmanlar...</p>
     <a href="filmler.html" class="hero-btn">▶ İzle</a>
   </div>
-</div>
+</div>-->
 
 
 
@@ -284,37 +284,13 @@ body{
 
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-    // 3 hero div
-    const heroes = ['hero1', 'hero2', 'hero3'];
 
-    // Rastgele birini seç
-    const randomIndex = Math.floor(Math.random() * heroes.length);
-    const selectedHero = heroes[randomIndex];
-
-    // Tüm hero divlerini gizle
-    document.querySelectorAll('.hero').forEach(hero => {
-        hero.style.display = 'none';
-    });
-
-    // Seçilen hero'yu göster
-    const activeHero = document.querySelector(`.${selectedHero}`);
-    if(activeHero) activeHero.style.display = 'block';
-
-    // Menüde ilk butona focus ver (TV kumanda için)
+    // Menüde ilk butona focus (TV kumanda için)
     const firstMenu = document.querySelector('.menu-btn');
     if(firstMenu) firstMenu.focus();
 
-    // Debug: TV’de de görebilmek için alt div'e yazabiliriz
-    const debugDiv = document.createElement('div');
-    debugDiv.style.position = 'fixed';
-    debugDiv.style.bottom = '0';
-    debugDiv.style.left = '0';
-    debugDiv.style.color = 'white';
-    debugDiv.style.background = 'rgba(0,0,0,0.5)';
-    debugDiv.style.padding = '5px 10px';
-    debugDiv.innerText = "Seçilen hero: " + selectedHero;
-    document.body.appendChild(debugDiv);
+    // Sayfa açıldı logu (debug veya TV’ye göstermek için)
+    console.log("Sayfa açıldı ve seçilen hero:", selectedHeroClass);
 });
 </script>
 </body>
