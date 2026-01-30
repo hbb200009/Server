@@ -1,76 +1,48 @@
-let appStarted = false;
+/* ============================= */
+/* APP DURUMU */
+/* ============================= */
+let appStarted = true; // Splash yok artık, direkt başladı
+
+/* Sayfa açılır açılmaz çalışacak */
 window.onload = () => {
-    initApp();
-};
-function startApp(){
-    if(appStarted) return;
-    appStarted = true;
-
-    /* #app’i hemen görünür yap */
     const appDiv = document.getElementById("app");
-    appDiv.style.display = "block";
+    appDiv.style.display = "block"; // app görünür olsun
+    initApp();                     // hero ve category yükle
+};
 
-    /* Splash fade out */
-    const splash = document.getElementById("splash");
-    splash.style.opacity = "1";
-    splash.style.pointerEvents = "none";
-
-    setTimeout(()=>{
-        splash.style.display = "none";
-        document.getElementById("app").style.display = "block";
-    }, 600);
-}
-
-/* Buton click */
-
-/* TV kumanda Enter / OK */
-document.addEventListener("keydown", e=>{
-    if(!appStarted){
-        if(e.key === "Enter" || e.keyCode === 13 || e.keyCode === 415 || e.keyCode === 10009){
-            startApp();
-        }
-    }
-});
-document.getElementById("startBtn").addEventListener("click", startApp);
-document.getElementById("startBtn").addEventListener("click", initApp);
-
-
-document.addEventListener("keydown", e=>{
-    if(!appStarted){
-        if(e.key === "Enter" || e.keyCode === 13 || e.keyCode === 415 || e.keyCode === 10009){
-            startApp();
-        }
-    }
-});
-
+/* ============================= */
+/* TV KUMANDA ENTER / OK */
+/* ============================= */
 document.addEventListener('keydown', function(e){
     const key = e.key || e.keyCode;
-
     if(key === 'Enter' || key === 13 || key === 415 || key === 10009){
         const active = document.activeElement;
 
-        if(active.classList.contains('menu-btn') || active.classList.contains('hero-btn')){
+        if(active?.classList.contains('menu-btn') || active?.classList.contains('hero-btn')){
             active.click();
         }
 
-        if(active.classList.contains('card')){
+        if(active?.classList.contains('card')){
             active.click();
         }
     }
 });
 
+/* ============================= */
+/* APP MOTORU */
+/* ============================= */
 function initApp(){
 
-     /* İlk menüye focus */
+    // İlk menüye focus
     const firstMenu = document.querySelector('.menu-btn');
     if(firstMenu) firstMenu.focus();
-    
-    /* JSON LOAD */
+
+    // JSON verileri yükle
     fetch("https://raw.githubusercontent.com/hbb200009/Server/main/data.json?ts=" + Date.now())
     .then(res => res.json())
     .then(data => {
 
-        /* HERO RANDOM */
+        // HERO
         const heroes = data.hero;
         const randHero = heroes[Math.floor(Math.random() * heroes.length)];
 
@@ -79,13 +51,14 @@ function initApp(){
         const heroDesc = document.getElementById("hero-desc");
         const heroLink = document.getElementById("hero-link");
 
-        heroDiv.style.background = `url('${randHero.image}') center/cover no-repeat`;
-        heroTitle.innerText = randHero.title;
-        heroDesc.innerText = randHero.desc;
-        heroLink.href = randHero.link;
+        if(heroDiv) heroDiv.style.background = `url('${randHero.image}') center/cover no-repeat`;
+        if(heroTitle) heroTitle.innerText = randHero.title;
+        if(heroDesc) heroDesc.innerText = randHero.desc;
+        if(heroLink) heroLink.href = randHero.link;
 
-        /* 🔥 TÜM KATEGORİLER */
+        // KATEGORİLER
         const container = document.getElementById("categories");
+        if(!container) return;
         container.innerHTML = "";
 
         data.categories.forEach(cat=>{
@@ -113,6 +86,10 @@ function initApp(){
         });
 
     })
+    .catch(err=>{
+        console.log("JSON ERROR:", err);
+    });
+}    })
     .catch(err=>{
         console.log("JSON ERROR:", err);
     });
