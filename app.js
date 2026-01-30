@@ -1,20 +1,54 @@
-/* ============================= */
-/* APP DURUMU */
-/* ============================= */
-let appStarted = true; // Splash yok artık, direkt başladı
+let appStarted = false;
 
-/* Sayfa açılır açılmaz çalışacak */
+/* Sayfa açılınca app gizli, splash görünür */
 window.onload = () => {
     const appDiv = document.getElementById("app");
-    appDiv.style.display = "block"; // app görünür olsun
-    initApp();                     // hero ve category yükle
+    appDiv.style.display = "none";
 };
 
 /* ============================= */
-/* TV KUMANDA ENTER / OK */
+/* Başlatma Fonksiyonu (Splash ile) */
+/* ============================= */
+function startApp(){
+    if(appStarted) return;
+    appStarted = true;
+
+    const appDiv = document.getElementById("app");
+    const splash = document.getElementById("splash");
+
+    // Splash’i gizle, app’i göster
+    splash.style.opacity = "0";
+    splash.style.pointerEvents = "none";
+
+    setTimeout(()=>{
+        splash.style.display = "none";
+        appDiv.style.display = "block";
+
+        // App motorunu başlat
+        initApp();
+
+        // İlk menüye veya ilk karta focus verebilirsin
+        const firstMenu = document.querySelector('.menu-btn');
+        if(firstMenu) firstMenu.focus();
+    }, 600);
+}
+
+/* Butona click */
+document.getElementById("startBtn").addEventListener("click", startApp);
+
+/* TV kumanda ile Enter / OK */
+document.addEventListener("keydown", e=>{
+    if(!appStarted && (e.key === "Enter" || e.keyCode === 13 || e.keyCode === 415 || e.keyCode === 10009)){
+        startApp();
+    }
+});
+
+/* ============================= */
+/* TV KUMANDA KONTROL */
 /* ============================= */
 document.addEventListener('keydown', function(e){
     const key = e.key || e.keyCode;
+
     if(key === 'Enter' || key === 13 || key === 415 || key === 10009){
         const active = document.activeElement;
 
@@ -29,13 +63,9 @@ document.addEventListener('keydown', function(e){
 });
 
 /* ============================= */
-/* APP MOTORU */
+/* APP MOTORU (JSON Çekme & Hero + Category) */
 /* ============================= */
 function initApp(){
-
-    // İlk menüye focus
-    const firstMenu = document.querySelector('.menu-btn');
-    if(firstMenu) firstMenu.focus();
 
     // JSON verileri yükle
     fetch("https://raw.githubusercontent.com/hbb200009/Server/main/data.json?ts=" + Date.now())
@@ -89,29 +119,4 @@ function initApp(){
     .catch(err=>{
         console.log("JSON ERROR:", err);
     });
-}    })
-    .catch(err=>{
-        console.log("JSON ERROR:", err);
-    });
 }
-
-
-/* ============================= */
-/* TV KUMANDA KONTROL */
-/* ============================= */
-
-document.addEventListener('keydown', function(e){
-    const key = e.key || e.keyCode;
-
-    if(key === 'Enter' || key === 13 || key === 415 || key === 10009){
-        const active = document.activeElement;
-
-        if(active.classList.contains('menu-btn') || active.classList.contains('hero-btn')){
-            active.click();
-        }
-
-        if(active.classList.contains('card')){
-            active.click();
-        }
-    }
-});
