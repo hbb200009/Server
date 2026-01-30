@@ -38,9 +38,7 @@ document.addEventListener("keydown", e=>{
 function initApp(){
 
     /* İlk menüye focus */
-    const firstMenu = document.querySelector('.menu-btn');
-    if(firstMenu) firstMenu.focus();
-
+    
     /* JSON LOAD */
     fetch("https://raw.githubusercontent.com/hbb200009/Server/main/data.json?ts=" + Date.now())
     .then(res => res.json())
