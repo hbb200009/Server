@@ -1,12 +1,9 @@
 let appStarted = false;
-    let appMovies = false;
 
 /* Sayfa açılınca app gizli, splash görünür */
 window.onload = () => {
     const appDiv = document.getElementById("app");
-    const moviesDiv = document.getElementById("movies");
     appDiv.style.display = "none";
-    moviesDiv.style.display = "none";
 };
 
 /* ============================= */
@@ -18,7 +15,6 @@ function startApp(){
 
     const appDiv = document.getElementById("app");
     const splash = document.getElementById("splash");
-    const moviesDiv = document.getElementById("movies");
 
     // Splash’i gizle, app’i göster
     
@@ -38,45 +34,12 @@ function startApp(){
 /* Butona click */
 document.getElementById("startBtn").addEventListener("click", startApp);
 document.getElementById("startBtn").addEventListener("click", initApp);
-document.getElementById("OpenMovies").addEventListener("click", startMovies);
 
 
 /* TV kumanda ile Enter / OK */
 document.addEventListener("keydown", e=>{
     if(!appStarted && (e.key === "Enter" || e.keyCode === 13 || e.keyCode === 415 || e.keyCode === 10009)){
         startApp();
-    }
-});
-
-function startMovies(){
-    if(appMovies) return;
-    appMovies = true;
-
-    const appDiv = document.getElementById("app");
-    const moviesDiv = document.getElementById("movies");
-
-    // app gizle
-    appDiv.style.transition = "opacity 0.8s ease";
-    appDiv.style.opacity = "0";
-
-    setTimeout(()=>{
-        appDiv.style.display = "none";
-        moviesDiv.style.display = "block";
-        moviesDiv.style.opacity = "1";
-
-        // focus
-        const firstMenu = moviesDiv.querySelector('.menu-btn');
-        if(firstMenu) firstMenu.focus();
-    }, 800);
-}
-
-
-document.addEventListener("keydown", e=>{
-    if(e.key === "Enter" || e.keyCode === 13 || e.keyCode === 415 || e.keyCode === 10009){
-        const active = document.activeElement;
-        if(active && active.id === "OpenMovies"){
-            startMovies();
-        }
     }
 });
 
