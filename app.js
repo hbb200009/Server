@@ -42,7 +42,18 @@ document.addEventListener('keydown', function(e){
         }
     }
 });
-  /* HERO RANDOM */
+function initApp(){
+
+    /* İlk menüye focus */
+    const firstMenu = document.querySelector('.menu-btn');
+    if(firstMenu) firstMenu.focus();
+
+    /* JSON LOAD */
+    fetch("https://raw.githubusercontent.com/hbb200009/Server/main/data.json?ts=" + Date.now())
+    .then(res => res.json())
+    .then(data => {
+
+        /* HERO RANDOM */
         const heroes = data.hero;
         const randHero = heroes[Math.floor(Math.random() * heroes.length)];
 
@@ -89,3 +100,24 @@ document.addEventListener('keydown', function(e){
         console.log("JSON ERROR:", err);
     });
 }
+
+
+/* ============================= */
+/* TV KUMANDA KONTROL */
+/* ============================= */
+
+document.addEventListener('keydown', function(e){
+    const key = e.key || e.keyCode;
+
+    if(key === 'Enter' || key === 13 || key === 415 || key === 10009){
+        const active = document.activeElement;
+
+        if(active.classList.contains('menu-btn') || active.classList.contains('hero-btn')){
+            active.click();
+        }
+
+        if(active.classList.contains('card')){
+            active.click();
+        }
+    }
+});
