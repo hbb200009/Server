@@ -17,11 +17,21 @@ function startApp(){
 
     setTimeout(()=>{
         splash.style.display = "none";
-
-        
+        document.getElementById("app").style.display = "block";
     }, 600);
 }
 
+/* Buton click */
+document.getElementById("startBtn").addEventListener("click", startApp);
+
+/* TV kumanda Enter / OK */
+document.addEventListener("keydown", e=>{
+    if(!appStarted){
+        if(e.key === "Enter" || e.keyCode === 13 || e.keyCode === 415 || e.keyCode === 10009){
+            startApp();
+        }
+    }
+});
 document.getElementById("startBtn").addEventListener("click", startApp);
 
 
@@ -33,10 +43,27 @@ document.addEventListener("keydown", e=>{
     }
 });
 
+document.addEventListener('keydown', function(e){
+    const key = e.key || e.keyCode;
+
+    if(key === 'Enter' || key === 13 || key === 415 || key === 10009){
+        const active = document.activeElement;
+
+        if(active.classList.contains('menu-btn') || active.classList.contains('hero-btn')){
+            active.click();
+        }
+
+        if(active.classList.contains('card')){
+            active.click();
+        }
+    }
+});
 
 function initApp(){
 
-    /* İlk menüye focus */
+     /* İlk menüye focus */
+    const firstMenu = document.querySelector('.menu-btn');
+    if(firstMenu) firstMenu.focus();
     
     /* JSON LOAD */
     fetch("https://raw.githubusercontent.com/hbb200009/Server/main/data.json?ts=" + Date.now())
