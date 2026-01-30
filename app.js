@@ -42,3 +42,50 @@ document.addEventListener('keydown', function(e){
         }
     }
 });
+  /* HERO RANDOM */
+        const heroes = data.hero;
+        const randHero = heroes[Math.floor(Math.random() * heroes.length)];
+
+        const heroDiv = document.getElementById("hero");
+        const heroTitle = document.getElementById("hero-title");
+        const heroDesc = document.getElementById("hero-desc");
+        const heroLink = document.getElementById("hero-link");
+
+        heroDiv.style.background = `url('${randHero.image}') center/cover no-repeat`;
+        heroTitle.innerText = randHero.title;
+        heroDesc.innerText = randHero.desc;
+        heroLink.href = randHero.link;
+
+        /* 🔥 TÜM KATEGORİLER */
+        const container = document.getElementById("categories");
+        container.innerHTML = "";
+
+        data.categories.forEach(cat=>{
+            const section = document.createElement("div");
+            section.className = "category";
+
+            const title = document.createElement("h2");
+            title.className = "cat-title";
+            title.innerText = cat.title;
+
+            const row = document.createElement("div");
+            row.className = "row";
+
+            cat.items.forEach(item=>{
+                const a = document.createElement("a");
+                a.href = item.link;
+                a.className = "card";
+                a.innerHTML = `<img src="${item.img}">`;
+                row.appendChild(a);
+            });
+
+            section.appendChild(title);
+            section.appendChild(row);
+            container.appendChild(section);
+        });
+
+    })
+    .catch(err=>{
+        console.log("JSON ERROR:", err);
+    });
+}
