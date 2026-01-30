@@ -47,8 +47,10 @@
         {
           "img": "https://images5.alphacoders.com/132/thumb-1920-1325003.jpeg",
           "link": "film2.html"
-        }, 
-        {
+        }
+      ]
+  "categories2": [
+    {
       "title": "Öne Çıkanlar",
       "items": [
         {
@@ -76,6 +78,7 @@
           "link": "film2.html"
         }
       ]
-     }
-    ]
-   }
+      
+    }
+  ]
+    }
