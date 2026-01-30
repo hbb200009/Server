@@ -24,7 +24,33 @@
       "link": "filmler.html"
     }
   ],
+  
+  "hero2": [
+    {
+      "title": "Miraculous Ladybug", 
+      "_note": "Ana hero slider - 1. içerik",
+      "desc": "Paris’i koruyan iki gizli kahraman.",
+      "image": "https://cdn.iview.abc.net.au/thumbs/i/zw/ZW4198A_68952b8a2d2a8_3600.jpg",
+      "link": "diziler.html"
+    },
 
+    {
+      "title": "Paris Özel Bölümü",
+      "_note": "Ana hero slider - 2. içerik",
+      "desc": "Paralel evrende kahramanlar.",
+      "image": "https://miraculous.to/global_data/img/S0E04_2025-08-18_17-37-57.webp",
+      "link": "filmler.html"
+    },
+
+    {
+      "title": "Miraculous The Movie",
+      "_note": "Ana hero slider - 3. içerik",
+      "desc": "Film hero alanı",
+      "image": "https://images5.alphacoders.com/132/thumb-1920-1325003.jpeg",
+      "link": "filmler.html"
+    }
+  ],
+  
   "categories": [
 
     {
