@@ -18,9 +18,7 @@ function startApp(){
     setTimeout(()=>{
         splash.style.display = "none";
 
-        // İlk kart focus ver
-        const firstCard = document.querySelector('.card');
-        if(firstCard) firstCard.focus();
+        
     }, 600);
 }
 
@@ -36,16 +34,7 @@ document.addEventListener("keydown", e=>{
     }
 });
 
-/* TV KUMANDA KONTROL */
-document.addEventListener('keydown', function(e){
-    const key = e.key || e.keyCode;
-    if(key === 'Enter' || key === 13 || key === 415 || key === 10009){
-        const active = document.activeElement;
-        if(active?.classList.contains('card')){
-            alert("Seçilen Card: " + active.innerText);
-        }
-    }
-});
+
 function initApp(){
 
     /* İlk menüye focus */
