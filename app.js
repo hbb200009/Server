@@ -17,12 +17,12 @@ function startApp(){
     const splash = document.getElementById("splash");
 
     // Splash’i gizle, app’i göster
-    splash.style.opacity = "0";
+    splash.style.opacity = "1";
     splash.style.pointerEvents = "none";
 
     setTimeout(()=>{
         splash.style.display = "none";
-        appDiv.style.display = "block";
+        
 
         // App motorunu başlat
         initApp();
