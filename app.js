@@ -1,4 +1,4 @@
-let appStarted = true;
+let appStarted = false;
 
 function startApp(){
     if(appStarted) return;
