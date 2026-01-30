@@ -22,8 +22,6 @@ function startApp(){
 }
 
 /* Buton click */
-document.getElementById("startBtn").addEventListener("click", startApp);
-document.getElementById("startBtn").addEventListener("click", initApp);
 
 /* TV kumanda Enter / OK */
 document.addEventListener("keydown", e=>{
@@ -33,6 +31,8 @@ document.addEventListener("keydown", e=>{
         }
     }
 });
+document.getElementById("startBtn").addEventListener("click", startApp);
+document.getElementById("startBtn").addEventListener("click", initApp);
 
 
 document.addEventListener("keydown", e=>{
