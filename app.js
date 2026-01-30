@@ -3,7 +3,9 @@ let appStarted = false;
 /* Sayfa açılınca app gizli, splash görünür */
 window.onload = () => {
     const appDiv = document.getElementById("app");
+    const splash = document.getElementById("splash");
     appDiv.style.display = "none";
+    splash.style.display = "block";
 };
 
 /* ============================= */
