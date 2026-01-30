@@ -23,6 +23,8 @@ function startApp(){
 }
 
 document.getElementById("startBtn").addEventListener("click", startApp);
+document.getElementById("startBtn").addEventListener("click", initApp);
+
 
 document.addEventListener("keydown", e=>{
     if(!appStarted){
