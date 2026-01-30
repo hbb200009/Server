@@ -16,6 +16,7 @@
         <meta name='apple-mobile-web-app-status-bar-style' content='black-translucent' />
         <meta name='apple-mobile-web-app-title' content='' />
 
+
 <style>
 body{
     margin:0;
@@ -80,12 +81,15 @@ body{
 }
 /* Focus efekti */
 .card:focus {
-    
     border-color: white;
     box-shadow: 0 0 20px white;
     background: #111;
     z-index: 5; /* diğer kartların üstüne çıkması için */
 }
+h2{
+    margin-left: 2%;
+}
+
 
 /*AÇILIŞ RESMİ*/
 /* HERO */
@@ -185,7 +189,7 @@ body{
 #splash{
     position:fixed;
     inset:0;
-    background:black;
+    background: url("https://raw.githubusercontent.com/hbb200009/Server/refs/heads/main/images/appbackground.jpg") center/cover no-repeat;
     display:flex;
     flex-direction:column;
     align-items:center;
@@ -195,8 +199,8 @@ body{
 }
 
 #splash img{
-    width:180px;
-    margin-bottom:30px;
+    width: 30%;
+    margin-bottom:-5%;
 }
 
 #startBtn{
