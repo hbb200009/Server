@@ -18,7 +18,8 @@ function startApp(){
 
     // Splash’i gizle, app’i göster
     splash.style.opacity = "1";
-    splash.style.pointerEvents = "none";
+    splash.style.display = "none";
+    appDiv.style.display = "block";
 
     setTimeout(()=>{
         splash.style.display = "none";
@@ -35,6 +36,8 @@ function startApp(){
 
 /* Butona click */
 document.getElementById("startBtn").addEventListener("click", startApp);
+document.getElementById("startBtn").addEventListener("click", initApp);
+
 
 /* TV kumanda ile Enter / OK */
 document.addEventListener("keydown", e=>{
