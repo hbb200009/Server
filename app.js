@@ -10,7 +10,7 @@ function startApp(){
 
     /* Splash fade out */
     const splash = document.getElementById("splash");
-    splash.style.opacity = "0";
+    splash.style.opacity = "1";
     splash.style.pointerEvents = "none";
 
     setTimeout(()=>{
