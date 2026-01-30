@@ -32,11 +32,7 @@ body{
     z-index: 9;
 }
 
-#app{
-    display:none;   /* Splash varken gizli */
-    min-height:100vh;
-    background:black;
-}
+
 /* Row kartlar */
 .row {
     display: flex;
@@ -184,50 +180,12 @@ body{
 }
 
 /* SPLASH SCREEN */
-#splash{
-    position:fixed;
-    inset:0;
-    background:black;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    z-index:9999;
-    transition:opacity 0.6s ease;
-}
 
-#splash img{
-    width:180px;
-    margin-bottom:30px;
-}
-
-#startBtn{
-    padding:16px 42px;
-    font-size:24px;
-    font-weight:700;
-    border-radius:12px;
-    border:none;
-    background:white;
-    color:black;
-    cursor:pointer;
-    transition:0.2s;
-    outline:none;
-}
-
-#startBtn:focus{
-    transform:scale(1.1);
-    box-shadow:0 0 25px white;
-}
 </style>
 </head>
 
 <body>
-<div id="splash">
-  <img src="https://raw.githubusercontent.com/hbb200009/Server/refs/heads/main/images/applogo.png">
-  <button id="startBtn">İzlemeye Başla!</button>
-</div>
 
-<div id="app">
 <!--LOGO-->
 <img src="https://raw.githubusercontent.com/hbb200009/Server/refs/heads/main/images/applogo.png" alt="logo" class="applogo">
 
@@ -257,6 +215,5 @@ body{
 <h6 style="text-align: center;">Demo Version 0.0.2 &copy;HBBA2000</h6>
 <br><br><br>
 
-</div>
 </body>
 </html>
