@@ -17,22 +17,19 @@ function startApp(){
     const splash = document.getElementById("splash");
 
     // Splash’i gizle, app’i göster
-    splash.style.opacity = "1";
-    splash.style.display = "none";
-    appDiv.style.display = "block";
+    
 
     setTimeout(()=>{
-        splash.style.display = "none";
-        
-
+        splash.style.transition = "opacity 1s ease";
+        splash.style.opacity = "0";
+        appDiv.style.display = "block";
         // App motorunu başlat
         initApp();
 
         // İlk menüye veya ilk karta focus verebilirsin
         const firstMenu = document.querySelector('.menu-btn');
         if(firstMenu) firstMenu.focus();
-    }, 600);
-}
+    }, 500);}
 
 /* Butona click */
 document.getElementById("startBtn").addEventListener("click", startApp);
