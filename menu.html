@@ -33,7 +33,11 @@ body{
     z-index: 9;
 }
 #app{
-    display:block;/* Splash varken gizli */
+    display:none;   /* Splash varken gizli */
+    
+}
+#movies{
+    display:none;   /* Splash varken gizli */
     
 }
 /* Row kartlar */
@@ -196,14 +200,7 @@ h2{
     z-index: 99999;
     transition:opacity 0.6s ease;
 }
-        
-#startDes{
-    margin-bottom: -10%;
-    margin-left: 25%;
-    margin-right: 25%;
-    text-align: center;
-}
-        
+
 #splash img{
     width: 30%;
     margin-bottom:-5%;
@@ -222,7 +219,12 @@ h2{
     transition:0.2s;
     outline:none;
 }
-
+#startDes{
+    margin-bottom: -10%;
+    margin-left: 25%;
+    margin-right: 25%;
+    text-align: center;
+}
 #startBtn:focus{
     transform:scale(1.1);
     box-shadow:0 0 25px white;
@@ -234,10 +236,46 @@ h2{
 <div id="splash">
   <img src="https://raw.githubusercontent.com/hbb200009/Server/refs/heads/main/images/applogo.png">
   <button id="startBtn">İzlemeye Başla!</button>
-   <h3 id="startDes">En iyi animasyon filmler ve dizileri, oscar ödüllü animasyonlar ve dev stüdyolardan yapımlar hepsi tek bir yerde. Disney'den Warner Bros'a, Cartoon Network'den Boomerang'a. En sevilen Nickelodeon yapımları, Pixar'ın kalperi ısıtan hikayeleri, Cartoonito'nun çocukları eğlendiren çizgi filmleri, dünyaca ünlü [adultswim] içerikleri gibi daha birçok yapım 100+ saat sunan bir imkanla tek bir yerde ücretsiz olarak size sunuluyor! </h3>
+  <h3 id="startDes">En iyi animasyon filmler ve dizileri, oscar ödüllü animasyonlar ve dev stüdyolardan yapımlar hepsi tek bir yerde. Disney'den Warner Bros'a, Cartoon Network'den Boomerang'a. En sevilen Nickelodeon yapımları, Pixar'ın kalperi ısıtan hikayeleri, Cartoonito'nun çocukları eğlendiren çizgi filmleri, dünyaca ünlü [adultswim] içerikleri gibi daha birçok yapım 100+ saat sunan bir imkanla tek bir yerde ücretsiz olarak size sunuluyor! </h3>
 </div>
 
 <div id="app">
+
+<!--LOGO-->
+<img src="https://raw.githubusercontent.com/hbb200009/Server/refs/heads/main/images/applogo.png" alt="logo" class="applogo">
+
+
+<!-- ÜST MENÜ -->
+<div class="top-menu">
+    <a href="https://raw.githubusercontent.com/hbb200009/Server/refs/heads/main/search.html" class="menu-btn" tabindex="1">Ana Sayfa</a>
+    <a href="arama.html" class="menu-btn" tabindex="2">Arama</a>
+    <a href="filmler.html" class="menu-btn" tabindex="3" id="OpenMovies">Filmler</a>
+    <a href="diziler.html" class="menu-btn" tabindex="4">Diziler</a>
+</div>
+
+
+
+<!--ANA RESİM-->
+<div class="hero" id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1 id="hero-title"></h1>
+        <p id="hero-desc"></p>
+        <a id="hero-link" class="hero-btn">▶ İzle</a>
+    </div>
+</div>
+
+<h2 id="cat-title"></h2>
+<div id="categories"></div>
+
+<h6 style="text-align: center;">Demo Version 0.0.4 &copy;HBBA2000</h6>
+<br><br><br>
+
+
+</div>
+
+
+<div id="movies">
 
 <!--LOGO-->
 <img src="https://raw.githubusercontent.com/hbb200009/Server/refs/heads/main/images/applogo.png" alt="logo" class="applogo">
@@ -262,10 +300,6 @@ h2{
         <a id="hero-link" class="hero-btn">▶ İzle</a>
     </div>
 </div>
-
-<h2 id="cat-title"></h2>
-<div id="categories"></div>
-
 <h6 style="text-align: center;">Demo Version 0.0.4 &copy;HBBA2000</h6>
 <br><br><br>
 
