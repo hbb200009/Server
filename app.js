@@ -1,5 +1,7 @@
 let appStarted = false;
-
+window.onload = () => {
+    initApp();
+};
 function startApp(){
     if(appStarted) return;
     appStarted = true;
