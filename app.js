@@ -6,6 +6,7 @@ window.onload = () => {
     const splash = document.getElementById("splash");
     appDiv.style.display = "none";
     splash.style.display = "block";
+    splash.style.opacity = "1";
 };
 
 /* ============================= */
