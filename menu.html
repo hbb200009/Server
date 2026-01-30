@@ -15,6 +15,7 @@
         <meta name='mobile-web-app-capable' content='yes' />
         <meta name='apple-mobile-web-app-status-bar-style' content='black-translucent' />
         <meta name='apple-mobile-web-app-title' content='' />
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
 
 <style>
@@ -33,7 +34,7 @@ body{
     z-index: 9;
 }
 #app{
-    display: block;   /* Splash varken gizli */
+    display:none;   /* Splash varken gizli */
     
 }
 /* Row kartlar */
@@ -154,34 +155,52 @@ h2{
 }
 
 
-/* TOP MENU */
-.top-menu{
-    position:absolute;
+/* Fade overlay */
+#fade{
+    position:fixed;
+    inset:0;
+    background:black;
+    z-index:9999;
+    opacity:1;
+    pointer-events:none;
+    transition:opacity 1s ease;
+}
+
+/* MENU */
+#menu{
+    position:fixed;
     top:20px;
-    left:40px;
+    left:30px;
     display:flex;
-    gap:25px;
+    gap:20px;
     z-index:10;
 }
 
 .menu-btn{
     padding:10px 25px;
-    font-size:18px;
-    border:none;
-    border-radius:8px;
+    font-size: 18px;
     background:rgba(20,20,30,0.6);
     color:white;
-    cursor:pointer;
-    transition:0.2s;
+    border-radius:8px;
     outline:none;
     text-decoration: none;
+    border:none;
+    transition:0.2s;
+    cursor:pointer;
 }
 
 .menu-btn:focus{
-    background: white;
+    outline:none;
+    background:white;
     color:black;
     transform:scale(1.1);
     box-shadow:0 0 25px white;
+}
+
+/* VIEW */
+#view{
+    width:100vw;
+    height:100vh;
 }
 
 /* SPLASH SCREEN */
@@ -242,31 +261,17 @@ h2{
 
 
 <!-- ÜST MENÜ -->
-<div class="top-menu">
-    <a href="https://raw.githubusercontent.com/hbb200009/Server/refs/heads/main/search.html" class="menu-btn" tabindex="1">Ana Sayfa</a>
-    <a href="arama.html" class="menu-btn" tabindex="2">Arama</a>
-    <a href="filmler.html" class="menu-btn" tabindex="3">Filmler</a>
-    <a href="diziler.html" class="menu-btn" tabindex="4">Diziler</a>
+<div id="fade"></div>
+
+<!-- MENU -->
+<div id="menu">
+    <button class="menu-btn" onclick="go('home')">Ana Sayfa</button>
+    <button class="menu-btn" onclick="go('movies')">Filmler</button>
+    <button class="menu-btn" onclick="go('series')">Diziler</button>
+    <button class="menu-btn" onclick="go('fav')">Favoriler</button>
 </div>
 
-
-
-<!--ANA RESİM-->
-<div class="hero" id="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-        <h1 id="hero-title"></h1>
-        <p id="hero-desc"></p>
-        <a id="hero-link" class="hero-btn">▶ İzle</a>
-    </div>
-</div>
-
-<h2 id="cat-title"></h2>
-<div id="categories"></div>
-
-<h6 style="text-align: center;">Demo Version 0.0.4 &copy;HBBA2000</h6>
-<br><br><br>
-
+<div id="view"></div>
 
 </div>
 </body>
