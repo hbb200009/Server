@@ -4,11 +4,13 @@ function startApp(){
     if(appStarted) return;
     appStarted = true;
 
-    /* #app’i hemen görünür yap */
+    console.log("APP START");
+
+    /* #app’i aç */
     const appDiv = document.getElementById("app");
     appDiv.style.display = "block";
 
-    /* Splash fade out */
+    /* Splash fade */
     const splash = document.getElementById("splash");
     splash.style.opacity = "0";
     splash.style.pointerEvents = "none";
@@ -16,14 +18,17 @@ function startApp(){
     setTimeout(()=>{
         splash.style.display = "none";
 
-        // İlk kart focus ver
-        const firstCard = document.querySelector('.card');
-        if(firstCard) firstCard.focus();
+        // Hero butonuna focus ver
+        const heroBtn = document.querySelector('.hero-btn');
+        if(heroBtn) heroBtn.focus();
+
     }, 600);
 }
 
+/* Buton */
 document.getElementById("startBtn").addEventListener("click", startApp);
 
+/* Kumanda Enter */
 document.addEventListener("keydown", e=>{
     if(!appStarted){
         if(e.key === "Enter" || e.keyCode === 13 || e.keyCode === 415 || e.keyCode === 10009){
@@ -32,13 +37,19 @@ document.addEventListener("keydown", e=>{
     }
 });
 
-/* TV KUMANDA KONTROL */
+/* TV Enter kontrol */
 document.addEventListener('keydown', function(e){
     const key = e.key || e.keyCode;
+
     if(key === 'Enter' || key === 13 || key === 415 || key === 10009){
         const active = document.activeElement;
+
+        if(active?.classList.contains('menu-btn') || active?.classList.contains('hero-btn')){
+            active.click();
+        }
+
         if(active?.classList.contains('card')){
-            alert("Seçilen Card: " + active.innerText);
+            active.click();
         }
     }
 });
