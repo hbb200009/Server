@@ -31,7 +31,12 @@ const pages = {
     `,
 
     series: () => `
-        <h1 style="padding:40px">📺 Diziler</h1>
+        <!--DIZILER RESİM-->
+        <div class="heroMovies" id="hero3">
+            <div class="heroMovies-overlay"></div>
+        </div>
+        <h2 id="cat-title3" style="margin-top: -10%;"></h2>
+        <div id="categories3"></div>
         
     `,
 
@@ -180,6 +185,15 @@ function initApp(){
 
         if(hero2Div) hero2Div.style.background = `url('${randHero2.image}') center/cover no-repeat`;
         
+        // HERO SERIES
+        const heroes3 = data.hero3;
+        const randHero3 = heroes3[Math.floor(Math.random() * heroes3.length)];
+
+        const hero3Div = document.getElementById("hero3");
+        
+
+        if(hero3Div) hero3Div.style.background = `url('${randHero3.image}') center/cover no-repeat`;
+        
 
         // HOME kategorileri
 const container = document.getElementById("categories");
@@ -199,7 +213,7 @@ if(container){
             const a = document.createElement("a");
             a.className = "card";
             a.href = item.link;
-            a.innerHTML = `<img src="${item.img}">`;
+            a.innerHTML = `<img src="${item.image}">`;
             row.appendChild(a);
         });
 
@@ -209,7 +223,7 @@ if(container){
     });
 }
         
-        // KATEGORİLER
+        // MOVIES kategorileri
         const container2 = document.getElementById("categories2");
 if(container2){
     container2.innerHTML = "";
@@ -227,7 +241,7 @@ if(container2){
             const a = document.createElement("a");
             a.className = "card";
             a.href = item.link;
-            a.innerHTML = `<img src="${item.img}">`;
+            a.innerHTML = `<img src="${item.image}">`;
             row.appendChild(a);
         });
 
@@ -236,9 +250,39 @@ if(container2){
         container2.appendChild(section);
     });
 }
+        
+        // SERIES kategorileri
+        const container3 = document.getElementById("categories3");
+if(container3){
+    container3.innerHTML = "";
+
+    data.categories3.forEach(cat=>{
+        const section = document.createElement("div");
+
+        const title3 = document.createElement("h2");
+        title3.innerText = cat.title;
+
+        const row = document.createElement("div");
+        row.className = "row";
+
+        cat.items.forEach(item=>{
+            const a = document.createElement("a");
+            a.className = "card";
+            a.href = item.link;
+            a.innerHTML = `<img src="${item.image}">`;
+            row.appendChild(a);
+        });
+
+        section.appendChild(title3);
+        section.appendChild(row);
+        container3.appendChild(section);
+    });
+}
+        
+        
         })
     
     .catch(err=>{
         console.log("JSON ERROR:", err);
     });
-       }
+}
