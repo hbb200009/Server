@@ -95,12 +95,19 @@ document.addEventListener('keydown', e=>{
 let appStarted = false;
 
 /* Sayfa açılınca app gizli, splash görünür */
-window.onload = () => {
+function init(){
+  console.log("INIT ÇALIŞTI");
+  // her ne başlatıyosan burda
     startApp();
     initApp();
     go('home');
-};
+}
 
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", init);
+} else {
+  init();
+}
 /* ============================= */
 /* Başlatma Fonksiyonu (Splash ile) */
 /* ============================= */
