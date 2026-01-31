@@ -16,34 +16,35 @@
         <meta name='apple-mobile-web-app-status-bar-style' content='black-translucent' />
         <meta name='apple-mobile-web-app-title' content='' />
       <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
-
+      <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+      
 <style>
 body{
     margin:0;
     background: black;
     color:white;
-    font-family:Arial, sans-serif;
+    font-family: 'Manrope', sans-serif;
 }
 .applogo {
     position: absolute;
-    width: 12.5%;
-    height: 20%;
+    width: 15vw;
+    height: 23vh;
     top: 5%;
     right: 5%;
     z-index: 9;
 }
 #app{
     display: block;   /* Splash varken gizli */
+    
 }
 /* Row kartlar */
 .row {
     display: flex;
     gap: 20px;
     overflow-x: auto;    
-    padding: 1%;
-    margin-top: -1.5%;
-    margin-left: 1%;    
+    padding: 1vw 1vh;
+    margin-top: -2vh;
+    margin-left: 1vw;    
 }
 .row:focus{
     outline: none;
@@ -56,8 +57,8 @@ body{
 }
 /* Kartlar */
 .card {
-    width: 200px;
-    height: 280px;
+    width: 12vw;
+    height: 30vh;
     background: #1a1a1f;
     border-radius: 12px;
     overflow: hidden;
@@ -95,7 +96,7 @@ h2{
 /* HERO */
 .hero{
     position:relative;
-    width:100%;
+    width:100vw;
     height:100vh;
     background: url("") center/cover no-repeat;
 }
@@ -157,7 +158,7 @@ h2{
 
 /* İZLE BUTONU */
 .hero-btn{
-    padding:12px 32px;
+    padding: 1vh 2vw;
     text-decoration: none;
     font-size:25px;
     font-weight: 700;
@@ -200,8 +201,9 @@ h2{
 }
 
 .menu-btn{
-    padding:10px 25px;
-    font-size: 18px;
+    padding:1vh 2vw;
+    font-size: 2vh;
+    font-weight: 600;
     background:rgba(20,20,30,0.6);
     color:white;
     border-radius:8px;
@@ -284,11 +286,7 @@ h2{
 </head>
 
 <body>
-<div id="splash">
-  <img src="https://raw.githubusercontent.com/hbb200009/Server/refs/heads/main/images/applogo.png">
-  <button id="startBtn">İzlemeye Başla!</button>
-  <h3 id="startDes" class="splash-box">En iyi animasyon filmler ve dizileri, oscar ödüllü animasyonlar ve dev stüdyolardan yapımlar hepsi tek bir yerde. Disney'den Warner Bros'a, Cartoon Network'den Boomerang'a. En sevilen Nickelodeon yapımları, Pixar'ın kalperi ısıtan hikayeleri, Cartoonito'nun çocukları eğlendiren çizgi filmleri, dünyaca ünlü [adultswim] içerikleri gibi daha birçok yapım 100+ saat sunan bir imkanla tek bir yerde ücretsiz olarak size sunuluyor! </h3>
-</div>
+
 
 <div id="app">
 
@@ -310,5 +308,9 @@ h2{
 <div id="view"></div>
 
 </div>
+<script>
+
+</script>
+
 </body>
 </html>
