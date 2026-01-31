@@ -1,119 +1,120 @@
 {
   "hero": [
     {
+      "id": "ladybug-series",
       "title": "Miraculous Ladybug",
-      "_note": "Ana hero slider - 1. içerik",
       "desc": "Paris’i koruyan iki gizli kahraman.",
       "image": "https://cdn.iview.abc.net.au/thumbs/i/zw/ZW4198A_68952b8a2d2a8_3600.jpg",
-      "link": "diziler.html"
+      "link": "movie.html?id=ladybug-series"
     },
     {
+      "id": "paris-special",
       "title": "Paris Özel Bölümü",
-      "_note": "Ana hero slider - 2. içerik",
       "desc": "Paralel evrende kahramanlar.",
       "image": "https://miraculous.to/global_data/img/S0E04_2025-08-18_17-37-57.webp",
-      "link": "filmler.html"
+      "link": "movie.html?id=paris-special"
     },
     {
+      "id": "miraculous-movie",
       "title": "Miraculous The Movie",
-      "_note": "Ana hero slider - 3. içerik",
       "desc": "Film hero alanı",
       "image": "https://images5.alphacoders.com/132/thumb-1920-1325003.jpeg",
-      "link": "filmler.html"
+      "link": "movie.html?id=miraculous-movie"
     }
   ],
 
   "hero2": [
     {
+      "id": "hero2-ladybug",
       "title": "Miraculous Ladybug",
-      "_note": "İkinci hero alanı - 1",
       "desc": "Paris’i koruyan iki gizli kahraman.",
       "image": "https://cdn.iview.abc.net.au/thumbs/i/zw/ZW4198A_68952b8a2d2a8_3600.jpg",
-      "link": "diziler.html"
+      "link": "movie.html?id=hero2-ladybug"
     },
     {
+      "id": "hero2-paris",
       "title": "Paris Özel Bölümü",
-      "_note": "İkinci hero alanı - 2",
       "desc": "Paralel evrende kahramanlar.",
       "image": "https://miraculous.to/global_data/img/S0E04_2025-08-18_17-37-57.webp",
-      "link": "filmler.html"
-    },
-    {
-      "title": "Miraculous The Movie",
-      "_note": "İkinci hero alanı - 3",
-      "desc": "Film hero alanı",
-      "image": "https://images5.alphacoders.com/132/thumb-1920-1325003.jpeg",
-      "link": "filmler.html"
+      "link": "movie.html?id=hero2-paris"
     }
   ],
 
   "hero3": [
     {
-      "title": "Miraculous Ladybug",
-      "_note": "Üçüncü hero alanı - 1",
-      "desc": "Paris’i koruyan iki gizli kahraman.",
-      "image": "https://cdn.iview.abc.net.au/thumbs/i/zw/ZW4198A_68952b8a2d2a8_3600.jpg",
-      "link": "diziler.html"
-    },
-    {
-      "title": "Paris Özel Bölümü",
-      "_note": "Üçüncü hero alanı - 2",
-      "desc": "Paralel evrende kahramanlar.",
-      "image": "https://miraculous.to/global_data/img/S0E04_2025-08-18_17-37-57.webp",
-      "link": "filmler.html"
-    },
-    {
+      "id": "hero3-movie",
       "title": "Miraculous The Movie",
-      "_note": "Üçüncü hero alanı - 3",
-      "desc": "Film hero alanı",
+      "desc": "Sinema filmi özel alan",
       "image": "https://images5.alphacoders.com/132/thumb-1920-1325003.jpeg",
-      "link": "filmler.html"
+      "link": "movie.html?id=hero3-movie"
     }
   ],
 
   "categories": [
     {
       "title": "Öne Çıkanlar",
-      "_note": "Ana vitrin - üst sıra",
       "items": [
-        { "img": "https://m.media-amazon.com/images/M/MV5BODQ5NGFjZTQtNDkzNy00YWVjLWJiNGMtNTk1YzVmMmQ1YWQwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", "link": "film1.html" },
-        { "img": "https://images5.alphacoders.com/132/thumb-1920-1325003.jpeg", "link": "film2.html" },
-        { "img": "https://images5.alphacoders.com/132/thumb-1920-1325003.jpeg", "link": "film2.html" },
-        { "img": "https://m.media-amazon.com/images/M/MV5BODQ5NGFjZTQtNDkzNy00YWVjLWJiNGMtNTk1YzVmMmQ1YWQwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", "link": "film1.html" },
-        { "img": "https://images5.alphacoders.com/132/thumb-1920-1325003.jpeg", "link": "film2.html" },
-        { "img": "https://images5.alphacoders.com/132/thumb-1920-1325003.jpeg", "link": "film2.html" }
+        {
+          "id": "featured-1",
+          "img": "https://m.media-amazon.com/images/M/MV5BODQ5NGFjZTQtNDkzNy00YWVjLWJiNGMtNTk1YzVmMmQ1YWQwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+          "link": "movie.html?id=featured-1"
+        },
+        {
+          "id": "featured-2",
+          "img": "https://images5.alphacoders.com/132/thumb-1920-1325003.jpeg",
+          "link": "movie.html?id=featured-2"
+        }
       ]
     },
     {
       "title": "En Popüler",
-      "_note": "Trending / popüler içerikler",
       "items": [
-        { "img": "https://images5.alphacoders.com/132/thumb-1920-1325003.jpeg", "link": "popular1.html" },
-        { "img": "https://m.media-amazon.com/images/M/MV5BODQ5NGFjZTQtNDkzNy00YWVjLWJiNGMtNTk1YzVmMmQ1YWQwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", "link": "popular2.html" },
-        { "img": "https://miraculous.to/global_data/img/S0E04_2025-08-18_17-37-57.webp", "link": "popular3.html" },
-        { "img": "https://cdn.iview.abc.net.au/thumbs/i/zw/ZW4198A_68952b8a2d2a8_3600.jpg", "link": "popular4.html" }
+        {
+          "id": "popular-1",
+          "img": "https://cdn.iview.abc.net.au/thumbs/i/zw/ZW4198A_68952b8a2d2a8_3600.jpg",
+          "link": "movie.html?id=popular-1"
+        },
+        {
+          "id": "popular-2",
+          "img": "https://miraculous.to/global_data/img/S0E04_2025-08-18_17-37-57.webp",
+          "link": "movie.html?id=popular-2"
+        }
       ]
     }
   ],
 
   "categories2": [
     {
-      "title": "Öne Çıkanlar",
-      "_note": "İkinci sayfa vitrin",
+      "title": "Filmler",
       "items": [
-        { "img": "https://m.media-amazon.com/images/M/MV5BODQ5NGFjZTQtNDkzNy00YWVjLWJiNGMtNTk1YzVmMmQ1YWQwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", "link": "film1.html" },
-        { "img": "https://images5.alphacoders.com/132/thumb-1920-1325003.jpeg", "link": "film2.html" }
+        {
+          "id": "movie-1",
+          "img": "https://m.media-amazon.com/images/M/MV5BODQ5NGFjZTQtNDkzNy00YWVjLWJiNGMtNTk1YzVmMmQ1YWQwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+          "link": "movie.html?id=movie-1"
+        },
+        {
+          "id": "movie-2",
+          "img": "https://images5.alphacoders.com/132/thumb-1920-1325003.jpeg",
+          "link": "movie.html?id=movie-2"
+        }
       ]
     }
   ],
 
   "categories3": [
     {
-      "title": "Öne Çıkanlar",
-      "_note": "İkinci sayfa vitrin",
+      "title": "Diziler",
       "items": [
-        { "img": "https://m.media-amazon.com/images/M/MV5BODQ5NGFjZTQtNDkzNy00YWVjLWJiNGMtNTk1YzVmMmQ1YWQwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", "link": "film1.html" },
-        { "img": "https://images5.alphacoders.com/132/thumb-1920-1325003.jpeg", "link": "film2.html" }
+        {
+          "id": "series-1",
+          "img": "https://cdn.iview.abc.net.au/thumbs/i/zw/ZW4198A_68952b8a2d2a8_3600.jpg",
+          "link": "movie.html?id=series-1"
+        },
+        {
+          "id": "series-2",
+          "img": "https://miraculous.to/global_data/img/S0E04_2025-08-18_17-37-57.webp",
+          "link": "movie.html?id=series-2"
+        }
       ]
     }
   ]
