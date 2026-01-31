@@ -72,7 +72,7 @@ function go(page){
             initApp();
         }
 
-    },300);
+    },100);
 }
 
 function focusFirst(){
@@ -95,8 +95,8 @@ document.addEventListener('keydown', e=>{
 
 /* Sayfa açılınca app gizli, splash görünür */
 window.onload = () => {
-    const appDiv = document.getElementById("app");
-    appDiv.style.display = "none";
+    startApp();
+    initApp();
 };
 
 /* ============================= */
@@ -107,23 +107,19 @@ function startApp(){
     appStarted = true;
 
     const appDiv = document.getElementById("app");
-    const splash = document.getElementById("splash");
-
-    splash.style.transition = "opacity 1s ease";
-    splash.style.opacity = "0";
+    
 
     setTimeout(()=>{
-        splash.style.display = "none";
         appDiv.style.display = "block";
 
         // SPA başlat
         go('home');
 
-    }, 1000);
+    }, 100);
 }
 
 /* Butona click */
-document.getElementById("startBtn").addEventListener("click", startApp);
+
 
 
 /* TV kumanda ile Enter / OK */
