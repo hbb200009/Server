@@ -88,5 +88,18 @@
         }
       ]
     }
-  ]
+  ], 
+
+  "movies": [
+  {
+    "id": "miraculous-movie",
+    "title": "Miraculous: The Movie",
+    "year": "2023",
+    "desc": "Marinette ve Adrien’ın kaderini anlatan sinematik Miraculous filmi.",
+    "bg": "https://images5.alphacoders.com/132/thumb-1920-1325003.jpeg",
+    "poster": "https://images5.alphacoders.com/132/thumb-1920-1325003.jpeg",
+    "type": "movie",
+    "duration": "105 dk"
+  }
+]
 }
