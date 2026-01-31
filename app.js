@@ -106,15 +106,12 @@ function startApp(){
     if(appStarted) return;
     appStarted = true;
 
-    const appDiv = document.getElementById("app");
-    
-
     setTimeout(()=>{
         initApp();
         // SPA başlat
         go('home');
 
-    }, 100);
+    }, 1000);
 }
 
 /* Butona click */
@@ -122,11 +119,6 @@ function startApp(){
 
 
 /* TV kumanda ile Enter / OK */
-document.addEventListener("keydown", e=>{
-    if(!appStarted && (e.key === "Enter" || e.keyCode === 13 || e.keyCode === 415 || e.keyCode === 10009)){
-        startApp();
-    }
-});
 
 /* ============================= */
 /* TV KUMANDA KONTROL */
@@ -135,7 +127,7 @@ document.addEventListener('keydown', function(e){
     const key = e.key || e.keyCode;
 
     if(key === 'Enter' || key === 13 || key === 415 || key === 10009){
-        const active = document.activeElement;
+        cappent.activeElement;
 
         if(active?.classList.contains('menu-btn') || active?.classList.contains('hero-btn')){
             active.click();
