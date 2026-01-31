@@ -98,6 +98,7 @@ document.addEventListener('keydown', e=>{
 window.onload = () => {
     startApp();
     initApp();
+    go('home');
 };
 
 /* ============================= */
