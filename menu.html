@@ -227,67 +227,10 @@ h2{
     height:100vh;
 }
 
-
-.splash-box{
-    background: rgba(0,0,0,0.55);
-    backdrop-filter: blur(12px);
-    border-radius:20px;
-    padding:30px 50px;
-    text-align:center;
-    max-width:700px;
-    box-shadow: 0 0 40px rgba(255,255,255,0.15);
-}
-
-/* SPLASH SCREEN */
-#splash{
-    position:fixed;
-    inset:0;
-    background: url("https://raw.githubusercontent.com/hbb200009/Server/refs/heads/main/images/appbackground.jpg") center/cover no-repeat;
-    display: flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    z-index: 99999;
-    transition:opacity 0.6s ease;
-}
-
-#splash img{
-    width: 30%;
-    margin-bottom:-5%;
-    
-}
-
-#startBtn{
-    padding:16px 42px;
-    font-size:24px;
-    font-weight:700;
-    border-radius:12px;
-    border:none;
-    background:white;
-    color:black;
-    cursor:pointer;
-    transition:0.2s;
-    outline:none;
-}
-#startDes{
-    margin-bottom: -10%;
-    margin-left: 25%;
-    margin-right: 25%;
-    text-align: center;
-    opacity:0.9;
-    line-height:1.6;
-}
-#startBtn:focus{
-    transform:scale(1.1);
-    box-shadow:0 0 25px white;
-}
 </style>
 </head>
 
 <body>
-
-
-<div id="app">
 
 <!--LOGO-->
 <img src="https://raw.githubusercontent.com/hbb200009/Server/refs/heads/main/images/applogo.png" alt="logo" class="applogo">
@@ -306,6 +249,5 @@ h2{
 
 <div id="view"></div>
 
-</div>
 </body>
 </html>
