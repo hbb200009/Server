@@ -90,7 +90,8 @@
       "duration": "105 dk",
       "desc": "Ladybug ve Cat Noir'in sinema filmi.",
       "poster": "https://images5.alphacoders.com/132/thumb-1920-1325003.jpeg",
-      "video": "https://www.w3schools.com/html/mov_bbb.mp4"
+      "video": "https://www.w3schools.com/html/mov_bbb.mp4",
+      "episodes": []
     },
     {
       "id": "paris-special",
@@ -99,27 +100,22 @@
       "duration": "50 dk",
       "desc": "Paralel evrende geçen özel bölüm.",
       "poster": "https://miraculous.to/global_data/img/S0E04_2025-08-18_17-37-57.webp",
-      "video": "https://www.w3schools.com/html/mov_bbb.mp4"
-    }, 
-
+      "video": "https://www.w3schools.com/html/mov_bbb.mp4",
+      "episodes": []
+    },
     {
       "id": "miraculous-series",
       "title": "Miraculous Ladybug",
       "year": "2015",
       "desc": "Paris’i koruyan iki süper kahraman.",
       "poster": "https://cdn.iview.abc.net.au/thumbs/i/zw/ZW4198A_68952b8a2d2a8_3600.jpg",
-      "seasons": [
+      "episodes": [
         {
-          "season": 1,
-          "episodes": [
-            {
-              "id": "s1e1",
-              "title": "1. Bölüm",
-              "duration": "22 dk",
-              "img": "https://images5.alphacoders.com/132/thumb-1920-1325003.jpeg",
-              "video": "https://www.w3schools.com/html/mov_bbb.mp4"
-            }
-          ]
+          "id": "s1e1",
+          "title": "1. Bölüm",
+          "duration": "22 dk",
+          "img": "https://images5.alphacoders.com/132/thumb-1920-1325003.jpeg",
+          "video": "https://www.w3schools.com/html/mov_bbb.mp4"
         }
       ]
     }
