@@ -27,7 +27,7 @@ fetch("https://raw.githubusercontent.com/hbb200009/Server/main/data.json")
       epDiv.innerHTML += `
         <div class="episode">
           <img src="${ep.img}">
-          <div>
+          <div>    
             <b>${ep.title}</b><br>
             ${ep.duration}
           </div>
