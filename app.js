@@ -63,7 +63,7 @@ function go(page){
 
     setTimeout(()=>{
         view.innerHTML = pages[page]();
-        fade.style.opacity = "1";
+        fade.style.opacity = "0";
         focusFirst();
         initApp();
 
@@ -91,7 +91,7 @@ document.addEventListener('keydown', e=>{
 
 /*JAVA AYAR KODLARI*/
 
-let appStarted = false;
+    let appStarted = false;
 
 /* Sayfa açılınca app gizli, splash görünür */
 window.onload = () => {
@@ -106,12 +106,16 @@ function startApp(){
     if(appStarted) return;
     appStarted = true;
 
+    const appDiv = document.getElementById("app");
+    
+
     setTimeout(()=>{
-        initApp();
+        appDiv.style.display = "block";
+
         // SPA başlat
         go('home');
 
-    }, 1000);
+    }, 100);
 }
 
 /* Butona click */
@@ -119,6 +123,11 @@ function startApp(){
 
 
 /* TV kumanda ile Enter / OK */
+document.addEventListener("keydown", e=>{
+    if(!appStarted && (e.key === "Enter" || e.keyCode === 13 || e.keyCode === 415 || e.keyCode === 10009)){
+        startApp();
+    }
+});
 
 /* ============================= */
 /* TV KUMANDA KONTROL */
@@ -127,7 +136,7 @@ document.addEventListener('keydown', function(e){
     const key = e.key || e.keyCode;
 
     if(key === 'Enter' || key === 13 || key === 415 || key === 10009){
-        cappent.activeElement;
+        const active = document.activeElement;
 
         if(active?.classList.contains('menu-btn') || active?.classList.contains('hero-btn')){
             active.click();
