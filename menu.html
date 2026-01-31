@@ -34,7 +34,7 @@ body{
     z-index: 9;
 }
 #app{
-    display:block;   /* Splash varken gizli */
+    display:none;   /* Splash varken gizli */
     
 }
 /* Row kartlar */
@@ -102,6 +102,30 @@ h2{
 }
 /* Gradient siyahlık */
 .hero-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.1) 0%,
+        rgba(0,0,0,0.6) 50%,
+        rgba(0,0,0,0.9) 100%
+    );
+}
+.heroMovies{
+    position:relative;
+    background-position: center top;
+    width:100%;
+    height:70vh;
+    z-index: -1;
+    background: url("") center/cover no-repeat;
+}
+.heroMovies::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top, black 20%, transparent 60%);
+}
+.heroMovies-overlay{
     position:absolute;
     inset:0;
     background:linear-gradient(
