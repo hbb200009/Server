@@ -102,4 +102,23 @@
       "episodes": []
     }
   ]
+
+  {
+  "id": "miraculous-s1",
+  "type": "series",
+  "title": "Miraculous Ladybug",
+  "season": 1,
+  "year": "2015",
+  "desc": "Paris’i koruyan iki kahraman.",
+  "poster": "POSTER_URL",
+  "episodes": [
+    {
+      "id": "s1e1",
+      "title": "1. Bölüm",
+      "duration": "22 dk",
+      "img": "EP_IMG",
+      "video": "EP_MP4"
+    }
+  ]
+}
 }
