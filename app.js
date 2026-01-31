@@ -58,21 +58,18 @@ function cards(){
     return html;
 }
 
-function go(page){
-    fade.style.opacity = "1";
+function go(page) {
+  const fade = document.getElementById("fade");
 
-    setTimeout(()=>{
-        view.innerHTML = pages[page]();
-        fade.style.opacity = "0";
-        focusFirst();
-        initApp();
+  fade.style.opacity = "1";
 
-        // sadece home sayfasında initApp çalışsın
-        if(page === "home"){
-            initApp();
-        }
+  setTimeout(() => {
+    loadPage(page);
 
-    },100);
+    setTimeout(() => {
+      fade.style.opacity = "0";
+    }, 100);
+  }, 400);
 }
 
 function focusFirst(){
