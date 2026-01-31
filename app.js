@@ -63,7 +63,7 @@ function go(page){
 
     setTimeout(()=>{
         view.innerHTML = pages[page]();
-        fade.style.opacity = "0";
+        fade.style.opacity = "1";
         focusFirst();
         initApp();
 
