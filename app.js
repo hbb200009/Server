@@ -91,7 +91,7 @@ document.addEventListener('keydown', e=>{
 
 /*JAVA AYAR KODLARI*/
 
-    let appStarted = false;
+let appStarted = false;
 
 /* Sayfa açılınca app gizli, splash görünür */
 window.onload = () => {
@@ -110,8 +110,7 @@ function startApp(){
     
 
     setTimeout(()=>{
-        appDiv.style.display = "block";
-
+        initApp();
         // SPA başlat
         go('home');
 
