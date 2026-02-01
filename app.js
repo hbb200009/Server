@@ -326,22 +326,7 @@ function initRowLoop(row) {
             });
 
             // 3. Sonsuz Döngü Kontrolü (Focus anında)
-            handleInfiniteLoop(index);
+            
         });
     });
-
-    function handleInfiniteLoop(currentIndex) {
-        // Eğer kullanıcı ilk kopyalanan gruba geçtiyse, ortadaki gruba atlat
-        if (currentIndex < originalCount) {
-            setTimeout(() => {
-                allCards[currentIndex + originalCount].focus({ preventScroll: true });
-            }, 300);
-        } 
-        // Eğer kullanıcı son kopyalanan gruba geçtiyse, ortadaki gruba geri çek
-        else if (currentIndex >= originalCount * 2) {
-            setTimeout(() => {
-                allCards[currentIndex - originalCount].focus({ preventScroll: true });
-            }, 300);
-        }
-    }
 }
