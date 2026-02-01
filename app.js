@@ -307,12 +307,10 @@ function initRowLoop(row){
     const originalCount = cards.length;
 
     // ortadan başlat
-    row.scrollLeft = cardWidth * originalCount;
+    
 
     // focus index hep ortadaki ilk kart
-    let focusIndex = originalCount; 
-    cards[focusIndex].focus();
-
+    
     function scrollToIndex(idx){
         row.scrollTo({
             left: idx * cardWidth,
