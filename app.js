@@ -315,19 +315,30 @@ function initRowLoop(row) {
         card.tabIndex = 0; // Kumanda ile seçilebilir yapar
 
         card.addEventListener("focus", () => {
-            // Kartı Row içinde yatayda ortala
-            const rowWidth = row.offsetWidth;
-            const cardOffset = card.offsetLeft;
-            const targetScroll = Math.max(3, cardOffset);
-            
-            row.scrollTo({
-                left: targetScroll,
-                behavior: "smooth"
-            });
 
-            // 3. Sonsuz Döngü Kontrolü (Focus anında)
-            handleInfiniteLoop(index);
-        });
+    // 🔹 row padding'ini otomatik al
+    const style = getComputedStyle(row);
+    const rowPadding = parseInt(style.paddingLeft, 10);
+
+    const cardOffset = card.offsetLeft;
+
+    let targetScroll;
+
+    // 🔹 İlk kart soldan tam görünsün
+    if (cardOffset <= rowPadding) {
+        targetScroll = 0;
+    } else {
+        targetScroll = cardOffset - rowPadding;
+    }
+
+    row.scrollTo({
+        left: targetScroll,
+        behavior: "smooth"
+    });
+
+    // 🔹 Sonsuz döngü kontrolü
+    handleInfiniteLoop(index);
+});
     });
 
     function handleInfiniteLoop(currentIndex) {
