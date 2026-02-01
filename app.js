@@ -296,48 +296,56 @@ if(container3){
 }
 
 function initRowLoop(row) {
-    let cards = Array.from(row.children);
-    if (cards.length === 0) return;
+    const originalCards = Array.from(row.children);
+    if (originalCards.length === 0) return;
 
-    // Kumanda desteği için kartlara özellik ekle
-    function setupCard(card) {
-        card.tabIndex = 0;
-        card.style.flexShrink = "0"; // Boyutun bozulmaması için
+    // 1. Sonsuzluk hissi için çoklu kopyalama (Örn: 10 grup)
+    // Bu, kumanda ile hızlı geçişlerde bile sonun gelmesini engeller.
+    for (let i = 0; i < 10; i++) {
+        originalCards.forEach(c => {
+            const clone = c.cloneNode(true);
+            clone.tabIndex = 0; // Kumanda odağı için
+            row.appendChild(clone);
+        });
     }
+    // Orijinal ilk kartları temizleyelim, hepsi klon üzerinden dönsün
+    originalCards.forEach(c => c.remove());
 
-    cards.forEach(setupCard);
+    const allCards = Array.from(row.children);
+    const cardWidth = allCards[0].offsetWidth + 20; // Kart + Gap
+    const totalContentWidth = allCards.length * cardWidth;
+
+    // Başlangıç noktası: Listenin tam ortası
+    let startPoint = (allCards.length / 2) * cardWidth;
+    row.scrollLeft = startPoint;
 
     row.addEventListener("focusin", (e) => {
         const focusedCard = e.target;
-        const allCards = Array.from(row.children);
-        const index = allCards.indexOf(focusedCard);
+        const rect = focusedCard.getBoundingClientRect();
+        const rowRect = row.getBoundingClientRect();
 
-        // 1. Her zaman en başa (sola) odakla
+        // 2. Odaklanan kartın her zaman 2. sırada olması için:
+        // (Kartın sol pozisyonu) - (1 kartlık boşluk bırak)
+        const targetScroll = (focusedCard.offsetLeft - row.offsetLeft) - cardWidth;
+
         row.scrollTo({
-            left: focusedCard.offsetLeft - row.offsetLeft,
+            left: targetScroll,
             behavior: "smooth"
         });
 
-        // 2. Sonsuz Döngü Mantığı:
-        // Eğer sona yaklaştıysa (son 2 kart), baş taraftaki kartları sona taşı
-        if (index > allCards.length - 3) {
-            for (let i = 0; i < 3; i++) {
-                const first = row.firstElementChild;
-                row.appendChild(first); // Baştakini al sona tak
-            }
-        }
+        // 3. Çaktırmadan Pozisyon Sıfırlama (Teleport)
+        // Eğer kullanıcı çok sağa veya çok sola giderse, 
+        // animasyonsuz bir şekilde merkeze geri atıyoruz.
+        setTimeout(() => {
+            const currentScroll = row.scrollLeft;
+            const threshold = totalContentWidth / 4;
 
-        // Eğer en başa geldiyse ve sola basıyorsa, sondakileri başa taşı
-        if (index < 2) {
-            for (let i = 0; i < 3; i++) {
-                const last = row.lastElementChild;
-                row.prepend(last); // Sondakini al başa tak
+            if (currentScroll > totalContentWidth * 0.75 || currentScroll < totalContentWidth * 0.25) {
+                row.style.scrollBehavior = "auto"; // Animasyonu kapat
+                const offset = currentScroll % (originalCards.length * cardWidth);
+                row.scrollLeft = startPoint + offset;
+                row.style.scrollBehavior = "smooth"; // Tekrar aç
             }
-            // Kaydırma bozulmasın diye pozisyonu anlık güncelle
-            row.scrollLeft += (cards[0].offsetWidth * 3);
-        }
+        }, 300); // Kaydırma bittikten sonra kontrol et
     });
-
-    // İlk başta ilk elemana odaklanabilmesi için hazırla
-    row.scrollLeft = 0;
 }
