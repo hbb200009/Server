@@ -318,7 +318,7 @@ function initRowLoop(row) {
             // Kartı Row içinde yatayda ortala
             const rowWidth = row.offsetWidth;
             const cardOffset = card.offsetLeft;
-            const targetScroll = cardOffset - (rowWidth / 3) + (card.offsetWidth / 3);
+            const targetScroll = cardOffset - (rowWidth / 2) + (card.offsetWidth / 3);
 
             row.scrollTo({
                 left: targetScroll,
