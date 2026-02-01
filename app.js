@@ -296,47 +296,35 @@ if(container3){
 }
 
 function initRowLoop(row){
-    const cards = Array.from(row.querySelectorAll('.card'));
+    const cards = Array.from(row.children);
     if(cards.length === 0) return;
 
-    let focusIndex = 0; // hep ilk kart focus
-    
+    // 3 kere kopyala
+    cards.forEach(c => row.appendChild(c.cloneNode(true)));
+    cards.forEach(c => row.appendChild(c.cloneNode(true)));
 
-    // Kartları başa ve sona kopyala (sonsuz efekt)
-    const firstClone = cards.map(c => c.cloneNode(true));
-    const lastClone = cards.map(c => c.cloneNode(true));
-    
+    const cardWidth = cards[0].offsetWidth + 20; // gap dahil
+    const originalCount = cards.length;
 
-    lastClone.forEach(c => row.insertBefore(c, row.firstChild));
-    firstClone.forEach(c => row.appendChild(c));
+    // ortadan başlat
+    row.scrollLeft = cardWidth * originalCount;
 
-    const cardWidth = cards[0].offsetWidth + 20; // gap 20px
+    row.addEventListener("scroll", ()=>{
+        const maxScroll = cardWidth * originalCount * 2;
+        const minScroll = 0;
 
-    // Başlangıç scroll, kopyalardan ötürü orta noktada
-    row.scrollLeft = row.scrollWidth / 3;
+        // sağdan taştıysa
+        if(row.scrollLeft >= maxScroll){
+            row.style.scrollBehavior = "auto";
+            row.scrollLeft = cardWidth * originalCount;
+            row.style.scrollBehavior = "smooth";
+        }
 
-    document.addEventListener('keydown', e=>{
-        if(document.activeElement.closest('.row') === row){
-            if(e.key === 'ArrowRight' || e.keyCode === 39){
-                row.scrollLeft += cardWidth;
-
-                // loop kontrolü
-                if(row.scrollLeft >= (row.scrollWidth * 2/3)){
-                    row.scrollLeft -= row.scrollWidth / 3;
-                }
-
-                cards[focusIndex].focus();
-            }
-            if(e.key === 'ArrowLeft' || e.keyCode === 37){
-                row.scrollLeft -= cardWidth;
-
-                // loop kontrolü
-                if(row.scrollLeft <= 0){
-                    row.scrollLeft += row.scrollWidth / 3;
-                }
-
-                cards[focusIndex].focus();
-            }
+        // soldan taştıysa
+        if(row.scrollLeft <= minScroll){
+            row.style.scrollBehavior = "auto";
+            row.scrollLeft = cardWidth * originalCount;
+            row.style.scrollBehavior = "smooth";
         }
     });
 }
