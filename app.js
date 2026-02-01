@@ -326,7 +326,7 @@ function initRowLoop(row) {
 
     // 🔹 İlk kart soldan tam görünsün
     if (cardOffset <= rowPadding) {
-        targetScroll = 0;
+        targetScroll = -5;
     } else {
         targetScroll = cardOffset - rowPadding;
     }
