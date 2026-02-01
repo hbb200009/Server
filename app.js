@@ -318,7 +318,7 @@ function initRowLoop(row) {
 
     // 🔹 row padding'ini otomatik al
     const style = getComputedStyle(row);
-    const rowPadding = parseInt(style.paddingLeft, 20);
+    const rowPadding = parseInt(style.paddingLeft, 10);
 
     const cardOffset = card.offsetLeft;
 
@@ -326,7 +326,7 @@ function initRowLoop(row) {
 
     // 🔹 İlk kart soldan tam görünsün
     if (cardOffset <= rowPadding) {
-        targetScroll = -5;
+        targetScroll = 0;
     } else {
         targetScroll = cardOffset - rowPadding;
     }
