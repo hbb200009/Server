@@ -295,36 +295,53 @@ if(container3){
     });
 }
 
-function initRowLoop(row){
+function initRowLoop(row) {
     const cards = Array.from(row.children);
-    if(cards.length === 0) return;
+    if (cards.length === 0) return;
 
-    // 3 kere kopyala
+    // 1. Kopyalama Mantığı (Daha güvenli döngü için)
     cards.forEach(c => row.appendChild(c.cloneNode(true)));
     cards.forEach(c => row.appendChild(c.cloneNode(true)));
 
-    const cardWidth = cards[0].offsetWidth + 20; // gap dahil
+    const allCards = Array.from(row.children);
     const originalCount = cards.length;
+    const cardWidth = cards[0].offsetWidth + 20; // gap dahil
 
-    // ortadan başlat
+    // Başlangıçta ortadaki gruba odaklan
     row.scrollLeft = cardWidth * originalCount;
 
-    row.addEventListener("scroll", ()=>{
-        const maxScroll = cardWidth * originalCount * 2;
-        const minScroll = 0;
+    // 2. Kartlara Focus Özelliği Ekle (Kumanda için şart)
+    allCards.forEach((card, index) => {
+        card.tabIndex = 0; // Kumanda ile seçilebilir yapar
 
-        // sağdan taştıysa
-        if(row.scrollLeft >= maxScroll){
-            row.style.scrollBehavior = "auto";
-            row.scrollLeft = cardWidth * originalCount;
-            row.style.scrollBehavior = "smooth";
-        }
+        card.addEventListener("focus", () => {
+            // Kartı Row içinde yatayda ortala
+            const rowWidth = row.offsetWidth;
+            const cardOffset = card.offsetLeft;
+            const targetScroll = Math.max(3, cardOffset);
+            
+            row.scrollTo({
+                left: targetScroll,
+                behavior: "smooth"
+            });
 
-        // soldan taştıysa
-        if(row.scrollLeft <= minScroll){
-            row.style.scrollBehavior = "auto";
-            row.scrollLeft = cardWidth * originalCount;
-            row.style.scrollBehavior = "smooth";
-        }
+            // 3. Sonsuz Döngü Kontrolü (Focus anında)
+            handleInfiniteLoop(index);
+        });
     });
+
+    function handleInfiniteLoop(currentIndex) {
+        // Eğer kullanıcı ilk kopyalanan gruba geçtiyse, ortadaki gruba atlat
+        if (currentIndex < originalCount) {
+            setTimeout(() => {
+                allCards[currentIndex + originalCount].focus({ preventScroll: true });
+            }, 300);
+        } 
+        // Eğer kullanıcı son kopyalanan gruba geçtiyse, ortadaki gruba geri çek
+        else if (currentIndex >= originalCount * 2) {
+            setTimeout(() => {
+                allCards[currentIndex - originalCount].focus({ preventScroll: true });
+            }, 300);
+        }
+    }
 }
