@@ -337,7 +337,7 @@ function initRowLoop(row) {
     });
 
     // 🔹 Sonsuz döngü kontrolü
-    handleInfiniteLoop(index);
+    
 });
     });
 
