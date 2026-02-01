@@ -16,7 +16,7 @@ const pages = {
         
         <h2 id="cat-title"></h2>
         <div id="categories"></div>
-        <h6 style="text-align: center;">Demo Version 0.0.4 &copy;HBBA2000</h6>
+        <h6 style="text-align: center;">Demo Version 0.0.5 &copy;HBBA2000</h6>
         <br><br><br>
     `,
 
@@ -59,6 +59,7 @@ function cards(){
 }
 
 function go(page){
+    const fade = document.getElementById("fade");
     fade.style.opacity = "1";
 
     setTimeout(()=>{
@@ -72,7 +73,7 @@ function go(page){
             initApp();
         }
 
-    },300);
+    },100);
 }
 
 function focusFirst(){
@@ -91,14 +92,22 @@ document.addEventListener('keydown', e=>{
 
 /*JAVA AYAR KODLARI*/
 
-    let appStarted = false;
+let appStarted = false;
 
 /* Sayfa açılınca app gizli, splash görünür */
-window.onload = () => {
-    const appDiv = document.getElementById("app");
-    appDiv.style.display = "none";
-};
+function init(){
+  console.log("INIT ÇALIŞTI");
+  // her ne başlatıyosan burda
+    startApp();
+    initApp();
+    go('home');
+}
 
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", init);
+} else {
+  init();
+}
 /* ============================= */
 /* Başlatma Fonksiyonu (Splash ile) */
 /* ============================= */
@@ -107,23 +116,19 @@ function startApp(){
     appStarted = true;
 
     const appDiv = document.getElementById("app");
-    const splash = document.getElementById("splash");
-
-    splash.style.transition = "opacity 1s ease";
-    splash.style.opacity = "0";
+    
 
     setTimeout(()=>{
-        splash.style.display = "none";
         appDiv.style.display = "block";
 
         // SPA başlat
         go('home');
 
-    }, 1000);
+    }, 100);
 }
 
 /* Butona click */
-document.getElementById("startBtn").addEventListener("click", startApp);
+
 
 
 /* TV kumanda ile Enter / OK */
@@ -278,11 +283,65 @@ if(container3){
         container3.appendChild(section);
     });
 }
-        
+
+        document.querySelectorAll(".row").forEach(row=>{
+    initRowLoop(row);
+});
         
         })
     
     .catch(err=>{
         console.log("JSON ERROR:", err);
     });
+}
+
+function initRowLoop(row) {
+    const cards = Array.from(row.children);
+    if (cards.length === 0) return;
+
+    // 1. Kopyalama Mantığı (Daha güvenli döngü için)
+    cards.forEach(c => row.appendChild(c.cloneNode(true)));
+    cards.forEach(c => row.appendChild(c.cloneNode(true)));
+
+    const allCards = Array.from(row.children);
+    const originalCount = cards.length;
+    const cardWidth = cards[0].offsetWidth + 20; // gap dahil
+
+    // Başlangıçta ortadaki gruba odaklan
+    row.scrollLeft = cardWidth * originalCount;
+
+    // 2. Kartlara Focus Özelliği Ekle (Kumanda için şart)
+    allCards.forEach((card, index) => {
+        card.tabIndex = 0; // Kumanda ile seçilebilir yapar
+
+        card.addEventListener("focus", () => {
+            // Kartı Row içinde yatayda ortala
+            const rowWidth = row.offsetWidth;
+            const cardOffset = card.offsetLeft;
+            const targetScroll = cardOffset - (rowWidth / 2) + (card.offsetWidth / 2);
+
+            row.scrollTo({
+                left: targetScroll,
+                behavior: "smooth"
+            });
+
+            // 3. Sonsuz Döngü Kontrolü (Focus anında)
+            handleInfiniteLoop(index);
+        });
+    });
+
+    function handleInfiniteLoop(currentIndex) {
+        // Eğer kullanıcı ilk kopyalanan gruba geçtiyse, ortadaki gruba atlat
+        if (currentIndex < originalCount) {
+            setTimeout(() => {
+                allCards[currentIndex + originalCount].focus({ preventScroll: true });
+            }, 300);
+        } 
+        // Eğer kullanıcı son kopyalanan gruba geçtiyse, ortadaki gruba geri çek
+        else if (currentIndex >= originalCount * 2) {
+            setTimeout(() => {
+                allCards[currentIndex - originalCount].focus({ preventScroll: true });
+            }, 300);
+        }
+    }
 }
