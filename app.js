@@ -327,7 +327,7 @@ function initRowLoop(row) {
             });
             // 3. Sonsuz Döngü Kontrolü (Focus anında)
             handleInfiniteLoop(index);
-        });
+       
             
     });
 
