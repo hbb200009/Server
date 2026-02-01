@@ -308,7 +308,7 @@ function initRowLoop(row) {
     const cardWidth = cards[0].offsetWidth + 20; // gap dahil
 
     // Başlangıçta ortadaki gruba odaklan
-    row.scrollLeft = cardWidth * originalCount;
+    
 
     // 2. Kartlara Focus Özelliği Ekle (Kumanda için şart)
     allCards.forEach((card, index) => {
