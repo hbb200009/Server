@@ -309,22 +309,39 @@ function initRowLoop(row){
     // ortadan başlat
     row.scrollLeft = cardWidth * originalCount;
 
+    // focus index hep ilk kartta
+    let focusIndex = 0;
+    cards[focusIndex].focus();
+
     row.addEventListener("scroll", ()=>{
         const maxScroll = cardWidth * originalCount * 2;
         const minScroll = 0;
 
-        // sağdan taştıysa
         if(row.scrollLeft >= maxScroll){
             row.style.scrollBehavior = "auto";
             row.scrollLeft = cardWidth * originalCount;
             row.style.scrollBehavior = "smooth";
         }
 
-        // soldan taştıysa
         if(row.scrollLeft <= minScroll){
             row.style.scrollBehavior = "auto";
             row.scrollLeft = cardWidth * originalCount;
             row.style.scrollBehavior = "smooth";
+        }
+    });
+
+    // Kumanda ile sağ-sol tuşu
+    document.addEventListener("keydown", e=>{
+        if(document.activeElement.closest(".row") === row){
+            if(e.key === "ArrowRight" || e.keyCode === 39){
+                row.scrollLeft += cardWidth;
+                // focus kart scroll ile birlikte görünecek
+                cards[focusIndex].focus();
+            }
+            if(e.key === "ArrowLeft" || e.keyCode === 37){
+                row.scrollLeft -= cardWidth;
+                cards[focusIndex].focus();
+            }
         }
     });
 }
