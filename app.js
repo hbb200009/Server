@@ -318,16 +318,14 @@ function initRowLoop(row) {
             // Kartı Row içinde yatayda ortala
             const rowWidth = row.offsetWidth;
             const cardOffset = card.offsetLeft;
-            const targetScroll = Math.max(0, cardOffset);
+            const targetScroll = Math.max(1, cardOffset);
 
             row.scrollTo({
                 left: targetScroll,
                 behavior: "smooth"
             });
 
-            // 3. Sonsuz Döngü Kontrolü (Focus anında)
-            handleInfiniteLoop(index);
-        });
+            
     });
 
     function handleInfiniteLoop(currentIndex) {
