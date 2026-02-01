@@ -309,9 +309,30 @@ function initRowLoop(row){
     // ortadan başlat
     row.scrollLeft = cardWidth * originalCount;
 
-    // focus index hep ilk kartta
-    let focusIndex = 0;
+    // focus index hep ortadaki ilk kart
+    let focusIndex = originalCount; 
     cards[focusIndex].focus();
+
+    function scrollToIndex(idx){
+        row.scrollTo({
+            left: idx * cardWidth,
+            behavior: "smooth"
+        });
+        cards[idx].focus();
+    }
+
+    document.addEventListener("keydown", e=>{
+        if(document.activeElement.closest(".row") === row){
+            if(e.key === "ArrowRight" || e.keyCode === 39){
+                focusIndex++;
+                scrollToIndex(focusIndex);
+            }
+            if(e.key === "ArrowLeft" || e.keyCode === 37){
+                focusIndex--;
+                scrollToIndex(focusIndex);
+            }
+        }
+    });
 
     row.addEventListener("scroll", ()=>{
         const maxScroll = cardWidth * originalCount * 2;
@@ -321,27 +342,14 @@ function initRowLoop(row){
             row.style.scrollBehavior = "auto";
             row.scrollLeft = cardWidth * originalCount;
             row.style.scrollBehavior = "smooth";
+            focusIndex = originalCount;
         }
 
         if(row.scrollLeft <= minScroll){
             row.style.scrollBehavior = "auto";
             row.scrollLeft = cardWidth * originalCount;
             row.style.scrollBehavior = "smooth";
-        }
-    });
-
-    // Kumanda ile sağ-sol tuşu
-    document.addEventListener("keydown", e=>{
-        if(document.activeElement.closest(".row") === row){
-            if(e.key === "ArrowRight" || e.keyCode === 39){
-                row.scrollLeft += cardWidth;
-                // focus kart scroll ile birlikte görünecek
-                cards[focusIndex].focus();
-            }
-            if(e.key === "ArrowLeft" || e.keyCode === 37){
-                row.scrollLeft -= cardWidth;
-                cards[focusIndex].focus();
-            }
+            focusIndex = originalCount;
         }
     });
 }
