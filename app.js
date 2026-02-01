@@ -285,7 +285,7 @@ if(container3){
 }
 
         document.querySelectorAll(".row").forEach(row=>{
-    makeRowLoop(row);
+    makeRowLoopWithFocus(row);
 });
         
         })
@@ -295,13 +295,11 @@ if(container3){
     });
 }
 
-function makeRowLoop(row){
+function makeRowLoopWithFocus(row){
     const cards = Array.from(row.children);
     if(cards.length === 0) return;
 
     // 3 kere kopyala
-    cards.forEach(c => row.appendChild(c.cloneNode(true)));
-    cards.forEach(c => row.appendChild(c.cloneNode(true)));
     cards.forEach(c => row.appendChild(c.cloneNode(true)));
     cards.forEach(c => row.appendChild(c.cloneNode(true)));
 
@@ -311,18 +309,47 @@ function makeRowLoop(row){
     // ortadan başlat
     row.scrollLeft = cardWidth * originalCount;
 
+    // Focus kart hep ortada kalsın
+    let focusedIndex = originalCount; // ortadaki ilk kart
+
+    function updateFocus(){
+        cards.forEach(c => c.classList.remove('focus'));
+        const focusCard = row.children[focusedIndex];
+        if(focusCard){
+            focusCard.classList.add('focus');
+            focusCard.focus();
+        }
+    }
+
+    updateFocus();
+
+    document.addEventListener('keydown', e=>{
+        if(document.activeElement?.parentElement !== row) return;
+
+        if(e.key === 'ArrowRight'){
+            focusedIndex++;
+            if(focusedIndex >= originalCount * 3) focusedIndex = originalCount;
+            updateFocus();
+        }
+
+        if(e.key === 'ArrowLeft'){
+            focusedIndex--;
+            if(focusedIndex < 0) focusedIndex = originalCount * 2 -1;
+            updateFocus();
+        }
+    });
+
+    // scroll loop
     row.addEventListener("scroll", ()=>{
         const maxScroll = cardWidth * originalCount * 2;
         const minScroll = 0;
 
-        // sağdan taştıysa
         if(row.scrollLeft >= maxScroll){
             row.style.scrollBehavior = "auto";
             row.scrollLeft = cardWidth * originalCount;
             row.style.scrollBehavior = "smooth";
         }
 
-        // soldan taştıysa
         if(row.scrollLeft <= minScroll){
             row.style.scrollBehavior = "auto";
             row.scrollLeft = cardWidth * originalCount;
