@@ -318,7 +318,7 @@ function initRowLoop(row) {
 
     // 🔹 row padding'ini otomatik al
     const style = getComputedStyle(row);
-    const rowPadding = parseInt(style.paddingLeft, 10);
+    const rowPadding = parseInt(style.paddingLeft, 20);
 
     const cardOffset = card.offsetLeft;
 
