@@ -16,7 +16,7 @@ const pages = {
         
         <h2 id="cat-title"></h2>
         <div id="categories"></div>
-        <h6 style="text-align: center;">Demo Version 0.0.5 &copy;HBBA2000</h6>
+        <h6 style="text-align: center;">Demo Version 0.0.4 &copy;HBBA2000</h6>
         <br><br><br>
     `,
 
@@ -59,7 +59,6 @@ function cards(){
 }
 
 function go(page){
-    const fade = document.getElementById("fade");
     fade.style.opacity = "1";
 
     setTimeout(()=>{
@@ -73,7 +72,7 @@ function go(page){
             initApp();
         }
 
-    },100);
+    },300);
 }
 
 function focusFirst(){
@@ -92,22 +91,14 @@ document.addEventListener('keydown', e=>{
 
 /*JAVA AYAR KODLARI*/
 
-let appStarted = false;
+    let appStarted = false;
 
 /* Sayfa açılınca app gizli, splash görünür */
-function init(){
-  console.log("INIT ÇALIŞTI");
-  // her ne başlatıyosan burda
-    startApp();
-    initApp();
-    go('home');
-}
+window.onload = () => {
+    const appDiv = document.getElementById("app");
+    appDiv.style.display = "none";
+};
 
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", init);
-} else {
-  init();
-}
 /* ============================= */
 /* Başlatma Fonksiyonu (Splash ile) */
 /* ============================= */
@@ -116,19 +107,23 @@ function startApp(){
     appStarted = true;
 
     const appDiv = document.getElementById("app");
-    
+    const splash = document.getElementById("splash");
+
+    splash.style.transition = "opacity 1s ease";
+    splash.style.opacity = "0";
 
     setTimeout(()=>{
+        splash.style.display = "none";
         appDiv.style.display = "block";
 
         // SPA başlat
         go('home');
 
-    }, 100);
+    }, 1000);
 }
 
 /* Butona click */
-
+document.getElementById("startBtn").addEventListener("click", startApp);
 
 
 /* TV kumanda ile Enter / OK */
@@ -283,7 +278,6 @@ if(container3){
         container3.appendChild(section);
     });
 }
-
         
         
         })
@@ -292,4 +286,3 @@ if(container3){
         console.log("JSON ERROR:", err);
     });
 }
-
