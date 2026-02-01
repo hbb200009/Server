@@ -296,37 +296,48 @@ if(container3){
 }
 
 function initRowLoop(row) {
-    const cards = Array.from(row.children);
+    let cards = Array.from(row.children);
     if (cards.length === 0) return;
 
-    // 1. Kopyalama Mantığı (Daha güvenli döngü için)
-    cards.forEach(c => row.appendChild(c.cloneNode(true)));
-    cards.forEach(c => row.appendChild(c.cloneNode(true)));
+    // Kumanda desteği için kartlara özellik ekle
+    function setupCard(card) {
+        card.tabIndex = 0;
+        card.style.flexShrink = "0"; // Boyutun bozulmaması için
+    }
 
-    const allCards = Array.from(row.children);
-    const originalCount = cards.length;
-    const cardWidth = cards[0].offsetWidth + 20; // gap dahil
+    cards.forEach(setupCard);
 
-    // Başlangıçta ortadaki gruba odaklan
-    row.scrollLeft = cardWidth * originalCount;
+    row.addEventListener("focusin", (e) => {
+        const focusedCard = e.target;
+        const allCards = Array.from(row.children);
+        const index = allCards.indexOf(focusedCard);
 
-    // 2. Kartlara Focus Özelliği Ekle (Kumanda için şart)
-    allCards.forEach((card, index) => {
-        card.tabIndex = 0; // Kumanda ile seçilebilir yapar
-
-        card.addEventListener("focus", () => {
-            // Kartı Row içinde yatayda ortala
-            const rowWidth = row.offsetWidth;
-            const cardOffset = card.offsetLeft;
-            const targetScroll = cardOffset - (rowWidth / 2) + (card.offsetWidth / 2);
-
-            row.scrollTo({
-                left: targetScroll,
-                behavior: "smooth"
-            });
-
-            // 3. Sonsuz Döngü Kontrolü (Focus anında)
-            
+        // 1. Her zaman en başa (sola) odakla
+        row.scrollTo({
+            left: focusedCard.offsetLeft - row.offsetLeft,
+            behavior: "smooth"
         });
+
+        // 2. Sonsuz Döngü Mantığı:
+        // Eğer sona yaklaştıysa (son 2 kart), baş taraftaki kartları sona taşı
+        if (index > allCards.length - 3) {
+            for (let i = 0; i < 3; i++) {
+                const first = row.firstElementChild;
+                row.appendChild(first); // Baştakini al sona tak
+            }
+        }
+
+        // Eğer en başa geldiyse ve sola basıyorsa, sondakileri başa taşı
+        if (index < 2) {
+            for (let i = 0; i < 3; i++) {
+                const last = row.lastElementChild;
+                row.prepend(last); // Sondakini al başa tak
+            }
+            // Kaydırma bozulmasın diye pozisyonu anlık güncelle
+            row.scrollLeft += (cards[0].offsetWidth * 3);
+        }
     });
+
+    // İlk başta ilk elemana odaklanabilmesi için hazırla
+    row.scrollLeft = 0;
 }
