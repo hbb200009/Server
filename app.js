@@ -296,56 +296,52 @@ if(container3){
 }
 
 function initRowLoop(row) {
-    const originalCards = Array.from(row.children);
-    if (originalCards.length === 0) return;
+    const cards = Array.from(row.children);
+    if (cards.length === 0) return;
 
-    // 1. Sonsuzluk hissi için çoklu kopyalama (Örn: 10 grup)
-    // Bu, kumanda ile hızlı geçişlerde bile sonun gelmesini engeller.
-    for (let i = 0; i < 10; i++) {
-        originalCards.forEach(c => {
-            const clone = c.cloneNode(true);
-            clone.tabIndex = 0; // Kumanda odağı için
-            row.appendChild(clone);
-        });
-    }
-    // Orijinal ilk kartları temizleyelim, hepsi klon üzerinden dönsün
-    originalCards.forEach(c => c.remove());
+    // 1. Kopyalama Mantığı (Daha güvenli döngü için)
+    cards.forEach(c => row.appendChild(c.cloneNode(true)));
+    cards.forEach(c => row.appendChild(c.cloneNode(true)));
 
     const allCards = Array.from(row.children);
-    const cardWidth = allCards[0].offsetWidth + 20; // Kart + Gap
-    const totalContentWidth = allCards.length * cardWidth;
+    const originalCount = cards.length;
+    const cardWidth = cards[0].offsetWidth + 20; // gap dahil
 
-    // Başlangıç noktası: Listenin tam ortası
-    let startPoint = (allCards.length / 2) * cardWidth;
-    row.scrollLeft = startPoint;
+    // Başlangıçta ortadaki gruba odaklan
+    row.scrollLeft = cardWidth * originalCount;
 
-    row.addEventListener("focusin", (e) => {
-        const focusedCard = e.target;
-        const rect = focusedCard.getBoundingClientRect();
-        const rowRect = row.getBoundingClientRect();
+    // 2. Kartlara Focus Özelliği Ekle (Kumanda için şart)
+    allCards.forEach((card, index) => {
+        card.tabIndex = 0; // Kumanda ile seçilebilir yapar
 
-        // 2. Odaklanan kartın her zaman 2. sırada olması için:
-        // (Kartın sol pozisyonu) - (1 kartlık boşluk bırak)
-        const targetScroll = (focusedCard.offsetLeft - row.offsetLeft) - cardWidth;
+        card.addEventListener("focus", () => {
+            // Kartı Row içinde yatayda ortala
+            const rowWidth = row.offsetWidth;
+            const cardOffset = card.offsetLeft;
+            const targetScroll = cardOffset - (rowWidth / 1) + (card.offsetWidth / 1);
 
-        row.scrollTo({
-            left: targetScroll,
-            behavior: "smooth"
+            row.scrollTo({
+                left: targetScroll,
+                behavior: "smooth"
+            });
+
+            // 3. Sonsuz Döngü Kontrolü (Focus anında)
+            handleInfiniteLoop(index);
         });
-
-        // 3. Çaktırmadan Pozisyon Sıfırlama (Teleport)
-        // Eğer kullanıcı çok sağa veya çok sola giderse, 
-        // animasyonsuz bir şekilde merkeze geri atıyoruz.
-        setTimeout(() => {
-            const currentScroll = row.scrollLeft;
-            const threshold = totalContentWidth / 4;
-
-            if (currentScroll > totalContentWidth * 0.75 || currentScroll < totalContentWidth * 0.25) {
-                row.style.scrollBehavior = "auto"; // Animasyonu kapat
-                const offset = currentScroll % (originalCards.length * cardWidth);
-                row.scrollLeft = startPoint + offset;
-                row.style.scrollBehavior = "smooth"; // Tekrar aç
-            }
-        }, 300); // Kaydırma bittikten sonra kontrol et
     });
+
+    function handleInfiniteLoop(currentIndex) {
+        // Eğer kullanıcı ilk kopyalanan gruba geçtiyse, ortadaki gruba atlat
+        if (currentIndex < originalCount) {
+            setTimeout(() => {
+                allCards[currentIndex + originalCount].focus({ preventScroll: true });
+            }, 300);
+        } 
+        // Eğer kullanıcı son kopyalanan gruba geçtiyse, ortadaki gruba geri çek
+        else if (currentIndex >= originalCount * 2) {
+            setTimeout(() => {
+                allCards[currentIndex - originalCount].focus({ preventScroll: true });
+            }, 300);
+        }
+    }
 }
