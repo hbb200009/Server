@@ -296,27 +296,45 @@ if(container3){
 }
 
 function initRowLoop(row){
-    // row: class="row" divi
-    const cards = row.querySelectorAll('.card');
+    const cards = Array.from(row.querySelectorAll('.card'));
     if(cards.length === 0) return;
 
-    let focusIndex = 0; // focus hep 0. kartta
+    let focusIndex = 0; // hep ilk kart focus
+    
 
-    // İlk focus
-    cards[focusIndex].focus();
+    // Kartları başa ve sona kopyala (sonsuz efekt)
+    const firstClone = cards.map(c => c.cloneNode(true));
+    const lastClone = cards.map(c => c.cloneNode(true));
+    
+
+    lastClone.forEach(c => row.insertBefore(c, row.firstChild));
+    firstClone.forEach(c => row.appendChild(c));
+
+    const cardWidth = cards[0].offsetWidth + 20; // gap 20px
+
+    // Başlangıç scroll, kopyalardan ötürü orta noktada
+    row.scrollLeft = row.scrollWidth / 3;
 
     document.addEventListener('keydown', e=>{
         if(document.activeElement.closest('.row') === row){
             if(e.key === 'ArrowRight' || e.keyCode === 39){
-                // sağa kaydır, focus hep ilk kart
-                const cardWidth = cards[0].offsetWidth + 20; // gap 20px
                 row.scrollLeft += cardWidth;
+
+                // loop kontrolü
+                if(row.scrollLeft >= (row.scrollWidth * 2/3)){
+                    row.scrollLeft -= row.scrollWidth / 3;
+                }
+
                 cards[focusIndex].focus();
             }
             if(e.key === 'ArrowLeft' || e.keyCode === 37){
-                // sola kaydır, focus hep ilk kart
-                const cardWidth = cards[0].offsetWidth + 20;
                 row.scrollLeft -= cardWidth;
+
+                // loop kontrolü
+                if(row.scrollLeft <= 0){
+                    row.scrollLeft += row.scrollWidth / 3;
+                }
+
                 cards[focusIndex].focus();
             }
         }
