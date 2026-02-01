@@ -284,9 +284,7 @@ if(container3){
     });
 }
 
-        document.querySelectorAll(".row").forEach(row=>{
-    initRowLoop(row);
-});
+        
         
         })
     
@@ -295,59 +293,3 @@ if(container3){
     });
 }
 
-function initRowLoop(row){
-    const cards = Array.from(row.children);
-    if(cards.length === 0) return;
-
-    // 3 kere kopyala
-    cards.forEach(c => row.appendChild(c.cloneNode(true)));
-    cards.forEach(c => row.appendChild(c.cloneNode(true)));
-
-    const cardWidth = cards[0].offsetWidth + 20; // gap dahil
-    const originalCount = cards.length;
-
-    // ortadan başlat
-    
-
-    // focus index hep ortadaki ilk kart
-    
-    function scrollToIndex(idx){
-        row.scrollTo({
-            left: idx * cardWidth,
-            behavior: "smooth"
-        });
-        cards[idx].focus();
-    }
-
-    document.addEventListener("keydown", e=>{
-        if(document.activeElement.closest(".row") === row){
-            if(e.key === "ArrowRight" || e.keyCode === 39){
-                focusIndex++;
-                scrollToIndex(focusIndex);
-            }
-            if(e.key === "ArrowLeft" || e.keyCode === 37){
-                focusIndex--;
-                scrollToIndex(focusIndex);
-            }
-        }
-    });
-
-    row.addEventListener("scroll", ()=>{
-        const maxScroll = cardWidth * originalCount * 2;
-        const minScroll = 0;
-
-        if(row.scrollLeft >= maxScroll){
-            row.style.scrollBehavior = "auto";
-            row.scrollLeft = cardWidth * originalCount;
-            row.style.scrollBehavior = "smooth";
-            focusIndex = originalCount;
-        }
-
-        if(row.scrollLeft <= minScroll){
-            row.style.scrollBehavior = "auto";
-            row.scrollLeft = cardWidth * originalCount;
-            row.style.scrollBehavior = "smooth";
-            focusIndex = originalCount;
-        }
-    });
-}
