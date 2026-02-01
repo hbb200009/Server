@@ -38,6 +38,7 @@ body{
 .row {
     display: flex;
     gap: 20px;
+    scroll-behavior: smooth;
     overflow-x: auto;    
     padding: 1vw 1vh;
     margin-top: -2vh;
@@ -54,8 +55,8 @@ body{
 }
 /* Kartlar */
 .card {
-    width: 18vw;
-    height: 35vh;
+    width: 16vw;
+    height: 40vh;
     background: #1a1a1f;
     border-radius: 12px;
     overflow: hidden;
@@ -71,6 +72,7 @@ body{
     text-decoration: none;
     transform-origin: bottom center; /* büyüme aşağıya taşmasın */
     z-index: 5;
+    opacity: 0.7;
 }
 .card img {
     width:100%;
@@ -82,7 +84,10 @@ body{
     border-color: white;
     box-shadow: 0 0 20px white;
     background: #111;
-    z-index: 5; /* diğer kartların üstüne çıkması için */
+    z-index: 5;
+    opacity: 1;
+    width: 35vw;
+    height: 40vh;
 }
 h2{
     margin-left: 2%;
@@ -196,7 +201,6 @@ h2{
     gap:20px;
     z-index:10;
 }
-
 .menu-btn{
     padding:1vh 2vw;
     font-size: 2vh;
@@ -301,6 +305,7 @@ h2{
     <button class="menu-btn" onclick="go('series')">Diziler</button>
     <button class="menu-btn" onclick="go('fav')">Favoriler</button>
 </div>
+
 
 <div id="view"></div>
 
