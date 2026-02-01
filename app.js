@@ -302,13 +302,27 @@ function initRowLoop(row) {
     // 1. Kopyalama Mantığı (Daha güvenli döngü için)
     cards.forEach(c => row.appendChild(c.cloneNode(true)));
     cards.forEach(c => row.appendChild(c.cloneNode(true)));
-
+    cards.forEach(c => row.appendChild(c.cloneNode(true)));
+    cards.forEach(c => row.appendChild(c.cloneNode(true)));
+    cards.forEach(c => row.appendChild(c.cloneNode(true)));
+    cards.forEach(c => row.appendChild(c.cloneNode(true)));
+    cards.forEach(c => row.appendChild(c.cloneNode(true)));
+    cards.forEach(c => row.appendChild(c.cloneNode(true)));
+    cards.forEach(c => row.appendChild(c.cloneNode(true)));
+    cards.forEach(c => row.appendChild(c.cloneNode(true)));
+    cards.forEach(c => row.appendChild(c.cloneNode(true)));
+    cards.forEach(c => row.appendChild(c.cloneNode(true)));
+    cards.forEach(c => row.appendChild(c.cloneNode(true)));
+    cards.forEach(c => row.appendChild(c.cloneNode(true)));
+    cards.forEach(c => row.appendChild(c.cloneNode(true)));
+    cards.forEach(c => row.appendChild(c.cloneNode(true)));
+    
     const allCards = Array.from(row.children);
     const originalCount = cards.length;
     const cardWidth = cards[0].offsetWidth + 20; // gap dahil
 
     // Başlangıçta ortadaki gruba odaklan
-    
+    row.scrollLeft = cardWidth * originalCount;
 
     // 2. Kartlara Focus Özelliği Ekle (Kumanda için şart)
     allCards.forEach((card, index) => {
