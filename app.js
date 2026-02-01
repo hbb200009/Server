@@ -16,7 +16,7 @@ const pages = {
         
         <h2 id="cat-title"></h2>
         <div id="categories"></div>
-        <h6 style="text-align: center;">Demo Version 0.0.4 &copy;HBBA2000</h6>
+        <h6 style="text-align: center;">Demo Version 0.0.5 &copy;HBBA2000</h6>
         <br><br><br>
     `,
 
@@ -283,11 +283,50 @@ if(container3){
         container3.appendChild(section);
     });
 }
-        
+
+        document.querySelectorAll(".row").forEach(row=>{
+    makeRowLoop(row);
+});
         
         })
     
     .catch(err=>{
         console.log("JSON ERROR:", err);
+    });
+}
+
+function makeRowLoop(row){
+    const cards = Array.from(row.children);
+    if(cards.length === 0) return;
+
+    // 3 kere kopyala
+    cards.forEach(c => row.appendChild(c.cloneNode(true)));
+    cards.forEach(c => row.appendChild(c.cloneNode(true)));
+    cards.forEach(c => row.appendChild(c.cloneNode(true)));
+    cards.forEach(c => row.appendChild(c.cloneNode(true)));
+
+    const cardWidth = cards[0].offsetWidth + 20; // gap dahil
+    const originalCount = cards.length;
+
+    // ortadan başlat
+    row.scrollLeft = cardWidth * originalCount;
+
+    row.addEventListener("scroll", ()=>{
+        const maxScroll = cardWidth * originalCount * 2;
+        const minScroll = 0;
+
+        // sağdan taştıysa
+        if(row.scrollLeft >= maxScroll){
+            row.style.scrollBehavior = "auto";
+            row.scrollLeft = cardWidth * originalCount;
+            row.style.scrollBehavior = "smooth";
+        }
+
+        // soldan taştıysa
+        if(row.scrollLeft <= minScroll){
+            row.style.scrollBehavior = "auto";
+            row.scrollLeft = cardWidth * originalCount;
+            row.style.scrollBehavior = "smooth";
+        }
     });
 }
