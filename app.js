@@ -285,7 +285,7 @@ if(container3){
 }
 
         document.querySelectorAll(".row").forEach(row=>{
-    makeRowLoopWithFocus(row);
+    initRowLoop(row);
 });
         
         })
@@ -295,65 +295,30 @@ if(container3){
     });
 }
 
-function makeRowLoopWithFocus(row){
-    const cards = Array.from(row.children);
+function initRowLoop(row){
+    // row: class="row" divi
+    const cards = row.querySelectorAll('.card');
     if(cards.length === 0) return;
 
-    // 3 kere kopyala
-    cards.forEach(c => row.appendChild(c.cloneNode(true)));
-    cards.forEach(c => row.appendChild(c.cloneNode(true)));
+    let focusIndex = 0; // focus hep 0. kartta
 
-    const cardWidth = cards[0].offsetWidth + 20; // gap dahil
-    const originalCount = cards.length;
-
-    // ortadan başlat
-    row.scrollLeft = cardWidth * originalCount;
-
-    // Focus kart hep ortada kalsın
-    let focusedIndex = originalCount; // ortadaki ilk kart
-
-    function updateFocus(){
-        cards.forEach(c => c.classList.remove('focus'));
-        const focusCard = row.children[focusedIndex];
-        if(focusCard){
-            focusCard.classList.add('focus');
-            focusCard.focus();
-        }
-    }
-
-    updateFocus();
+    // İlk focus
+    cards[focusIndex].focus();
 
     document.addEventListener('keydown', e=>{
-        if(document.activeElement?.parentElement !== row) return;
-
-        if(e.key === 'ArrowRight'){
-            focusedIndex++;
-            if(focusedIndex >= originalCount * 3) focusedIndex = originalCount;
-            updateFocus();
-        }
-
-        if(e.key === 'ArrowLeft'){
-            focusedIndex--;
-            if(focusedIndex < 0) focusedIndex = originalCount * 2 -1;
-            updateFocus();
-        }
-    });
-
-    // scroll loop
-    row.addEventListener("scroll", ()=>{
-        const maxScroll = cardWidth * originalCount * 2;
-        const minScroll = 0;
-
-        if(row.scrollLeft >= maxScroll){
-            row.style.scrollBehavior = "auto";
-            row.scrollLeft = cardWidth * originalCount;
-            row.style.scrollBehavior = "smooth";
-        }
-
-        if(row.scrollLeft <= minScroll){
-            row.style.scrollBehavior = "auto";
-            row.scrollLeft = cardWidth * originalCount;
-            row.style.scrollBehavior = "smooth";
+        if(document.activeElement.closest('.row') === row){
+            if(e.key === 'ArrowRight' || e.keyCode === 39){
+                // sağa kaydır, focus hep ilk kart
+                const cardWidth = cards[0].offsetWidth + 20; // gap 20px
+                row.scrollLeft += cardWidth;
+                cards[focusIndex].focus();
+            }
+            if(e.key === 'ArrowLeft' || e.keyCode === 37){
+                // sola kaydır, focus hep ilk kart
+                const cardWidth = cards[0].offsetWidth + 20;
+                row.scrollLeft -= cardWidth;
+                cards[focusIndex].focus();
+            }
         }
     });
 }
