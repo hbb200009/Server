@@ -319,16 +319,7 @@ function initRowLoop(row) {
             const rowWidth = row.offsetWidth;
             const cardOffset = card.offsetLeft;
             const targetScroll = Math.max(1, cardOffset);
-            const style = getComputedStyle(row);
-            const rowPadding = parseInt(style.paddingLeft, 10);
-            const cardOffset = card.offsetLeft;
             
-            let targetScroll;
-            if (cardOffset <= rowPadding) {
-                targetScroll = 0;
-            } else {
-                targetScroll = cardOffset - rowPadding;
-            }
 
             row.scrollTo({
                 left: targetScroll,
