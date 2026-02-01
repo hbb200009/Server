@@ -51,6 +51,26 @@
           "id": "paris-special",
           "image": "https://miraculous.to/global_data/img/S0E04_2025-08-18_17-37-57.webp",
           "link": "movie.html?id=paris-special"
+        },
+        {
+          "id": "samuraijack",
+          "image": "https://cdn.kayiprihtim.com/wp-content/uploads/2020/03/Samurai-Jack-izle.jpeg",
+          "link": "movie.html?id=samuraijack"
+        },
+        {
+          "id": "wowwinx",
+          "image": "https://occ-0-8407-2219.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABR-djRdEJKzYOxtWd8_USF06RLWMKHxgdJXbcGd-gIEtnTpzicBh8akFPdftrfW1TFLh4NM2kVjYP8yg3pjjFBwFKDyaVKSuRYn9.jpg?r=98e",
+          "link": "movie.html?id=wowwinx"
+        }, 
+        {
+          "id": "jakelong",
+          "image": "https://img1.hotstarext.com/image/upload/f_auto/sources/r1/cms/prod/8743/1378743-i-827005de1524",
+          "link": "movie.html?id=jakelong"
+        },
+        {
+          "id": "kimpossible",
+          "image": "https://images.squarespace-cdn.com/content/v1/54fc8146e4b02a22841f4df7/1671990957163-T5SXFXK6V9OMEJWYBE2B/o.jpg",
+          "link": "movie.html?id=kimpossible"
         }
       ]
     }
