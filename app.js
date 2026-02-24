@@ -345,10 +345,20 @@ function initRowLoop(row) {
         targetScroll = cardOffset - rowPadding;
     }
 
+    card.addEventListener("focus", () => {
+
+    const style = getComputedStyle(row);
+    const rowPadding = parseInt(style.paddingLeft, 10);
+
+    const targetScroll = card.offsetLeft - rowPadding;
+
     row.scrollTo({
         left: targetScroll,
         behavior: "smooth"
     });
+
+});
+
 
     // 🔹 Sonsuz döngü kontrolü
     
