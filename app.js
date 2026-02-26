@@ -363,7 +363,7 @@ function initRowLoop(row) {
                 behavior: "smooth"
             });
 
-           console.log(card.dataset)
+           
             const cardTitle = card.dataset.infoTitle;
             const cardDesc = card.dataset.infoDesc;
 
