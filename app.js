@@ -371,6 +371,19 @@ function initRowLoop(row) {
         card.tabIndex = 0; // Kumanda ile seçilebilir yapar
 
         card.addEventListener("focus", () => {
+            // 🔹 ROW'U DİKEY ORTALA
+            const rowRect = row.getBoundingClientRect();
+            const rowTop = rowRect.top + window.scrollY;
+            const rowHeight = rowRect.height;
+            const windowHeight = window.innerHeight;
+
+            // hedef scroll
+            const targetY = rowTop - (windowHeight / 2) + (rowHeight / 2);
+
+            window.scrollTo({
+                top: targetY,
+                behavior: "smooth"
+            });
 
             // 🔹 row padding'ini otomatik al
             const style = getComputedStyle(row);
@@ -381,9 +394,10 @@ function initRowLoop(row) {
 
             // 🔹 İlk kart soldan tam görünsün
             if (cardOffset <= rowPadding) {
-                targetScroll = 0;
+                targetScroll = 35;
             } else {
                 targetScroll = cardOffset - rowPadding;
+                targetScroll = targetScroll - 35;
             }
 
             row.scrollTo({
