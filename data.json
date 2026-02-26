@@ -40,96 +40,309 @@
 
   "categories": [
     {
-      "title": "Öne Çıkanlar",
+      "title": "Yeni Eklendi!",
       "items": [
         {
-          "id": "miraculous-movie",
-          "image": "https://images5.alphacoders.com/132/thumb-1920-1325003.jpeg",
-          "link": "movie.html?id=miraculous-movie",
-          "infoTitle": "TESTING1",
-          "infoDesc": "testing"
+          "id": "miraculous-series",
+          "image": "https://i.ytimg.com/vi/MlBGH7DJ4TU/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAWONZXlnhg4NfvpQsqOJh31EqW9w",
+          "link": "movie.html?id=miraculous-series",
+          "infoTitle": "2015 | 6 Sezon | Komedi,Aksiyon,Macera,Romantik",
+          "infoDesc": "Marinette artık Marinette değil. Tutması gereken büyük bir sırrı var. Hem gardiyan olmak, hem sırrını taşımak, hem de yeni düşmanları Chrysalis'i yenmek onun için artık daha da zor. Peki ya sevgilisine; babasının tüm dünyayı ele geçiren bir süper kötü olduğunu söyleyebilecek mi?" 
         },
         {
-          "id": "paris-special",
-          "image": "https://miraculous.to/global_data/img/S0E04_2025-08-18_17-37-57.webp",
-          "link": "movie.html?id=paris-special",
-          "infoTitle": "TESTING2",
-          "infoDesc": "testing"
+          "id": "cars",
+          "image": "https://filmmakinesi.to/uploads/postlar/kapak/cars-2006.jpg-thumb-normal.webp",
+          "link": "movie.html?id=cars",
+          "infoTitle": "2006 | 117DK | Komedi,Macera",
+          "infoDesc": "Kendini en hızlı yarış arabası olarak gören Lightning Mcqueen, egosuna yenik düşer ve büyük kupa yarışında berabere kalır. Yarışın tekrar yapılacağı kararlaşınca, Mcqueen dinlenmek için tırına geçer. Ancak yolda olan bir kazadan sonra kendini hiç bilmediği eski bir kasabanın yollarını tamir ederken bulur."
         },
-        {
-          "id": "samuraijack",
-          "image": "https://cdn.kayiprihtim.com/wp-content/uploads/2020/03/Samurai-Jack-izle.jpeg",
-          "link": "movie.html?id=samuraijack",
-          "infoTitle": "TESTING3",
-          "infoDesc": "testing"
-        },
-        {
-          "id": "wowwinx",
-          "image": "https://occ-0-8407-2219.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABR-djRdEJKzYOxtWd8_USF06RLWMKHxgdJXbcGd-gIEtnTpzicBh8akFPdftrfW1TFLh4NM2kVjYP8yg3pjjFBwFKDyaVKSuRYn9.jpg?r=98e",
-          "link": "movie.html?id=wowwinx",
-          "infoTitle": "TESTING4",
-          "infoDesc": "testing"
-        }, 
         {
           "id": "jakelong",
           "image": "https://img1.hotstarext.com/image/upload/f_auto/sources/r1/cms/prod/8743/1378743-i-827005de1524",
           "link": "movie.html?id=jakelong",
-          "infoTitle": "TESTING5",
-          "infoDesc": "testing"
+          "infoTitle": "2005 | 2 Sezon | Aksiyon",
+          "infoDesc": "Genç bir çocuk olan Jake Long'un ejderlik güçlerini keşfetmesi, bu yüzden eğitim alması ve düşmanına âşık olmasıyla beraber bir sürü macera yaşamasını konu alan bir çizgi dizidir."
         },
         {
           "id": "kimpossible",
-          "image": "https://images.squarespace-cdn.com/content/v1/54fc8146e4b02a22841f4df7/1671990957163-T5SXFXK6V9OMEJWYBE2B/o.jpg",
+          "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/3f673eab-10f4-4e38-9ec7-7d6070a26c1e/compose?format=webp&width=2560",
           "link": "movie.html?id=kimpossible",
-          "infoTitle": "TESTING6",
-          "infoDesc": "testing"
+          "infoTitle": "2002 | 4 Sezon | Aksiyon",
+          "infoDesc": "Kim Possible, suçla savaşan genç bir kızın hikayesini anlatıyor. Okulun amigo takımında olan Kin, oldukça başarılı olan bir genç kızdır. Genç kız gündüzleri sıradan öğrenciler gibi okula gidip arkadaşları ile vakit geçirirken geceleri ise dünyayı kötülerden kurtarır."
+        },
+        {
+          "id": "gravityfalls",
+          "image": "https://m.media-amazon.com/images/M/MV5BZWNiNGJiNDAtYzFiOS00YmMzLTgwMmUtNjAwMzZjMTFjZmUyXkEyXkFqcGc@._V1_.jpg",
+          "link": "movie.html?id=gravityfalls",
+          "infoTitle": "2012 | 2 Sezon | Gizem",
+          "infoDesc": "Yaz tatilini amcaları Stan’in gizemli kulübesinde geçiren ikizler Dipper ve Mabel’ın başına gelen paranormal olayları anlatır. Dipper’ın bulduğu gizemli günlük sayesinde kasabadaki tuhaf yaratıkların ve sırların peşine düşerler. Eğlenceli gibi başlayan macera, kasabanın kaderini etkileyen karanlık bir tehdide dönüşür."
+        },
+        {
+          "id": "frozen",
+          "image": "https://m.media-amazon.com/images/S/pv-target-images/e65f0b7d090826c6ba96430ebd2a08d225379c3319759731fb0ce85d2d20066f._SX1080_FMjpg_.jpg",
+          "link": "movie.html?id=frozen",
+          "infoTitle": "2019 | 103DK | Müzikal",
+          "infoDesc": "Elsa ve Anna sakin bir hayat yaşamak istemektedirler. Ancak bir anda uyanan ormanın kayıp ruhları başlarını belaya sokar! Birlikte krallıklarını kurtarmak için yeni bir maceraya atılırlar."
+        },
+        {
+          "id": "fvf",
+          "image": "https://variety.com/wp-content/uploads/2019/08/phineas-ferb-cast.jpg",
+          "link": "movie.html?id=fvf",
+          "infoTitle": "2007 | 5 Sezon | Müzikal",
+          "infoDesc": "Yaz tatilinde her gün imkânsız gibi görünen projeler yapan iki üvey kardeşi konu alır. Ablaları Candace onları annelerine ispiyonlamaya çalışırken her seferinde planları son anda yok olur. Arka planda ise ajan Perry ile kötü bilim insanı Doofenshmirtz arasında gizli bir mücadele döner."
+        },
+        {
+          "id": "ben10",
+          "image": "https://tr.web.img2.acsta.net/img/c8/98/c89858424f68f07d4808ee40c098aabc.jpg",
+          "link": "movie.html?id=ben10",
+          "infoTitle": "2005 | 5 Sezon | Aksiyon, bilim kurgu, süper kahraman",
+          "infoDesc": "Yaz tatilinde uzaylı bir saat olan Omnitrix’i bulan Ben’in farklı uzaylı formlarına dönüşerek dünyayı korumasını anlatır. Kuzeni Gwen ve Büyükbaba Max’le maceradan maceraya atılırken hem eğlenir hem de büyük tehditlerle savaşır."
+        },
+        {
+          "id": "scoob",
+          "image": "https://m.media-amazon.com/images/S/pv-target-images/71c326ffe09b4edc1876187fe9412547451adec377268268c8a96e713a234a35._SX1080_FMjpg_.jpg",
+          "link": "movie.html?id=scoob",
+          "infoTitle": "2020 | 93DK | Gizem",
+          "infoDesc": "Scooby ve Shaggy'nin tanıştıkları andan itibaren ömür boyu süren dostluğuna odaklanılıyor. Tanışmalarının ardından, dedektif olma hayali kuran Fred, Velma ve Daphne ile güçlerini birleştiren Scooby ve Shaggy, çok geçmeden ünlü Mystery Inc.'i kurar."
+        },
+        {
+          "id": "samuraijack",
+          "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhwdrQQCMvmgKDoSFjH1w5NwDEmQehgKWxPuRIcplBwTNCe7oRNytZbRdvKxbwkgVGXEMWoJYp73scfzjBojx-Bl2B_0v4dqEV4xQju_ek-FAkPL-Ggwy0eTsuEEiqJbofbRP-6SPjqLDY/s1920/image-asset.jpeg",
+          "link": "movie.html?id=samuraijack",
+          "infoTitle": "2001 | 5 Sezon | Aksiyon, bilim kurgu, fantastik",
+          "infoDesc": "Kötü büyücü Aku tarafından geleceğe gönderilen bir samurayın geçmişe dönüp kaderini değiştirme çabasını konu alır. Jack, distopik bir dünyada hem hayatta kalmaya hem de Aku’yu yenmeye çalışır. Seri daha karanlık ve felsefi bir tona sahiptir."
+        },
+        {
+          "id": "howtotrainyourdragon",
+          "image": "https://www.tvtime.com/_next/image?url=https%3A%2F%2Fartworks.thetvdb.com%2Fbanners%2Fv4%2Fmovie%2F170%2Fbackgrounds%2F6403550a9428c.jpg&w=3840&q=75",
+          "link": "movie.html?id=howtotrainyourdragon",
+          "infoTitle": "2010 | 98DK | Macera",
+          "infoDesc": "Vast Şefi Stoick'in yaratıcı ama göz ardı edilen oğlu Hıçkıdık, korkulan bir Gecenin Öfkesi ejderhası olan Dişsiz ile arkadaş olduğunda yüzyıllardır süregelen geleneklere meydan okur. Aralarındaki alışılmadık bağ, ejderhaların gerçek doğasını ortaya çıkararak Viking toplumunun temellerine karşı gelir."
+        },
+        {
+          "id": "gumball",
+          "image": "https://media.themoviedb.org/t/p/w780/gmO3aezFgDcrhcymhNSJLGZ3CT.jpg",
+          "link": "movie.html?id=gumball",
+          "infoTitle": "2011 | 6 Sezon | Komedi, aile, absürt mizah",
+          "infoDesc": "Elmore kasabasında yaşayan Gumball ve ailesinin absürt ve kaotik günlük hayatını anlatır. Gerçekçi ve animasyon tarzlarının karıştığı evrende her bölüm ayrı bir komedi felaketidir. Mizahı hem çocuklara hem büyüklere hitap eder."
+        },
+        {
+          "id": "zootopia",
+          "image": "https://media.themoviedb.org/t/p/w780/9tOkjBEiiGcaClgJFtwocStZvIT.jpg",
+          "link": "movie.html?id=zootopia",
+          "infoTitle": "2016 | 106DK | Komedi",
+          "infoDesc": "Bunnyburrow kasabasında, 9 yaşındaki tavşan Judy Hopps bir okul oyununda sahne almaktadır. Oyunun teması, bir zamanlar ilkel ve vahşi olan hayvanların, avcı ve avın uyum içinde yan yana yaşayabileceği bir evrim geçirdiğini anlatmaktadır."
+        },
+        {
+          "id": "teentitans",
+          "image": "https://m.media-amazon.com/images/S/pv-target-images/aaa3f3f52e4af6ff19dff80d2d1aa96aea07898e5de9381293f135d69e45c5a1.jpg",
+          "link": "movie.html?id=teentitans",
+          "infoTitle": "2003 | 5 Sezon | Süper kahraman, aksiyon, gençlik, dram",
+          "infoDesc": "Genç süper kahramanlardan oluşan bir ekibin suçla ve büyük düşmanlarla mücadelesini işler. Robin, Starfire, Raven, Beast Boy ve Cyborg hem takım olmayı öğrenir hem de kişisel sorunlarıyla yüzleşir. Aksiyon ve duygusal hikâyeler dengelidir."
+        },
+        {
+          "id": "adventuretime",
+          "image": "https://m.media-amazon.com/images/S/pv-target-images/8332115cb6765892003cd4d4c67321c8868ae2df6933b241cab2f439aac45caf.jpg",
+          "link": "movie.html?id=adventuretime",
+          "infoTitle": "2010 | 10 Sezon | Fantastik, macera, komedi, dram",
+          "infoDesc": "Ooo diyarında yaşayan Finn ve sihirli köpek Jake’in tuhaf maceralarını anlatır. Eğlenceli ve absürt görünen hikâyelerin altında derin karakter gelişimi ve karanlık bir geçmiş yatar. Seri ilerledikçe evrenin gizemleri ortaya çıkar."
+        },
+        {
+          "id": "kungfupanda",
+          "image": "https://image.kanald.com.tr/i/kanald/100/1200x0/5db34fbc9850b92b409bdd09.jpg",
+          "link": "movie.html?id=kungfupanda",
+          "infoTitle": "2008 | 92DK | Komedi",
+          "infoDesc": "Panda Po, kung fu hayranıdır. Ancak ailesine ait makarna restoranında çalışır ve bu spora pek yatkın sayılmaz. Hiç beklemediği bir anda eski bir kehanetin gereğini yerine getirmek için görevlendirilince Po'nun hayalleri gerçeğe dönüşür. O artık efsanevi Korkusuz Beşli'nin yanında kung fu dünyasına katılmıştır."
+        },
+        {
+          "id": "rickandmorty",
+          "image": "https://m.media-amazon.com/images/S/pv-target-images/2a4b90dbdf4f72151540a2579705e0bf78849a070297a3acdcbbdc233220e491._SX1080_FMjpg_.jpg",
+          "link": "movie.html?id=rickandmorty",
+          "infoTitle": "2013 | 8 Sezon | Bilim kurgu, kara komedi, yetişkin animasyon",
+          "infoDesc": "Dahi ama sorunlu bilim insanı Rick, torunu Morty’yi paralel evrenler arası çılgın maceralara sürükler. Bilim kurgu üzerinden kara mizah ve varoluşsal konular işlenir."
+        },
+        {
+          "id": "miraculous-movie",
+          "image": "https://images5.alphacoders.com/132/thumb-1920-1325003.jpeg",
+          "link": "movie.html?id=miraculous-movie",
+          "infoTitle": "2023 | 105DK | Komedi,Aksiyon",
+          "infoDesc": "Kelebek mucizesi ele geçirilmiştir. Bu kötü kelebekler insanlara korku ve dehşet yaymaktadır. Neyse ki onları durdurabilecek süper kahramanlar var! Paris'in yeni kahramanları günü kurtarmak için yeni kimlikler kazanırlar."
+        },
+        {
+          "id": "familyguy",
+          "image": "https://m.media-amazon.com/images/S/pv-target-images/c5df277b52811ae3f8e329c3a536eea53f33753e33bfa6519d7b885dfa8b7b66._SX1080_FMjpg_.jpg",
+          "link": "movie.html?id=familyguy",
+          "infoTitle": "1999 | 22 Sezon | Yetişkin animasyon, komedi, sitcom",
+          "infoDesc": "Griffin ailesinin absürt ve çoğu zaman politik olarak yanlış maceralarını anlatır. Popüler kültür göndermeleri ve sert mizah ön plandadır."
+        },
+        {
+          "id": "thesimpsons",
+          "image": "https://tr.web.img3.acsta.net/r_654_368/newsv7/21/03/04/08/49/0031909.jpg",
+          "link": "movie.html?id=thesimpsons",
+          "infoTitle": "1989 | 36 Sezon | Animasyon, komedi, hiciv, aile",
+          "infoDesc": "Springfield kasabasında yaşayan Simpson ailesinin günlük hayatı üzerinden Amerikan toplumuna hiciv yapar. Televizyon tarihinin en uzun soluklu animasyon dizilerindendir."
+        },
+        {
+          "id": "howtotrainyourdragon",
+          "image": "https://www.tvtime.com/_next/image?url=https%3A%2F%2Fartworks.thetvdb.com%2Fbanners%2Fv4%2Fmovie%2F170%2Fbackgrounds%2F6403550a9428c.jpg&w=3840&q=75",
+          "link": "movie.html?id=howtotrainyourdragon",
+          "infoTitle": "2010 | 98DK | Macera",
+          "infoDesc": "Vast Şefi Stoick'in yaratıcı ama göz ardı edilen oğlu Hıçkıdık, korkulan bir Gecenin Öfkesi ejderhası olan Dişsiz ile arkadaş olduğunda yüzyıllardır süregelen geleneklere meydan okur. Aralarındaki alışılmadık bağ, ejderhaların gerçek doğasını ortaya çıkararak Viking toplumunun temellerine karşı gelir."
+        },
+        {
+          "id": "unicornwarriorseternal",
+          "image": "https://m.media-amazon.com/images/S/pv-target-images/0deffd88c411c007a792f841a2f1287a36d049b39ce7468581b83e5ec49c8b56._SX1080_FMjpg_.jpg",
+          "link": "movie.html?id=unicornwarriorseternal",
+          "infoTitle": "2023 | 1 Sezon | Fantastik, aksiyon, dram",
+          "infoDesc": "Kötü bir varlığa karşı savaşan üç kadim savaşçının ruhları, farklı dönemlerde yeni bedenlerde yeniden doğar. Viktorya dönemi estetiğiyle epik bir fantastik hikâye sunar."
+        },
+        {
+          "id": "villainous",
+          "image": "https://m.media-amazon.com/images/S/pv-target-images/c57cdfdfbcccf071d73a83d8f72e1613320c7b6a90042a60a9eaa376a7d800bb._SX1080_FMjpg_.jpg",
+          "link": "movie.html?id=villainous",
+          "infoTitle": "2017 | 1 Sezon | Kara komedi, fantastik, animasyon",
+          "infoDesc": "Kötü karakterlere danışmanlık yapan Black Hat ve ekibinin komik ve karanlık maceralarını anlatır. Süper kötülerin dünyasına mizahi bir bakış sunar."
+        },
+        {
+          "id": "hoteltransilvania3",
+          "image": "https://m.media-amazon.com/images/M/MV5BMjE1MjA5NzQ5MV5BMl5BanBnXkFtZTgwMzUwMjA3NTM@._V1_.jpg",
+          "link": "movie.html?id=hoteltransilvania3",
+          "infoTitle": "2018 | 97DK | Komedi",
+          "infoDesc": "Otel işlerinden çok yorulan Dracula ailesi dev bir tatil planı yaparlar. Tüm oteli alarak mükemmel tatil için yola koyulurlar. Keyifli anlar asla eksiz olmaz. Canavarların dünyasında herşey daha farklı ilerliyor. Fakat eski bir düşman hiç beklenmedik bir anda onlara katılır."
         }
       ]
     },
     {
-      "title": "En Popüler",
+      "title": "En Maceralı",
       "items": [
         {
-          "id": "miraculous-movie",
-          "image": "https://images5.alphacoders.com/132/thumb-1920-1325003.jpeg",
-          "link": "movie.html?id=miraculous-movie",
-          "infoTitle": "TESTING1",
-          "infoDesc": "testing"
+          "id": "howtotrainyourdragon",
+          "image": "https://www.tvtime.com/_next/image?url=https%3A%2F%2Fartworks.thetvdb.com%2Fbanners%2Fv4%2Fmovie%2F170%2Fbackgrounds%2F6403550a9428c.jpg&w=3840&q=75",
+          "link": "movie.html?id=howtotrainyourdragon",
+          "infoTitle": "2010 | 98DK | Macera",
+          "infoDesc": "Vast Şefi Stoick'in yaratıcı ama göz ardı edilen oğlu Hıçkıdık, korkulan bir Gecenin Öfkesi ejderhası olan Dişsiz ile arkadaş olduğunda yüzyıllardır süregelen geleneklere meydan okur. Aralarındaki alışılmadık bağ, ejderhaların gerçek doğasını ortaya çıkararak Viking toplumunun temellerine karşı gelir."
         },
         {
-          "id": "paris-special",
-          "image": "https://miraculous.to/global_data/img/S0E04_2025-08-18_17-37-57.webp",
-          "link": "movie.html?id=paris-special",
-          "infoTitle": "TESTING2",
-          "infoDesc": "testing"
+          "id": "ben10",
+          "image": "https://tr.web.img2.acsta.net/img/c8/98/c89858424f68f07d4808ee40c098aabc.jpg",
+          "link": "movie.html?id=ben10",
+          "infoTitle": "2005 | 5 Sezon | Aksiyon, bilim kurgu, süper kahraman",
+          "infoDesc": "Yaz tatilinde uzaylı bir saat olan Omnitrix’i bulan Ben’in farklı uzaylı formlarına dönüşerek dünyayı korumasını anlatır. Kuzeni Gwen ve Büyükbaba Max’le maceradan maceraya atılırken hem eğlenir hem de büyük tehditlerle savaşır."
         },
         {
           "id": "samuraijack",
-          "image": "https://cdn.kayiprihtim.com/wp-content/uploads/2020/03/Samurai-Jack-izle.jpeg",
+          "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhwdrQQCMvmgKDoSFjH1w5NwDEmQehgKWxPuRIcplBwTNCe7oRNytZbRdvKxbwkgVGXEMWoJYp73scfzjBojx-Bl2B_0v4dqEV4xQju_ek-FAkPL-Ggwy0eTsuEEiqJbofbRP-6SPjqLDY/s1920/image-asset.jpeg",
           "link": "movie.html?id=samuraijack",
-          "infoTitle": "TESTING3",
-          "infoDesc": "testing"
+          "infoTitle": "2001 | 5 Sezon | Aksiyon, bilim kurgu, fantastik",
+          "infoDesc": "Kötü büyücü Aku tarafından geleceğe gönderilen bir samurayın geçmişe dönüp kaderini değiştirme çabasını konu alır. Jack, distopik bir dünyada hem hayatta kalmaya hem de Aku’yu yenmeye çalışır. Seri daha karanlık ve felsefi bir tona sahiptir."
         },
         {
-          "id": "wowwinx",
-          "image": "https://occ-0-8407-2219.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABR-djRdEJKzYOxtWd8_USF06RLWMKHxgdJXbcGd-gIEtnTpzicBh8akFPdftrfW1TFLh4NM2kVjYP8yg3pjjFBwFKDyaVKSuRYn9.jpg?r=98e",
-          "link": "movie.html?id=wowwinx",
-          "infoTitle": "TESTING4",
-          "infoDesc": "testing"
-        }, 
+          "id": "kungfupanda",
+          "image": "https://image.kanald.com.tr/i/kanald/100/1200x0/5db34fbc9850b92b409bdd09.jpg",
+          "link": "movie.html?id=kungfupanda",
+          "infoTitle": "2008 | 92DK | Komedi",
+          "infoDesc": "Panda Po, kung fu hayranıdır. Ancak ailesine ait makarna restoranında çalışır ve bu spora pek yatkın sayılmaz. Hiç beklemediği bir anda eski bir kehanetin gereğini yerine getirmek için görevlendirilince Po'nun hayalleri gerçeğe dönüşür. O artık efsanevi Korkusuz Beşli'nin yanında kung fu dünyasına katılmıştır."
+        },
+        {
+          "id": "teentitans",
+          "image": "https://m.media-amazon.com/images/S/pv-target-images/aaa3f3f52e4af6ff19dff80d2d1aa96aea07898e5de9381293f135d69e45c5a1.jpg",
+          "link": "movie.html?id=teentitans",
+          "infoTitle": "2003 | 5 Sezon | Süper kahraman, aksiyon, gençlik, dram",
+          "infoDesc": "Genç süper kahramanlardan oluşan bir ekibin suçla ve büyük düşmanlarla mücadelesini işler. Robin, Starfire, Raven, Beast Boy ve Cyborg hem takım olmayı öğrenir hem de kişisel sorunlarıyla yüzleşir. Aksiyon ve duygusal hikâyeler dengelidir."
+        },
+        {
+          "id": "samuraijack",
+          "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhwdrQQCMvmgKDoSFjH1w5NwDEmQehgKWxPuRIcplBwTNCe7oRNytZbRdvKxbwkgVGXEMWoJYp73scfzjBojx-Bl2B_0v4dqEV4xQju_ek-FAkPL-Ggwy0eTsuEEiqJbofbRP-6SPjqLDY/s1920/image-asset.jpeg",
+          "link": "movie.html?id=samuraijack",
+          "infoTitle": "2001 | 5 Sezon | Aksiyon, bilim kurgu, fantastik",
+          "infoDesc": "Kötü büyücü Aku tarafından geleceğe gönderilen bir samurayın geçmişe dönüp kaderini değiştirme çabasını konu alır. Jack, distopik bir dünyada hem hayatta kalmaya hem de Aku’yu yenmeye çalışır. Seri daha karanlık ve felsefi bir tona sahiptir."
+        }
+      ]
+    },
+    {
+      "title": "Korkulu Rüyalar",
+      "items": [
+        {
+          "id": "teentitans",
+          "image": "https://m.media-amazon.com/images/S/pv-target-images/aaa3f3f52e4af6ff19dff80d2d1aa96aea07898e5de9381293f135d69e45c5a1.jpg",
+          "link": "movie.html?id=teentitans",
+          "infoTitle": "2003 | 5 Sezon | Süper kahraman, aksiyon, gençlik, dram",
+          "infoDesc": "Genç süper kahramanlardan oluşan bir ekibin suçla ve büyük düşmanlarla mücadelesini işler. Robin, Starfire, Raven, Beast Boy ve Cyborg hem takım olmayı öğrenir hem de kişisel sorunlarıyla yüzleşir. Aksiyon ve duygusal hikâyeler dengelidir."
+        },
+        {
+          "id": "adventuretime",
+          "image": "https://m.media-amazon.com/images/S/pv-target-images/8332115cb6765892003cd4d4c67321c8868ae2df6933b241cab2f439aac45caf.jpg",
+          "link": "movie.html?id=adventuretime",
+          "infoTitle": "2010 | 10 Sezon | Fantastik, macera, komedi, dram",
+          "infoDesc": "Ooo diyarında yaşayan Finn ve sihirli köpek Jake’in tuhaf maceralarını anlatır. Eğlenceli ve absürt görünen hikâyelerin altında derin karakter gelişimi ve karanlık bir geçmiş yatar. Seri ilerledikçe evrenin gizemleri ortaya çıkar."
+        },
+        {
+          "id": "rickandmorty",
+          "image": "https://m.media-amazon.com/images/S/pv-target-images/2a4b90dbdf4f72151540a2579705e0bf78849a070297a3acdcbbdc233220e491._SX1080_FMjpg_.jpg",
+          "link": "movie.html?id=rickandmorty",
+          "infoTitle": "2013 | 8 Sezon | Bilim kurgu, kara komedi, yetişkin animasyon",
+          "infoDesc": "Dahi ama sorunlu bilim insanı Rick, torunu Morty’yi paralel evrenler arası çılgın maceralara sürükler. Bilim kurgu üzerinden kara mizah ve varoluşsal konular işlenir."
+        },
+        {
+          "id": "familyguy",
+          "image": "https://m.media-amazon.com/images/S/pv-target-images/c5df277b52811ae3f8e329c3a536eea53f33753e33bfa6519d7b885dfa8b7b66._SX1080_FMjpg_.jpg",
+          "link": "movie.html?id=familyguy",
+          "infoTitle": "1999 | 22 Sezon | Yetişkin animasyon, komedi, sitcom",
+          "infoDesc": "Griffin ailesinin absürt ve çoğu zaman politik olarak yanlış maceralarını anlatır. Popüler kültür göndermeleri ve sert mizah ön plandadır."
+        },
+        {
+          "id": "thesimpsons",
+          "image": "https://tr.web.img3.acsta.net/r_654_368/newsv7/21/03/04/08/49/0031909.jpg",
+          "link": "movie.html?id=thesimpsons",
+          "infoTitle": "1989 | 36 Sezon | Animasyon, komedi, hiciv, aile",
+          "infoDesc": "Springfield kasabasında yaşayan Simpson ailesinin günlük hayatı üzerinden Amerikan toplumuna hiciv yapar. Televizyon tarihinin en uzun soluklu animasyon dizilerindendir."
+        },
+        {
+          "id": "unicornwarriorseternal",
+          "image": "https://m.media-amazon.com/images/S/pv-target-images/0deffd88c411c007a792f841a2f1287a36d049b39ce7468581b83e5ec49c8b56._SX1080_FMjpg_.jpg",
+          "link": "movie.html?id=unicornwarriorseternal",
+          "infoTitle": "2023 | 1 Sezon | Fantastik, aksiyon, dram",
+          "infoDesc": "Kötü bir varlığa karşı savaşan üç kadim savaşçının ruhları, farklı dönemlerde yeni bedenlerde yeniden doğar. Viktorya dönemi estetiğiyle epik bir fantastik hikâye sunar."
+        }
+      ]
+    },
+    {
+      "title": "Disney Channel Favorileri",
+      "items": [
+        {
+          "id": "miraculous-series",
+          "image": "https://i.ytimg.com/vi/MlBGH7DJ4TU/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAWONZXlnhg4NfvpQsqOJh31EqW9w",
+          "link": "movie.html?id=miraculous-series",
+          "infoTitle": "2015 | 6 Sezon | Komedi,Aksiyon,Macera,Romantik",
+          "infoDesc": "Marinette artık Marinette değil. Tutması gereken büyük bir sırrı var. Hem gardiyan olmak, hem sırrını taşımak, hem de yeni düşmanları Chrysalis'i yenmek onun için artık daha da zor. Peki ya sevgilisine; babasının tüm dünyayı ele geçiren bir süper kötü olduğunu söyleyebilecek mi?" 
+        },
         {
           "id": "jakelong",
           "image": "https://img1.hotstarext.com/image/upload/f_auto/sources/r1/cms/prod/8743/1378743-i-827005de1524",
           "link": "movie.html?id=jakelong",
-          "infoTitle": "TESTING5",
-          "infoDesc": "testing"
+          "infoTitle": "2005 | 2 Sezon | Aksiyon",
+          "infoDesc": "Genç bir çocuk olan Jake Long'un ejderlik güçlerini keşfetmesi, bu yüzden eğitim alması ve düşmanına âşık olmasıyla beraber bir sürü macera yaşamasını konu alan bir çizgi dizidir."
         },
         {
           "id": "kimpossible",
-          "image": "https://images.squarespace-cdn.com/content/v1/54fc8146e4b02a22841f4df7/1671990957163-T5SXFXK6V9OMEJWYBE2B/o.jpg",
+          "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/3f673eab-10f4-4e38-9ec7-7d6070a26c1e/compose?format=webp&width=2560",
           "link": "movie.html?id=kimpossible",
-          "infoTitle": "TESTING6",
-          "infoDesc": "testing"
+          "infoTitle": "2002 | 4 Sezon | Aksiyon",
+          "infoDesc": "Kim Possible, suçla savaşan genç bir kızın hikayesini anlatıyor. Okulun amigo takımında olan Kin, oldukça başarılı olan bir genç kızdır. Genç kız gündüzleri sıradan öğrenciler gibi okula gidip arkadaşları ile vakit geçirirken geceleri ise dünyayı kötülerden kurtarır."
+        },
+        {
+          "id": "gravityfalls",
+          "image": "https://m.media-amazon.com/images/M/MV5BZWNiNGJiNDAtYzFiOS00YmMzLTgwMmUtNjAwMzZjMTFjZmUyXkEyXkFqcGc@._V1_.jpg",
+          "link": "movie.html?id=gravityfalls",
+          "infoTitle": "2012 | 2 Sezon | Gizem",
+          "infoDesc": "Yaz tatilini amcaları Stan’in gizemli kulübesinde geçiren ikizler Dipper ve Mabel’ın başına gelen paranormal olayları anlatır. Dipper’ın bulduğu gizemli günlük sayesinde kasabadaki tuhaf yaratıkların ve sırların peşine düşerler. Eğlenceli gibi başlayan macera, kasabanın kaderini etkileyen karanlık bir tehdide dönüşür."
+        },
+        {
+          "id": "fvf",
+          "image": "https://variety.com/wp-content/uploads/2019/08/phineas-ferb-cast.jpg",
+          "link": "movie.html?id=fvf",
+          "infoTitle": "2007 | 5 Sezon | Müzikal",
+          "infoDesc": "Yaz tatilinde her gün imkânsız gibi görünen projeler yapan iki üvey kardeşi konu alır. Ablaları Candace onları annelerine ispiyonlamaya çalışırken her seferinde planları son anda yok olur. Arka planda ise ajan Perry ile kötü bilim insanı Doofenshmirtz arasında gizli bir mücadele döner."
         }
       ]
     }
@@ -137,14 +350,63 @@
 
   "categories2": [
     {
-      "title": "Filmler",
+      "title": "Tüm Filmler",
       "items": [
         {
           "id": "miraculous-movie",
           "image": "https://images5.alphacoders.com/132/thumb-1920-1325003.jpeg",
           "link": "movie.html?id=miraculous-movie",
-          "infoTitle": "TESTING6",
-          "infoDesc": "testing"
+          "infoTitle": "2023 | 105DK | Komedi,Aksiyon",
+          "infoDesc": "Kelebek mucizesi ele geçirilmiştir. Bu kötü kelebekler insanlara korku ve dehşet yaymaktadır. Neyse ki onları durdurabilecek süper kahramanlar var! Paris'in yeni kahramanları günü kurtarmak için yeni kimlikler kazanırlar."
+        },
+        {
+          "id": "frozen",
+          "image": "https://m.media-amazon.com/images/S/pv-target-images/e65f0b7d090826c6ba96430ebd2a08d225379c3319759731fb0ce85d2d20066f._SX1080_FMjpg_.jpg",
+          "link": "movie.html?id=frozen",
+          "infoTitle": "2019 | 103DK | Müzikal",
+          "infoDesc": "Elsa ve Anna sakin bir hayat yaşamak istemektedirler. Ancak bir anda uyanan ormanın kayıp ruhları başlarını belaya sokar! Birlikte krallıklarını kurtarmak için yeni bir maceraya atılırlar."
+        },
+        {
+          "id": "kungfupanda",
+          "image": "https://image.kanald.com.tr/i/kanald/100/1200x0/5db34fbc9850b92b409bdd09.jpg",
+          "link": "movie.html?id=kungfupanda",
+          "infoTitle": "2008 | 92DK | Komedi",
+          "infoDesc": "Panda Po, kung fu hayranıdır. Ancak ailesine ait makarna restoranında çalışır ve bu spora pek yatkın sayılmaz. Hiç beklemediği bir anda eski bir kehanetin gereğini yerine getirmek için görevlendirilince Po'nun hayalleri gerçeğe dönüşür. O artık efsanevi Korkusuz Beşli'nin yanında kung fu dünyasına katılmıştır."
+        },
+        {
+          "id": "zootopia",
+          "image": "https://media.themoviedb.org/t/p/w780/9tOkjBEiiGcaClgJFtwocStZvIT.jpg",
+          "link": "movie.html?id=zootopia",
+          "infoTitle": "2016 | 106DK | Komedi",
+          "infoDesc": "Bunnyburrow kasabasında, 9 yaşındaki tavşan Judy Hopps bir okul oyununda sahne almaktadır. Oyunun teması, bir zamanlar ilkel ve vahşi olan hayvanların, avcı ve avın uyum içinde yan yana yaşayabileceği bir evrim geçirdiğini anlatmaktadır."
+        },
+        {
+          "id": "howtotrainyourdragon",
+          "image": "https://www.tvtime.com/_next/image?url=https%3A%2F%2Fartworks.thetvdb.com%2Fbanners%2Fv4%2Fmovie%2F170%2Fbackgrounds%2F6403550a9428c.jpg&w=3840&q=75",
+          "link": "movie.html?id=howtotrainyourdragon",
+          "infoTitle": "2010 | 98DK | Macera",
+          "infoDesc": "Vast Şefi Stoick'in yaratıcı ama göz ardı edilen oğlu Hıçkıdık, korkulan bir Gecenin Öfkesi ejderhası olan Dişsiz ile arkadaş olduğunda yüzyıllardır süregelen geleneklere meydan okur. Aralarındaki alışılmadık bağ, ejderhaların gerçek doğasını ortaya çıkararak Viking toplumunun temellerine karşı gelir."
+        },
+        {
+          "id": "cars",
+          "image": "https://filmmakinesi.to/uploads/postlar/kapak/cars-2006.jpg-thumb-normal.webp",
+          "link": "movie.html?id=cars",
+          "infoTitle": "2006 | 117DK | Komedi,Macera",
+          "infoDesc": "Kendini en hızlı yarış arabası olarak gören Lightning Mcqueen, egosuna yenik düşer ve büyük kupa yarışında berabere kalır. Yarışın tekrar yapılacağı kararlaşınca, Mcqueen dinlenmek için tırına geçer. Ancak yolda olan bir kazadan sonra kendini hiç bilmediği eski bir kasabanın yollarını tamir ederken bulur."
+        },
+        {
+          "id": "hoteltransilvania3",
+          "image": "https://m.media-amazon.com/images/M/MV5BMjE1MjA5NzQ5MV5BMl5BanBnXkFtZTgwMzUwMjA3NTM@._V1_.jpg",
+          "link": "movie.html?id=hoteltransilvania3",
+          "infoTitle": "2018 | 97DK | Komedi",
+          "infoDesc": "Otel işlerinden çok yorulan Dracula ailesi dev bir tatil planı yaparlar. Tüm oteli alarak mükemmel tatil için yola koyulurlar. Keyifli anlar asla eksiz olmaz. Canavarların dünyasında herşey daha farklı ilerliyor. Fakat eski bir düşman hiç beklenmedik bir anda onlara katılır."
+        },
+        {
+          "id": "scoob",
+          "image": "https://m.media-amazon.com/images/S/pv-target-images/71c326ffe09b4edc1876187fe9412547451adec377268268c8a96e713a234a35._SX1080_FMjpg_.jpg",
+          "link": "movie.html?id=scoob",
+          "infoTitle": "2020 | 93DK | Gizem",
+          "infoDesc": "Scooby ve Shaggy'nin tanıştıkları andan itibaren ömür boyu süren dostluğuna odaklanılıyor. Tanışmalarının ardından, dedektif olma hayali kuran Fred, Velma ve Daphne ile güçlerini birleştiren Scooby ve Shaggy, çok geçmeden ünlü Mystery Inc.'i kurar."
         }
       ]
     }
@@ -152,14 +414,112 @@
 
   "categories3": [
     {
-      "title": "Diziler",
+      "title": "Tüm Diziler",
       "items": [
         {
           "id": "miraculous-series",
-          "image": "https://cdn.iview.abc.net.au/thumbs/i/zw/ZW4198A_68952b8a2d2a8_3600.jpg",
+          "image": "https://i.ytimg.com/vi/MlBGH7DJ4TU/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAWONZXlnhg4NfvpQsqOJh31EqW9w",
           "link": "movie.html?id=miraculous-series",
-          "infoTitle": "TESTING6",
-          "infoDesc": "testing"
+          "infoTitle": "2015 | 6 Sezon | Komedi,Aksiyon,Macera,Romantik",
+          "infoDesc": "Marinette artık Marinette değil. Tutması gereken büyük bir sırrı var. Hem gardiyan olmak, hem sırrını taşımak, hem de yeni düşmanları Chrysalis'i yenmek onun için artık daha da zor. Peki ya sevgilisine; babasının tüm dünyayı ele geçiren bir süper kötü olduğunu söyleyebilecek mi?" 
+        },
+        {
+          "id": "jakelong",
+          "image": "https://img1.hotstarext.com/image/upload/f_auto/sources/r1/cms/prod/8743/1378743-i-827005de1524",
+          "link": "movie.html?id=jakelong",
+          "infoTitle": "2005 | 2 Sezon | Aksiyon",
+          "infoDesc": "Genç bir çocuk olan Jake Long'un ejderlik güçlerini keşfetmesi, bu yüzden eğitim alması ve düşmanına âşık olmasıyla beraber bir sürü macera yaşamasını konu alan bir çizgi dizidir."
+        },
+        {
+          "id": "kimpossible",
+          "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/3f673eab-10f4-4e38-9ec7-7d6070a26c1e/compose?format=webp&width=2560",
+          "link": "movie.html?id=kimpossible",
+          "infoTitle": "2002 | 4 Sezon | Aksiyon",
+          "infoDesc": "Kim Possible, suçla savaşan genç bir kızın hikayesini anlatıyor. Okulun amigo takımında olan Kin, oldukça başarılı olan bir genç kızdır. Genç kız gündüzleri sıradan öğrenciler gibi okula gidip arkadaşları ile vakit geçirirken geceleri ise dünyayı kötülerden kurtarır."
+        },
+        {
+          "id": "gravityfalls",
+          "image": "https://m.media-amazon.com/images/M/MV5BZWNiNGJiNDAtYzFiOS00YmMzLTgwMmUtNjAwMzZjMTFjZmUyXkEyXkFqcGc@._V1_.jpg",
+          "link": "movie.html?id=gravityfalls",
+          "infoTitle": "2012 | 2 Sezon | Gizem",
+          "infoDesc": "Yaz tatilini amcaları Stan’in gizemli kulübesinde geçiren ikizler Dipper ve Mabel’ın başına gelen paranormal olayları anlatır. Dipper’ın bulduğu gizemli günlük sayesinde kasabadaki tuhaf yaratıkların ve sırların peşine düşerler. Eğlenceli gibi başlayan macera, kasabanın kaderini etkileyen karanlık bir tehdide dönüşür."
+        },
+        {
+          "id": "fvf",
+          "image": "https://variety.com/wp-content/uploads/2019/08/phineas-ferb-cast.jpg",
+          "link": "movie.html?id=fvf",
+          "infoTitle": "2007 | 5 Sezon | Müzikal",
+          "infoDesc": "Yaz tatilinde her gün imkânsız gibi görünen projeler yapan iki üvey kardeşi konu alır. Ablaları Candace onları annelerine ispiyonlamaya çalışırken her seferinde planları son anda yok olur. Arka planda ise ajan Perry ile kötü bilim insanı Doofenshmirtz arasında gizli bir mücadele döner."
+        },
+        {
+          "id": "ben10",
+          "image": "https://tr.web.img2.acsta.net/img/c8/98/c89858424f68f07d4808ee40c098aabc.jpg",
+          "link": "movie.html?id=ben10",
+          "infoTitle": "2005 | 5 Sezon | Aksiyon, bilim kurgu, süper kahraman",
+          "infoDesc": "Yaz tatilinde uzaylı bir saat olan Omnitrix’i bulan Ben’in farklı uzaylı formlarına dönüşerek dünyayı korumasını anlatır. Kuzeni Gwen ve Büyükbaba Max’le maceradan maceraya atılırken hem eğlenir hem de büyük tehditlerle savaşır."
+        },
+        {
+          "id": "samuraijack",
+          "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhwdrQQCMvmgKDoSFjH1w5NwDEmQehgKWxPuRIcplBwTNCe7oRNytZbRdvKxbwkgVGXEMWoJYp73scfzjBojx-Bl2B_0v4dqEV4xQju_ek-FAkPL-Ggwy0eTsuEEiqJbofbRP-6SPjqLDY/s1920/image-asset.jpeg",
+          "link": "movie.html?id=samuraijack",
+          "infoTitle": "2001 | 5 Sezon | Aksiyon, bilim kurgu, fantastik",
+          "infoDesc": "Kötü büyücü Aku tarafından geleceğe gönderilen bir samurayın geçmişe dönüp kaderini değiştirme çabasını konu alır. Jack, distopik bir dünyada hem hayatta kalmaya hem de Aku’yu yenmeye çalışır. Seri daha karanlık ve felsefi bir tona sahiptir."
+        },
+        {
+          "id": "gumball",
+          "image": "https://media.themoviedb.org/t/p/w780/gmO3aezFgDcrhcymhNSJLGZ3CT.jpg",
+          "link": "movie.html?id=gumball",
+          "infoTitle": "2011 | 6 Sezon | Komedi, aile, absürt mizah",
+          "infoDesc": "Elmore kasabasında yaşayan Gumball ve ailesinin absürt ve kaotik günlük hayatını anlatır. Gerçekçi ve animasyon tarzlarının karıştığı evrende her bölüm ayrı bir komedi felaketidir. Mizahı hem çocuklara hem büyüklere hitap eder."
+        },
+        {
+          "id": "teentitans",
+          "image": "https://m.media-amazon.com/images/S/pv-target-images/aaa3f3f52e4af6ff19dff80d2d1aa96aea07898e5de9381293f135d69e45c5a1.jpg",
+          "link": "movie.html?id=teentitans",
+          "infoTitle": "2003 | 5 Sezon | Süper kahraman, aksiyon, gençlik, dram",
+          "infoDesc": "Genç süper kahramanlardan oluşan bir ekibin suçla ve büyük düşmanlarla mücadelesini işler. Robin, Starfire, Raven, Beast Boy ve Cyborg hem takım olmayı öğrenir hem de kişisel sorunlarıyla yüzleşir. Aksiyon ve duygusal hikâyeler dengelidir."
+        },
+        {
+          "id": "adventuretime",
+          "image": "https://m.media-amazon.com/images/S/pv-target-images/8332115cb6765892003cd4d4c67321c8868ae2df6933b241cab2f439aac45caf.jpg",
+          "link": "movie.html?id=adventuretime",
+          "infoTitle": "2010 | 10 Sezon | Fantastik, macera, komedi, dram",
+          "infoDesc": "Ooo diyarında yaşayan Finn ve sihirli köpek Jake’in tuhaf maceralarını anlatır. Eğlenceli ve absürt görünen hikâyelerin altında derin karakter gelişimi ve karanlık bir geçmiş yatar. Seri ilerledikçe evrenin gizemleri ortaya çıkar."
+        },
+        {
+          "id": "rickandmorty",
+          "image": "https://m.media-amazon.com/images/S/pv-target-images/2a4b90dbdf4f72151540a2579705e0bf78849a070297a3acdcbbdc233220e491._SX1080_FMjpg_.jpg",
+          "link": "movie.html?id=rickandmorty",
+          "infoTitle": "2013 | 8 Sezon | Bilim kurgu, kara komedi, yetişkin animasyon",
+          "infoDesc": "Dahi ama sorunlu bilim insanı Rick, torunu Morty’yi paralel evrenler arası çılgın maceralara sürükler. Bilim kurgu üzerinden kara mizah ve varoluşsal konular işlenir."
+        },
+        {
+          "id": "familyguy",
+          "image": "https://m.media-amazon.com/images/S/pv-target-images/c5df277b52811ae3f8e329c3a536eea53f33753e33bfa6519d7b885dfa8b7b66._SX1080_FMjpg_.jpg",
+          "link": "movie.html?id=familyguy",
+          "infoTitle": "1999 | 22 Sezon | Yetişkin animasyon, komedi, sitcom",
+          "infoDesc": "Griffin ailesinin absürt ve çoğu zaman politik olarak yanlış maceralarını anlatır. Popüler kültür göndermeleri ve sert mizah ön plandadır."
+        },
+        {
+          "id": "thesimpsons",
+          "image": "https://tr.web.img3.acsta.net/r_654_368/newsv7/21/03/04/08/49/0031909.jpg",
+          "link": "movie.html?id=thesimpsons",
+          "infoTitle": "1989 | 36 Sezon | Animasyon, komedi, hiciv, aile",
+          "infoDesc": "Springfield kasabasında yaşayan Simpson ailesinin günlük hayatı üzerinden Amerikan toplumuna hiciv yapar. Televizyon tarihinin en uzun soluklu animasyon dizilerindendir."
+        },
+        {
+          "id": "unicornwarriorseternal",
+          "image": "https://m.media-amazon.com/images/S/pv-target-images/0deffd88c411c007a792f841a2f1287a36d049b39ce7468581b83e5ec49c8b56._SX1080_FMjpg_.jpg",
+          "link": "movie.html?id=unicornwarriorseternal",
+          "infoTitle": "2023 | 1 Sezon | Fantastik, aksiyon, dram",
+          "infoDesc": "Kötü bir varlığa karşı savaşan üç kadim savaşçının ruhları, farklı dönemlerde yeni bedenlerde yeniden doğar. Viktorya dönemi estetiğiyle epik bir fantastik hikâye sunar."
+        },
+        {
+          "id": "villainous",
+          "image": "https://m.media-amazon.com/images/S/pv-target-images/c57cdfdfbcccf071d73a83d8f72e1613320c7b6a90042a60a9eaa376a7d800bb._SX1080_FMjpg_.jpg",
+          "link": "movie.html?id=villainous",
+          "infoTitle": "2017 | 1 Sezon | Kara komedi, fantastik, animasyon",
+          "infoDesc": "Kötü karakterlere danışmanlık yapan Black Hat ve ekibinin komik ve karanlık maceralarını anlatır. Süper kötülerin dünyasına mizahi bir bakış sunar."
         }
       ]
     }
