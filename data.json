@@ -142,7 +142,9 @@
         {
           "id": "miraculous-movie",
           "image": "https://images5.alphacoders.com/132/thumb-1920-1325003.jpeg",
-          "link": "movie.html?id=miraculous-movie"
+          "link": "movie.html?id=miraculous-movie",
+          "infoTitle": "TESTING6",
+          "infoDesc": "testing"
         }
       ]
     }
@@ -155,7 +157,9 @@
         {
           "id": "miraculous-series",
           "image": "https://cdn.iview.abc.net.au/thumbs/i/zw/ZW4198A_68952b8a2d2a8_3600.jpg",
-          "link": "movie.html?id=miraculous-series"
+          "link": "movie.html?id=miraculous-series",
+          "infoTitle": "TESTING6",
+          "infoDesc": "testing"
         }
       ]
     }
