@@ -164,7 +164,7 @@ document.addEventListener('keydown', function(e){
 function initApp(){
 
     // JSON verileri yükle
-    fetch("data.json?ts=" + Date.now())
+    fetch("https://raw.githubusercontent.com/hbb200009/Server/refs/heads/main/data.json?ts=" + Date.now())
     .then(res => res.json())
     .then(data => {
 
