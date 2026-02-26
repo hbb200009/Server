@@ -2,7 +2,7 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<title>TV Focus UI</title>
+<title>HBBA2000+</title>
 <!-- Required meta tags -->
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
@@ -90,7 +90,8 @@ body{
     height: 40vh;
 }
 h2{
-    margin-left: 2%;
+    margin-left: 1%;
+    margin-bottom: 0.5%;
 }
 
 
@@ -283,6 +284,34 @@ h2{
     transform:scale(1.1);
     box-shadow:0 0 25px white;
 }
+::-webkit-scrollbar{
+    display: none;
+}
+.row-info{
+    color: white;
+    opacity:0;
+    transition: opacity .3s ease;
+    margin-top:1vh;
+}
+
+.row-info.show{
+    opacity:1;
+}
+
+.row-info h1{
+    font-size:2vw;
+    margin-left:0.5%;
+    margin-top: -1.4%;
+
+}
+
+.row-info p{
+    font-size:1.2vw;
+    margin-left:0.6%;
+    margin-top: -1.7%;
+    opacity:.8;
+}
+
 </style>
 </head>
 
@@ -310,5 +339,6 @@ h2{
 <div id="view"></div>
 
 </div>
+<script src="app.js"></script>
 </body>
 </html>
