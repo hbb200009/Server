@@ -28,6 +28,7 @@ const pages = {
         </div>
         <h2 id="cat-title2" style="margin-top: -10%;"></h2>
         <div id="categories2"></div>
+        <br><br><br>
         
     `,
 
@@ -38,11 +39,12 @@ const pages = {
         </div>
         <h2 id="cat-title3" style="margin-top: -10%;"></h2>
         <div id="categories3"></div>
+        <br><br><br>
         
     `,
 
     fav: () => `
-        <h1 style="padding:40px">❤️ Favoriler</h1>
+        <h1 style="padding:40px"></h1>
         <div class="row" id="favRow"></div>
     `
 };
@@ -256,16 +258,29 @@ if(container2){
         const row = document.createElement("div");
         row.className = "row";
 
+        const infoBox = document.createElement("div");
+        infoBox.className = "row-info";
+        infoBox.innerHTML = `
+                <h1 class="infoTitle"></h1>
+                <p class="infoDesc"></p>
+        `;
+
         cat.items.forEach(item=>{
             const a = document.createElement("a");
             a.className = "card";
             a.href = item.link;
+
+            a.dataset.infoTitle = item.infoTitle || "";
+            a.dataset.infoDesc = item.infoDesc || "";
+
             a.innerHTML = `<img src="${item.image}">`;
             row.appendChild(a);
         });
 
         section.appendChild(title2);
         section.appendChild(row);
+        section.appendChild(infoBox);
+
         container2.appendChild(section);
     });
 }
@@ -284,16 +299,29 @@ if(container3){
         const row = document.createElement("div");
         row.className = "row";
 
+        const infoBox = document.createElement("div");
+        infoBox.className = "row-info";
+        infoBox.innerHTML = `
+                <h1 class="infoTitle"></h1>
+                <p class="infoDesc"></p>
+        `;
+
         cat.items.forEach(item=>{
             const a = document.createElement("a");
             a.className = "card";
             a.href = item.link;
+
+            a.dataset.infoTitle = item.infoTitle || "";
+            a.dataset.infoDesc = item.infoDesc || "";
+
             a.innerHTML = `<img src="${item.image}">`;
             row.appendChild(a);
         });
 
         section.appendChild(title3);
         section.appendChild(row);
+        section.appendChild(infoBox);
+
         container3.appendChild(section);
     });
 }
@@ -363,7 +391,6 @@ function initRowLoop(row) {
                 behavior: "smooth"
             });
 
-           
             const cardTitle = card.dataset.infoTitle;
             const cardDesc = card.dataset.infoDesc;
 
@@ -385,7 +412,6 @@ function initRowLoop(row) {
         card.addEventListener("blur",()=>{
             const section = row.parentElement;
             const info = section.querySelector(".row-info");
-
             info.classList.remove("show");
         });
 
@@ -411,3 +437,26 @@ function initRowLoop(row) {
             }, 300);
         }
     }
+
+/* ============================= */
+/* MENU ARKASI SİYAHLIK EFECTİ */
+/* ============================= */
+const menublur = document.getElementById("menublur");
+const logo = document.querySelector(".applogo");
+
+window.addEventListener("scroll", () => {
+
+    if(window.scrollY > 500){
+        menublur.style.opacity = "1";
+        logo.style.width = "7vw";
+        logo.style.height = "auto";
+        logo.style.top = "2%";
+        logo.style.right = "2%";
+    } else {
+        menublur.style.opacity = "0";
+        logo.style.width = "15vw";
+        logo.style.height = "auto";
+        logo.style.top = "5%";
+        logo.style.right = "5%";
+    }
+});
