@@ -14,8 +14,9 @@ const pages = {
             </div>
         </div>
         
-        <h2 id="cat-title"></h2>
+        <h2 id="cat-title baslik"></h2>
         <div id="categories"></div>
+
         <h6 style="text-align: center;">Demo Version 0.0.5 &copy;HBBA2000</h6>
         <br><br><br>
     `,
@@ -163,7 +164,7 @@ document.addEventListener('keydown', function(e){
 function initApp(){
 
     // JSON verileri yükle
-    fetch("https://raw.githubusercontent.com/hbb200009/Server/main/data.json?ts=" + Date.now())
+    fetch("data.json?ts=" + Date.now())
     .then(res => res.json())
     .then(data => {
 
@@ -214,16 +215,29 @@ if(container){
         const row = document.createElement("div");
         row.className = "row";
 
+        const infoBox = document.createElement("div");
+        infoBox.className = "row-info";
+        infoBox.innerHTML = `
+                <h1 class="infoTitle"></h1>
+                <p class="infoDesc"></p>
+        `;
+        
         cat.items.forEach(item=>{
             const a = document.createElement("a");
             a.className = "card";
             a.href = item.link;
+
+            a.dataset.infoTitle = item.infoTitle || "";
+            a.dataset.infoDesc = item.infoDesc || "";
+
             a.innerHTML = `<img src="${item.image}">`;
             row.appendChild(a);
         });
 
         section.appendChild(title);
         section.appendChild(row);
+        section.appendChild(infoBox);
+        
         container.appendChild(section);
     });
 }
@@ -319,7 +333,7 @@ function initRowLoop(row) {
     
     const allCards = Array.from(row.children);
     const originalCount = cards.length;
-    const cardWidth = cards[0].offsetWidth + 20; // gap dahil
+    const cardWidth = cards[0].offsetWidth * 0; // gap dahil
 
     // Başlangıçta ortadaki gruba odaklan
     row.scrollLeft = cardWidth * originalCount;
@@ -330,32 +344,58 @@ function initRowLoop(row) {
 
         card.addEventListener("focus", () => {
 
-    // 🔹 row padding'ini otomatik al
-    const style = getComputedStyle(row);
-    const rowPadding = parseInt(style.paddingLeft, 10);
+            // 🔹 row padding'ini otomatik al
+            const style = getComputedStyle(row);
+            const rowPadding = parseInt(style.paddingLeft, 10);
+            const cardOffset = card.offsetLeft;
 
-    const cardOffset = card.offsetLeft;
+            let targetScroll;
 
-    let targetScroll;
+            // 🔹 İlk kart soldan tam görünsün
+            if (cardOffset <= rowPadding) {
+                targetScroll = 0;
+            } else {
+                targetScroll = cardOffset - rowPadding;
+            }
 
-    // 🔹 İlk kart soldan tam görünsün
-    if (cardOffset <= rowPadding) {
-        targetScroll = 0;
-    } else {
-        targetScroll = cardOffset - rowPadding;
-    }
+            row.scrollTo({
+                left: targetScroll,
+                behavior: "smooth"
+            });
 
+           console.log(card.dataset)
+            const cardTitle = card.dataset.infoTitle;
+            const cardDesc = card.dataset.infoDesc;
 
-    row.scrollTo({
-        left: targetScroll,
-        behavior: "smooth"
-    });
+            const section = row.parentElement;
+            const info = section.querySelector(".row-info");
+
+            if(!info)return;
+
+            const infoTitleEl = info.querySelector(".infoTitle");
+            const infoDescEl = info.querySelector(".infoDesc");
+
+            if(infoTitleEl) infoTitleEl.textContent = cardTitle;
+            if(infoDescEl) infoDescEl.textContent = cardDesc;
+
+            info.classList.add("show");
+
+        });
+
+        card.addEventListener("blur",()=>{
+            const section = row.parentElement;
+            const info = section.querySelector(".row-info");
+
+            info.classList.remove("show");
+        });
+
+    
 
 
     // 🔹 Sonsuz döngü kontrolü
     
 });
-    });
+};
 
     function handleInfiniteLoop(currentIndex) {
         // Eğer kullanıcı ilk kopyalanan gruba geçtiyse, ortadaki gruba atlat
@@ -371,4 +411,3 @@ function initRowLoop(row) {
             }, 300);
         }
     }
-}
