@@ -1,40 +1,40 @@
 {
   "hero": [
     {
-      "title": "Miraculous Ladybug",
-      "desc": "Paris’i koruyan iki gizli kahraman.",
+      "title": "Mucize:Uğur Böceği ile Kara Kedi",
+      "desc": "Marinette artık Marinette değil. Tutması gereken büyük bir sırrı var. Hem gardiyan olmak, hem sırrını taşımak, hem de yeni düşmanları Chrysalis'i yenmek onun için artık daha da zor. Peki ya sevgilisine; babasının tüm dünyayı ele geçiren bir süper kötü olduğunu söyleyebilecek mi?",
       "image": "https://cdn.iview.abc.net.au/thumbs/i/zw/ZW4198A_68952b8a2d2a8_3600.jpg",
       "link": "movie.html?id=miraculous-series"
     },
     {
-      "title": "Paris Özel Bölümü",
-      "desc": "Paralel evrende kahramanlar.",
-      "image": "https://miraculous.to/global_data/img/S0E04_2025-08-18_17-37-57.webp",
-      "link": "movie.html?id=paris-special"
+      "title": "Samuray Jack",
+      "desc": "Kötü büyücü Aku tarafından geleceğe gönderilen bir samurayın geçmişe dönüp kaderini değiştirme çabasını konu alır. Jack, distopik bir dünyada hem hayatta kalmaya hem de Aku’yu yenmeye çalışır. Seri daha karanlık ve felsefi bir tona sahiptir.",
+      "image": "https://m.media-amazon.com/images/S/pv-target-images/e2cbf1638696973228a577ddb51c2d824fb38f41e379af684bf338e1f232be13.jpg",
+      "link": "movie.html?id=samuraijack"
     },
     {
-      "title": "Miraculous The Movie",
-      "desc": "Sinematik Miraculous filmi.",
-      "image": "https://images5.alphacoders.com/132/thumb-1920-1325003.jpeg",
-      "link": "movie.html?id=miraculous-movie"
+      "title": "Teen Titans",
+      "desc": "Genç süper kahramanlardan oluşan bir ekibin suçla ve büyük düşmanlarla mücadelesini işler. Robin, Starfire, Raven, Beast Boy ve Cyborg hem takım olmayı öğrenir hem de kişisel sorunlarıyla yüzleşir. Aksiyon ve duygusal hikâyeler dengelidir.",
+      "image": "https://m.media-amazon.com/images/S/pv-target-images/86ae0ff632e9f560589f9d217d845904571dace44a5a7ce5905355eb76fb8830.jpg",
+      "link": "movie.html?id=teentitans"
     }
   ],
 
   "hero2": [
     {
-      "title": "Miraculous The Movie",
-      "desc": "Film vitrini.",
-      "image": "https://images5.alphacoders.com/132/thumb-1920-1325003.jpeg",
-      "link": "movie.html?id=miraculous-movie"
+      "title": "Filmler",
+      "desc": "Filmler",
+      "image": "https://static0.srcdn.com/wordpress/wp-content/uploads/2021/06/Scoob-Hanna-Barbera-Multiverse-Movie.jpg?w=1600&h=900&fit=crop",
+      "link": "movie.html?id=scoob"
     }
   ],
 
   "hero3": [
     {
-      "title": "Paris Özel Bölümü",
-      "desc": "Özel bölüm vitrini.",
-      "image": "https://miraculous.to/global_data/img/S0E04_2025-08-18_17-37-57.webp",
-      "link": "movie.html?id=paris-special"
+      "title": "Diziler",
+      "desc": "Diziler",
+      "image": "https://images4.alphacoders.com/851/thumb-1920-851879.png",
+      "link": "movie.html?id=gravityfalls"
     }
   ],
 
@@ -349,6 +349,67 @@
   ],
 
   "categories2": [
+    {
+      "title": "Tüm Filmler",
+      "items": [
+        {
+          "id": "miraculous-movie",
+          "image": "https://images5.alphacoders.com/132/thumb-1920-1325003.jpeg",
+          "link": "movie.html?id=miraculous-movie",
+          "infoTitle": "2023 | 105DK | Komedi,Aksiyon",
+          "infoDesc": "Kelebek mucizesi ele geçirilmiştir. Bu kötü kelebekler insanlara korku ve dehşet yaymaktadır. Neyse ki onları durdurabilecek süper kahramanlar var! Paris'in yeni kahramanları günü kurtarmak için yeni kimlikler kazanırlar."
+        },
+        {
+          "id": "frozen",
+          "image": "https://m.media-amazon.com/images/S/pv-target-images/e65f0b7d090826c6ba96430ebd2a08d225379c3319759731fb0ce85d2d20066f._SX1080_FMjpg_.jpg",
+          "link": "movie.html?id=frozen",
+          "infoTitle": "2019 | 103DK | Müzikal",
+          "infoDesc": "Elsa ve Anna sakin bir hayat yaşamak istemektedirler. Ancak bir anda uyanan ormanın kayıp ruhları başlarını belaya sokar! Birlikte krallıklarını kurtarmak için yeni bir maceraya atılırlar."
+        },
+        {
+          "id": "kungfupanda",
+          "image": "https://image.kanald.com.tr/i/kanald/100/1200x0/5db34fbc9850b92b409bdd09.jpg",
+          "link": "movie.html?id=kungfupanda",
+          "infoTitle": "2008 | 92DK | Komedi",
+          "infoDesc": "Panda Po, kung fu hayranıdır. Ancak ailesine ait makarna restoranında çalışır ve bu spora pek yatkın sayılmaz. Hiç beklemediği bir anda eski bir kehanetin gereğini yerine getirmek için görevlendirilince Po'nun hayalleri gerçeğe dönüşür. O artık efsanevi Korkusuz Beşli'nin yanında kung fu dünyasına katılmıştır."
+        },
+        {
+          "id": "zootopia",
+          "image": "https://media.themoviedb.org/t/p/w780/9tOkjBEiiGcaClgJFtwocStZvIT.jpg",
+          "link": "movie.html?id=zootopia",
+          "infoTitle": "2016 | 106DK | Komedi",
+          "infoDesc": "Bunnyburrow kasabasında, 9 yaşındaki tavşan Judy Hopps bir okul oyununda sahne almaktadır. Oyunun teması, bir zamanlar ilkel ve vahşi olan hayvanların, avcı ve avın uyum içinde yan yana yaşayabileceği bir evrim geçirdiğini anlatmaktadır."
+        },
+        {
+          "id": "howtotrainyourdragon",
+          "image": "https://www.tvtime.com/_next/image?url=https%3A%2F%2Fartworks.thetvdb.com%2Fbanners%2Fv4%2Fmovie%2F170%2Fbackgrounds%2F6403550a9428c.jpg&w=3840&q=75",
+          "link": "movie.html?id=howtotrainyourdragon",
+          "infoTitle": "2010 | 98DK | Macera",
+          "infoDesc": "Vast Şefi Stoick'in yaratıcı ama göz ardı edilen oğlu Hıçkıdık, korkulan bir Gecenin Öfkesi ejderhası olan Dişsiz ile arkadaş olduğunda yüzyıllardır süregelen geleneklere meydan okur. Aralarındaki alışılmadık bağ, ejderhaların gerçek doğasını ortaya çıkararak Viking toplumunun temellerine karşı gelir."
+        },
+        {
+          "id": "cars",
+          "image": "https://filmmakinesi.to/uploads/postlar/kapak/cars-2006.jpg-thumb-normal.webp",
+          "link": "movie.html?id=cars",
+          "infoTitle": "2006 | 117DK | Komedi,Macera",
+          "infoDesc": "Kendini en hızlı yarış arabası olarak gören Lightning Mcqueen, egosuna yenik düşer ve büyük kupa yarışında berabere kalır. Yarışın tekrar yapılacağı kararlaşınca, Mcqueen dinlenmek için tırına geçer. Ancak yolda olan bir kazadan sonra kendini hiç bilmediği eski bir kasabanın yollarını tamir ederken bulur."
+        },
+        {
+          "id": "hoteltransilvania3",
+          "image": "https://m.media-amazon.com/images/M/MV5BMjE1MjA5NzQ5MV5BMl5BanBnXkFtZTgwMzUwMjA3NTM@._V1_.jpg",
+          "link": "movie.html?id=hoteltransilvania3",
+          "infoTitle": "2018 | 97DK | Komedi",
+          "infoDesc": "Otel işlerinden çok yorulan Dracula ailesi dev bir tatil planı yaparlar. Tüm oteli alarak mükemmel tatil için yola koyulurlar. Keyifli anlar asla eksiz olmaz. Canavarların dünyasında herşey daha farklı ilerliyor. Fakat eski bir düşman hiç beklenmedik bir anda onlara katılır."
+        },
+        {
+          "id": "scoob",
+          "image": "https://m.media-amazon.com/images/S/pv-target-images/71c326ffe09b4edc1876187fe9412547451adec377268268c8a96e713a234a35._SX1080_FMjpg_.jpg",
+          "link": "movie.html?id=scoob",
+          "infoTitle": "2020 | 93DK | Gizem",
+          "infoDesc": "Scooby ve Shaggy'nin tanıştıkları andan itibaren ömür boyu süren dostluğuna odaklanılıyor. Tanışmalarının ardından, dedektif olma hayali kuran Fred, Velma ve Daphne ile güçlerini birleştiren Scooby ve Shaggy, çok geçmeden ünlü Mystery Inc.'i kurar."
+        }
+      ]
+    },
     {
       "title": "Tüm Filmler",
       "items": [
